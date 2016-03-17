@@ -1,0 +1,1320 @@
+<html>
+<head>
+<script type="text/javascript" src="(null)sortable.js"></script>
+<script langugage="javascript">
+function toggle(item) {
+    obj=document.getElementById(item);
+    visible=(obj.style.display!="none" && obj.style.display!="");
+    key=document.getElementById("x" + item);
+    if (visible) {
+        obj.style.display="none";
+        key.innerHTML="+";
+    } else {
+        obj.style.display="block";
+        key.innerHTML="-";
+    }
+}
+function onMouseOver(obj) {
+    obj.style.background="lightblue";
+}
+function onMouseOut(obj) {
+    obj.style.background="white";
+}
+</script>
+<style type="text/css">
+div { font-family: courier; font-size: 13 }
+div.parent { margin-left: 15; display: none }
+div.leaf { margin-left: 10 }
+div.header { margin-left: 10 }
+div.link { margin-left: 10; cursor: move }
+span.parent { padding-right: 10; }
+span.leaf { padding-right: 10; }
+a img { border: 0;}
+table.sortable th { border-width: 0px 1px 1px 1px; background-color: #ccc;}
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+table.sortable th, table.sortable td { text-align: left;}table.sortable tr.odd td { background-color: #ddd; }
+table.sortable tr.even td { background-color: #fff; }
+</style>
+</head><body>
+
+<a name="contents"></a>
+<h2>Table of Contents</h2>
+<ul>
+  <li><a href="#exclusive">Exclusive profile</a></li>
+  <li><a href="#inclusive">Inclusive profile</a></li>
+  <li><a href="#class">Class/method profile</a></li>
+  <li><a href="#method">Method/class profile</a></li>
+</ul>
+
+<a name="exclusive"></a>
+<hr>
+<a href="#contents">[Top]</a>
+<a href="#exclusive">[Exclusive]</a>
+<a href="#inclusive">[Inclusive]</a>
+<a href="#class">[Class]</a>
+<a href="#method">[Method]</a>
+<br><br>
+Total cycles: 117026631
+
+<br><br>
+Exclusive elapsed times for each method, not including time spent in
+children, sorted by exclusive time.
+
+<br><br>
+<pre>
+    Usecs  self %  sum %  Method
+ 11384229    9.73   9.73  <a href="#m3">[3]</a> java/lang/Daemons$FinalizerDaemon.doFinalize (Ljava/lang/ref/FinalizerReference;)V
+  7743409    6.62  16.34  <a href="#m13">[13]</a> java/math/NativeBN.BN_nnmod (III)Z
+  5550875    4.74  21.09  <a href="#m17">[17]</a> java/math/NativeBN.BN_mul (III)Z
+  5503307    4.70  25.79  <a href="#m6">[6]</a> java/math/BigInt.newBigInt ()Ljava/math/BigInt;
+  5085494    4.35  30.14  <a href="#m10">[10]</a> java/math/BigInteger.&lt;init&gt; (Ljava/math/BigInt;)V
+  4191540    3.58  33.72  <a href="#m16">[16]</a> java/lang/ref/ReferenceQueue.remove (J)Ljava/lang/ref/Reference;
+  4151989    3.55  37.27  <a href="#m2">[2]</a> java/math/BigInteger.mod (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+  3962041    3.39  40.65  <a href="#m18">[18]</a> java/lang/ref/ReferenceQueue.enqueue (Ljava/lang/ref/Reference;)V
+  3839411    3.28  43.93  <a href="#m0">[0]</a> (toplevel)
+  3754857    3.21  47.14  <a href="#m14">[14]</a> java/math/BigInt.finalize ()V
+  3477183    2.97  50.11  <a href="#m4">[4]</a> java/math/BigInteger.multiply (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+  3434922    2.94  53.05  <a href="#m15">[15]</a> java/lang/ref/FinalizerReference.add (Ljava/lang/Object;)V
+  3133927    2.68  55.73  <a href="#m21">[21]</a> java/math/BigInteger.getBigInt ()Ljava/math/BigInt;
+  2978975    2.55  58.27  <a href="#m8">[8]</a> java/math/BigInt.&lt;init&gt; ()V
+  2888367    2.47  60.74  <a href="#m22">[22]</a> dalvik/system/VMDebug.startGC ()V
+  2727763    2.33  63.07  <a href="#m12">[12]</a> java/lang/ref/Reference.enqueueInternal ()Z
+  2620495    2.24  65.31  <a href="#m7">[7]</a> java/math/BigInt.product (Ljava/math/BigInt;Ljava/math/BigInt;)Ljava/math/BigInt;
+  2620470    2.24  67.55  <a href="#m5">[5]</a> java/math/BigInt.modulus (Ljava/math/BigInt;Ljava/math/BigInt;)Ljava/math/BigInt;
+  2496703    2.13  69.68  <a href="#m23">[23]</a> java/math/BigInt.Check (Z)V
+  2486748    2.12  71.81  <a href="#m24">[24]</a> java/lang/Object.notify ()V
+  2469014    2.11  73.92  <a href="#m20">[20]</a> java/lang/ref/FinalizerReference.&lt;init&gt; (Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V
+  2458592    2.10  76.02  <a href="#m11">[11]</a> java/lang/ref/ReferenceQueue.remove ()Ljava/lang/ref/Reference;
+  2386752    2.04  78.06  <a href="#m25">[25]</a> java/lang/Daemons$FinalizerWatchdogDaemon.access$200 ()Ljava/lang/Daemons$FinalizerWatchdogDaemon;
+  2366087    2.02  80.08  <a href="#m26">[26]</a> java/math/NativeBN.BN_free (I)V
+  1900563    1.62  81.70  <a href="#m19">[19]</a> java/math/BigInteger.signum ()I
+  1869370    1.60  83.30  <a href="#m28">[28]</a> java/math/NativeBN.BN_new ()I
+  1589004    1.36  84.66  <a href="#m29">[29]</a> java/lang/System.nanoTime ()J
+  1530189    1.31  85.97  <a href="#m30">[30]</a> java/lang/ref/ReferenceQueue.poll ()Ljava/lang/ref/Reference;
+  1529038    1.31  87.27  <a href="#m31">[31]</a> java/lang/ref/FinalizerReference.remove (Ljava/lang/ref/FinalizerReference;)V
+  1516829    1.30  88.57  <a href="#m9">[9]</a> java/lang/Daemons$ReferenceQueueDaemon.enqueue (Ljava/lang/ref/Reference;)V
+  1421406    1.21  89.78  <a href="#m32">[32]</a> java/lang/Daemons$Daemon.isRunning ()Z
+  1383982    1.18  90.97  <a href="#m1">[1]</a> fr/android/bri/test_profiling/MainActivity.mult ()V
+  1303955    1.11  92.08  <a href="#m33">[33]</a> java/lang/ref/Reference.&lt;init&gt; (Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V
+  1236111    1.06  93.14  <a href="#m34">[34]</a> java/math/BigInteger.setBigInt (Ljava/math/BigInt;)V
+  1231680    1.05  94.19  <a href="#m27">[27]</a> java/math/BigInt.sign ()I
+  1229180    1.05  95.24  <a href="#m35">[35]</a> java/lang/Number.&lt;init&gt; ()V
+  1228534    1.05  96.29  <a href="#m36">[36]</a> java/math/BigInt.getNativeBIGNUM ()I
+  1203972    1.03  97.32  <a href="#m37">[37]</a> java/lang/ref/FinalizerReference.get ()Ljava/lang/Object;
+  1198435    1.02  98.34  <a href="#m38">[38]</a> java/lang/ref/FinalizerReference.clear ()V
+  1181448    1.01  99.35  <a href="#m39">[39]</a> java/lang/Object.finalize ()V
+   738722    0.63  99.98  <a href="#m40">[40]</a> java/math/NativeBN.sign (I)I
+     8174    0.01  99.99  <a href="#m42">[42]</a> java/lang/Object.wait (JI)V
+     2798    0.00  99.99  <a href="#m41">[41]</a> com/android/internal/os/BinderInternal$GcWatcher.finalize ()V
+     1866    0.00  99.99  <a href="#m47">[47]</a> java/lang/Object.notifyAll ()V
+     1213    0.00  99.99  <a href="#m45">[45]</a> java/lang/ref/ReferenceQueue.add (Ljava/lang/ref/Reference;)V
+     1109    0.00  99.99  <a href="#m44">[44]</a> java/lang/Object.wait ()V
+     1032    0.00 100.00  <a href="#m49">[49]</a> android/os/SystemClock.uptimeMillis ()J
+      980    0.00 100.00  <a href="#m43">[43]</a> java/lang/Object.wait (J)V
+      950    0.00 100.00  <a href="#m46">[46]</a> com/android/internal/os/BinderInternal$GcWatcher.&lt;init&gt; ()V
+      728    0.00 100.00  <a href="#m51">[51]</a> com/android/internal/os/BinderInternal.handleGc ()V
+      697    0.00 100.00  <a href="#m48">[48]</a> java/lang/ref/WeakReference.&lt;init&gt; (Ljava/lang/Object;)V
+      180    0.00 100.00  <a href="#m54">[54]</a> android/os/Debug.stopMethodTracing ()V
+      161    0.00 100.00  <a href="#m50">[50]</a> java/lang/Daemons$FinalizerWatchdogDaemon.waitForObject ()Ljava/lang/Object;
+      134    0.00 100.00  <a href="#m58">[58]</a> android/os/Debug.startMethodTracing (Ljava/lang/String;II)V
+      108    0.00 100.00  <a href="#m61">[61]</a> java/lang/VMThread.sleep (JI)V
+       79    0.00 100.00  <a href="#m65">[65]</a> android/graphics/Canvas.finalizer (I)V
+       77    0.00 100.00  <a href="#m53">[53]</a> java/lang/Daemons$FinalizerWatchdogDaemon.sleepFor (JJ)V
+       75    0.00 100.00  <a href="#m66">[66]</a> java/lang/Daemons$FinalizerDaemon.access$100 ()Ljava/lang/Daemons$FinalizerDaemon;
+       61    0.00 100.00  <a href="#m69">[69]</a> android/graphics/Paint.finalizer (I)V
+       60    0.00 100.00  <a href="#m70">[70]</a> java/lang/Daemons$FinalizerDaemon.access$400 (Ljava/lang/Daemons$FinalizerDaemon;)Ljava/lang/Object;
+       55    0.00 100.00  <a href="#m52">[52]</a> java/lang/Daemons$FinalizerWatchdogDaemon.waitForFinalization (Ljava/lang/Object;)Z
+       37    0.00 100.00  <a href="#m73">[73]</a> android/os/Binder.destroy ()V
+       34    0.00 100.00  <a href="#m75">[75]</a> android/view/Surface.release ()V
+       32    0.00 100.00  <a href="#m62">[62]</a> android/graphics/Paint.finalize ()V
+       32    0.00 100.00  <a href="#m71">[71]</a> android/graphics/Region.finalize ()V
+       26    0.00 100.00  <a href="#m56">[56]</a> java/lang/Thread.sleep (J)V
+       25    0.00 100.00  <a href="#m80">[80]</a> android/os/Parcel.nativeEnforceInterface (ILjava/lang/String;)V
+       24    0.00 100.00  <a href="#m67">[67]</a> android/view/inputmethod/InputMethodManager$1.onUnbindMethod (I)V
+       24    0.00 100.00  <a href="#m59">[59]</a> java/lang/Thread.sleep (JI)V
+       22    0.00 100.00  <a href="#m68">[68]</a> android/os/Binder.finalize ()V
+       19    0.00 100.00  <a href="#m55">[55]</a> android/os/Binder.execTransact (IIII)Z
+       17    0.00 100.00  <a href="#m84">[84]</a> android/graphics/Matrix.finalizer (I)V
+       17    0.00 100.00  <a href="#m85">[85]</a> android/graphics/Region.nativeDestructor (I)V
+       16    0.00 100.00  <a href="#m83">[83]</a> android/os/Parcel.recycle ()V
+       14    0.00 100.00  <a href="#m81">[81]</a> android/view/InputChannel.finalize ()V
+       12    0.00 100.00  <a href="#m60">[60]</a> com/android/internal/view/IInputMethodClient$Stub.onTransact (ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+       11    0.00 100.00  <a href="#m78">[78]</a> android/graphics/Matrix.finalize ()V
+       11    0.00 100.00  <a href="#m90">[90]</a> java/lang/Daemons$FinalizerDaemon.access$500 (Ljava/lang/Daemons$FinalizerDaemon;)J
+       10    0.00 100.00  <a href="#m63">[63]</a> android/graphics/Canvas$CanvasFinalizer.finalize ()V
+       10    0.00 100.00  <a href="#m87">[87]</a> android/os/Parcel.obtain (I)Landroid/os/Parcel;
+       10    0.00 100.00  <a href="#m74">[74]</a> android/view/InputEventReceiver.finalize ()V
+       10    0.00 100.00  <a href="#m72">[72]</a> android/view/Surface.finalize ()V
+       10    0.00 100.00  <a href="#m82">[82]</a> android/view/ViewRootImpl$WindowInputEventReceiver.dispose ()V
+        9    0.00 100.00  <a href="#m94">[94]</a> android/view/InputChannel.nativeDispose (Z)V
+        8    0.00 100.00  <a href="#m95">[95]</a> android/os/Parcel.nativeReadInt (I)I
+        7    0.00 100.00  <a href="#m64">[64]</a> android/graphics/Canvas.access$000 (I)V
+        7    0.00 100.00  <a href="#m76">[76]</a> android/os/Parcel.enforceInterface (Ljava/lang/String;)V
+        6    0.00 100.00  <a href="#m86">[86]</a> android/os/Handler.obtainMessage (III)Landroid/os/Message;
+        6    0.00 100.00  <a href="#m79">[79]</a> android/os/Handler.sendMessageDelayed (Landroid/os/Message;J)Z
+        6    0.00 100.00  <a href="#m93">[93]</a> android/os/MessageQueue.enqueueMessage (Landroid/os/Message;J)Z
+        5    0.00 100.00  <a href="#m77">[77]</a> android/os/Handler.sendMessage (Landroid/os/Message;)Z
+        5    0.00 100.00  <a href="#m88">[88]</a> android/os/Handler.sendMessageAtTime (Landroid/os/Message;J)Z
+        5    0.00 100.00  <a href="#m92">[92]</a> android/os/Message.obtain (Landroid/os/Handler;III)Landroid/os/Message;
+        5    0.00 100.00  <a href="#m96">[96]</a> android/os/Parcel.init (I)V
+        5    0.00 100.00  <a href="#m91">[91]</a> android/view/InputEventReceiver.dispose ()V
+        5    0.00 100.00  <a href="#m97">[97]</a> android/view/ViewRootImpl.unscheduleConsumeBatchedInput ()V
+        5    0.00 100.00  <a href="#m98">[98]</a> dalvik/system/CloseGuard.close ()V
+        4    0.00 100.00  <a href="#m57">[57]</a> android/os/Debug.startMethodTracing (Ljava/lang/String;I)V
+        4    0.00 100.00  <a href="#m99">[99]</a> android/os/Message.obtain ()Landroid/os/Message;
+        4    0.00 100.00  <a href="#m100">[100]</a> android/os/Parcel.freeBuffer ()V
+        4    0.00 100.00  <a href="#m89">[89]</a> android/os/Parcel.readInt ()I
+        3    0.00 100.00  <a href="#m102">[102]</a> android/os/Message.isInUse ()Z
+</pre>
+<a name="inclusive"></a>
+<hr>
+<a href="#contents">[Top]</a>
+<a href="#exclusive">[Exclusive]</a>
+<a href="#inclusive">[Inclusive]</a>
+<a href="#class">[Class]</a>
+<a href="#method">[Method]</a>
+<br><br>
+
+Inclusive elapsed times for each method and its parents and children,
+sorted by inclusive time.
+
+<br><br>
+<pre>
+index  %/total %/self  index     calls         usecs name
+<a name="m0"></a>----------------------------------------------------
+[0]    100.0%                     0+0      117026631 (toplevel)
+                 3.3%   excl                 3839411
+                54.2%    <a href="#m1">[1]</a>      1/1       63386383 fr/android/bri/test_profiling/MainActivity.mult ()V
+                23.8%    <a href="#m3">[3]</a> 521302/521302  27831119 java/lang/Daemons$FinalizerDaemon.doFinalize (Ljava/lang/ref/FinalizerReference;)V
+                 8.1%    <a href="#m9">[9]</a>    147/147      9465164 java/lang/Daemons$ReferenceQueueDaemon.enqueue (Ljava/lang/ref/Reference;)V
+                 7.0%   <a href="#m11">[11]</a> 521302/521302   8185520 java/lang/ref/ReferenceQueue.remove ()Ljava/lang/ref/Reference;
+                 2.5%   <a href="#m22">[22]</a>    147/147      2888367 dalvik/system/VMDebug.startGC ()V
+                 1.2%   <a href="#m32">[32]</a> 521451/521451   1421406 java/lang/Daemons$Daemon.isRunning ()Z
+                 0.0%   <a href="#m44">[44]</a>    152/169         4673 java/lang/Object.wait ()V
+                 0.0%   <a href="#m45">[45]</a>    147/147         3079 java/lang/ref/ReferenceQueue.add (Ljava/lang/ref/Reference;)V
+                 0.0%   <a href="#m50">[50]</a>      4/4            756 java/lang/Daemons$FinalizerWatchdogDaemon.waitForObject ()Ljava/lang/Object;
+                 0.0%   <a href="#m52">[52]</a>      4/4            351 java/lang/Daemons$FinalizerWatchdogDaemon.waitForFinalization (Ljava/lang/Object;)Z
+                 0.0%   <a href="#m54">[54]</a>      1/1            180 android/os/Debug.stopMethodTracing ()V
+                 0.0%   <a href="#m55">[55]</a>      1/1            179 android/os/Binder.execTransact (IIII)Z
+                 0.0%   <a href="#m57">[57]</a>      1/1            142 android/os/Debug.startMethodTracing (Ljava/lang/String;I)V
+                 0.0%   <a href="#m58">[58]</a>      1/1            138 android/os/Debug.startMethodTracing (Ljava/lang/String;II)V
+                 0.0%   <a href="#m16">[16]</a>      1/521302        16 java/lang/ref/ReferenceQueue.remove (J)Ljava/lang/ref/Reference;
+                 0.0%   <a href="#m70">[70]</a>      4/27             9 java/lang/Daemons$FinalizerDaemon.access$400 (Ljava/lang/Daemons$FinalizerDaemon;)Ljava/lang/Object;
+                 0.0%   <a href="#m66">[66]</a>      4/31             8 java/lang/Daemons$FinalizerDaemon.access$100 ()Ljava/lang/Daemons$FinalizerDaemon;
+                 0.0%  <a href="#m101">[101]</a>      1/1              4 dalvik/system/VMDebug.startMethodTracing (Ljava/lang/String;II)V
+                 0.0%   <a href="#m30">[30]</a>      1/521302         4 java/lang/ref/ReferenceQueue.poll ()Ljava/lang/ref/Reference;
+                 0.0%   <a href="#m43">[43]</a>      1/147            2 java/lang/Object.wait (J)V
+<a name="m1"></a>----------------------------------------------------
+               100.0%    <a href="#m0">[0]</a>      1/1       63386383 (toplevel)
+[1]     54.2%                     1+0       63386383 fr/android/bri/test_profiling/MainActivity.mult ()V
+                 2.2%   excl                 1383982
+                54.7%    <a href="#m2">[2]</a> 262144/262144  34683924 java/math/BigInteger.mod (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+                43.1%    <a href="#m4">[4]</a> 262144/262144  27318477 java/math/BigInteger.multiply (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+<a name="m2"></a>----------------------------------------------------
+               100.0%    <a href="#m1">[1]</a> 262144/262144  34683924 fr/android/bri/test_profiling/MainActivity.mult ()V
+[2]     29.6%                262144+0       34683924 java/math/BigInteger.mod (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+                12.0%   excl                 4151989
+                58.8%    <a href="#m5">[5]</a> 262144/262144  20394076 java/math/BigInt.modulus (Ljava/math/BigInt;Ljava/math/BigInt;)Ljava/math/BigInt;
+                12.9%   <a href="#m19">[19]</a> 262144/262144   4490720 java/math/BigInteger.signum ()I
+                12.7%   <a href="#m10">[10]</a> 262144/524288   4390581 java/math/BigInteger.&lt;init&gt; (Ljava/math/BigInt;)V
+                 3.6%   <a href="#m21">[21]</a> 524288/1310720   1256558 java/math/BigInteger.getBigInt ()Ljava/math/BigInt;
+<a name="m3"></a>----------------------------------------------------
+               100.0%    <a href="#m0">[0]</a> 521302/521302  27831119 (toplevel)
+[3]     23.8%                521302+0       27831119 java/lang/Daemons$FinalizerDaemon.doFinalize (Ljava/lang/ref/FinalizerReference;)V
+                40.9%   excl                11384229
+                26.2%   <a href="#m14">[14]</a> 521138/521138   7302358 java/math/BigInt.finalize ()V
+                 8.6%   <a href="#m25">[25]</a> 1042603/1042603   2386752 java/lang/Daemons$FinalizerWatchdogDaemon.access$200 ()Ljava/lang/Daemons$FinalizerWatchdogDaemon;
+                 5.7%   <a href="#m29">[29]</a> 521302/521309   1588980 java/lang/System.nanoTime ()J
+                 5.5%   <a href="#m31">[31]</a> 521302/521302   1529038 java/lang/ref/FinalizerReference.remove (Ljava/lang/ref/FinalizerReference;)V
+                 4.4%   <a href="#m24">[24]</a> 521301/1044571   1228217 java/lang/Object.notify ()V
+                 4.3%   <a href="#m37">[37]</a> 521302/521302   1203972 java/lang/ref/FinalizerReference.get ()Ljava/lang/Object;
+                 4.3%   <a href="#m38">[38]</a> 521302/521302   1198435 java/lang/ref/FinalizerReference.clear ()V
+                 0.0%   <a href="#m41">[41]</a>    147/147         8677 com/android/internal/os/BinderInternal$GcWatcher.finalize ()V
+                 0.0%   <a href="#m62">[62]</a>      4/4            101 android/graphics/Paint.finalize ()V
+                 0.0%   <a href="#m63">[63]</a>      1/1             99 android/graphics/Canvas$CanvasFinalizer.finalize ()V
+                 0.0%   <a href="#m68">[68]</a>      3/3             66 android/os/Binder.finalize ()V
+                 0.0%   <a href="#m71">[71]</a>      4/4             58 android/graphics/Region.finalize ()V
+                 0.0%   <a href="#m72">[72]</a>      1/1             47 android/view/Surface.finalize ()V
+                 0.0%   <a href="#m74">[74]</a>      1/1             37 android/view/InputEventReceiver.finalize ()V
+                 0.0%   <a href="#m78">[78]</a>      1/1             28 android/graphics/Matrix.finalize ()V
+                 0.0%   <a href="#m81">[81]</a>      1/1             25 android/view/InputChannel.finalize ()V
+<a name="m4"></a>----------------------------------------------------
+               100.0%    <a href="#m1">[1]</a> 262144/262144  27318477 fr/android/bri/test_profiling/MainActivity.mult ()V
+[4]     23.3%                262144+0       27318477 java/math/BigInteger.multiply (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+                12.7%   excl                 3477183
+                66.6%    <a href="#m7">[7]</a> 262144/262144  18194942 java/math/BigInt.product (Ljava/math/BigInt;Ljava/math/BigInt;)Ljava/math/BigInt;
+                16.1%   <a href="#m10">[10]</a> 262144/524288   4388738 java/math/BigInteger.&lt;init&gt; (Ljava/math/BigInt;)V
+                 4.6%   <a href="#m21">[21]</a> 524288/1310720   1257614 java/math/BigInteger.getBigInt ()Ljava/math/BigInt;
+<a name="m5"></a>----------------------------------------------------
+               100.0%    <a href="#m2">[2]</a> 262144/262144  20394076 java/math/BigInteger.mod (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+[5]     17.4%                262144+0       20394076 java/math/BigInt.modulus (Ljava/math/BigInt;Ljava/math/BigInt;)Ljava/math/BigInt;
+                12.8%   excl                 2620470
+                46.0%    <a href="#m6">[6]</a> 262144/524288   9382802 java/math/BigInt.newBigInt ()Ljava/math/BigInt;
+                38.0%   <a href="#m13">[13]</a> 262144/262144   7743409 java/math/NativeBN.BN_nnmod (III)Z
+                 3.2%   <a href="#m23">[23]</a> 262144/1048576    647395 java/math/BigInt.Check (Z)V
+<a name="m6"></a>----------------------------------------------------
+                50.0%    <a href="#m5">[5]</a> 262144/524288   9382802 java/math/BigInt.modulus (Ljava/math/BigInt;Ljava/math/BigInt;)Ljava/math/BigInt;
+                50.0%    <a href="#m7">[7]</a> 262144/524288   9371773 java/math/BigInt.product (Ljava/math/BigInt;Ljava/math/BigInt;)Ljava/math/BigInt;
+[6]     16.0%                524288+0       18754575 java/math/BigInt.newBigInt ()Ljava/math/BigInt;
+                29.3%   excl                 5503307
+                54.3%    <a href="#m8">[8]</a> 524288/524288  10184389 java/math/BigInt.&lt;init&gt; ()V
+                10.0%   <a href="#m28">[28]</a> 524288/524288   1869370 java/math/NativeBN.BN_new ()I
+                 6.4%   <a href="#m23">[23]</a> 524288/1048576   1197509 java/math/BigInt.Check (Z)V
+<a name="m7"></a>----------------------------------------------------
+               100.0%    <a href="#m4">[4]</a> 262144/262144  18194942 java/math/BigInteger.multiply (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+[7]     15.5%                262144+0       18194942 java/math/BigInt.product (Ljava/math/BigInt;Ljava/math/BigInt;)Ljava/math/BigInt;
+                14.4%   excl                 2620495
+                51.5%    <a href="#m6">[6]</a> 262144/524288   9371773 java/math/BigInt.newBigInt ()Ljava/math/BigInt;
+                30.5%   <a href="#m17">[17]</a> 262144/262144   5550875 java/math/NativeBN.BN_mul (III)Z
+                 3.6%   <a href="#m23">[23]</a> 262144/1048576    651799 java/math/BigInt.Check (Z)V
+<a name="m8"></a>----------------------------------------------------
+               100.0%    <a href="#m6">[6]</a> 524288/524288  10184389 java/math/BigInt.newBigInt ()Ljava/math/BigInt;
+[8]      8.7%                524288+0       10184389 java/math/BigInt.&lt;init&gt; ()V
+                29.3%   excl                 2978975
+                70.7%   <a href="#m15">[15]</a> 524288/524435   7205414 java/lang/ref/FinalizerReference.add (Ljava/lang/Object;)V
+<a name="m9"></a>----------------------------------------------------
+               100.0%    <a href="#m0">[0]</a>    147/147      9465164 (toplevel)
+[9]      8.1%                   147+0        9465164 java/lang/Daemons$ReferenceQueueDaemon.enqueue (Ljava/lang/ref/Reference;)V
+                16.0%   excl                 1516829
+                84.0%   <a href="#m12">[12]</a> 523270/523270   7948335 java/lang/ref/Reference.enqueueInternal ()Z
+<a name="m10"></a>----------------------------------------------------
+                50.0%    <a href="#m2">[2]</a> 262144/524288   4390581 java/math/BigInteger.mod (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+                50.0%    <a href="#m4">[4]</a> 262144/524288   4388738 java/math/BigInteger.multiply (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+[10]     7.5%                524288+0        8779319 java/math/BigInteger.&lt;init&gt; (Ljava/math/BigInt;)V
+                57.9%   excl                 5085494
+                14.1%   <a href="#m34">[34]</a> 524288/524288   1236111 java/math/BigInteger.setBigInt (Ljava/math/BigInt;)V
+                14.0%   <a href="#m35">[35]</a> 524288/524288   1229180 java/lang/Number.&lt;init&gt; ()V
+                14.0%   <a href="#m36">[36]</a> 524288/524288   1228534 java/math/BigInt.getNativeBIGNUM ()I
+<a name="m11"></a>----------------------------------------------------
+               100.0%    <a href="#m0">[0]</a> 521302/521302   8185520 (toplevel)
+[11]     7.0%                521302+0        8185520 java/lang/ref/ReferenceQueue.remove ()Ljava/lang/ref/Reference;
+                30.0%   excl                 2458592
+                70.0%   <a href="#m16">[16]</a> 521301/521302   5726912 java/lang/ref/ReferenceQueue.remove (J)Ljava/lang/ref/Reference;
+<a name="m12"></a>----------------------------------------------------
+               100.0%    <a href="#m9">[9]</a> 523270/523270   7948335 java/lang/Daemons$ReferenceQueueDaemon.enqueue (Ljava/lang/ref/Reference;)V
+[12]     6.8%                523270+0        7948335 java/lang/ref/Reference.enqueueInternal ()Z
+                34.3%   excl                 2727763
+                65.7%   <a href="#m18">[18]</a> 523270/523270   5220572 java/lang/ref/ReferenceQueue.enqueue (Ljava/lang/ref/Reference;)V
+<a name="m13"></a>----------------------------------------------------
+               100.0%    <a href="#m5">[5]</a> 262144/262144   7743409 java/math/BigInt.modulus (Ljava/math/BigInt;Ljava/math/BigInt;)Ljava/math/BigInt;
+[13]     6.6%                262144+0        7743409 java/math/NativeBN.BN_nnmod (III)Z
+               100.0%   excl                 7743409
+<a name="m14"></a>----------------------------------------------------
+               100.0%    <a href="#m3">[3]</a> 521138/521138   7302358 java/lang/Daemons$FinalizerDaemon.doFinalize (Ljava/lang/ref/FinalizerReference;)V
+[14]     6.2%                521138+0        7302358 java/math/BigInt.finalize ()V
+                51.4%   excl                 3754857
+                32.4%   <a href="#m26">[26]</a> 521138/521138   2366087 java/math/NativeBN.BN_free (I)V
+                16.2%   <a href="#m39">[39]</a> 521138/521153   1181414 java/lang/Object.finalize ()V
+<a name="m15"></a>----------------------------------------------------
+               100.0%    <a href="#m8">[8]</a> 524288/524435   7205414 java/math/BigInt.&lt;init&gt; ()V
+                 0.0%   <a href="#m46">[46]</a>    147/524435      2113 com/android/internal/os/BinderInternal$GcWatcher.&lt;init&gt; ()V
+[15]     6.2%                524435+0        7207527 java/lang/ref/FinalizerReference.add (Ljava/lang/Object;)V
+                47.7%   excl                 3434922
+                52.3%   <a href="#m20">[20]</a> 524435/524435   3772605 java/lang/ref/FinalizerReference.&lt;init&gt; (Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V
+<a name="m16"></a>----------------------------------------------------
+               100.0%   <a href="#m11">[11]</a> 521301/521302   5726912 java/lang/ref/ReferenceQueue.remove ()Ljava/lang/ref/Reference;
+                 0.0%    <a href="#m0">[0]</a>      1/521302        16 (toplevel)
+[16]     4.9%                521302+0        5726928 java/lang/ref/ReferenceQueue.remove (J)Ljava/lang/ref/Reference;
+                73.2%   excl                 4191540
+                26.7%   <a href="#m30">[30]</a> 521301/521302   1530185 java/lang/ref/ReferenceQueue.poll ()Ljava/lang/ref/Reference;
+                 0.1%   <a href="#m43">[43]</a>    146/147         5194 java/lang/Object.wait (J)V
+<a name="m17"></a>----------------------------------------------------
+               100.0%    <a href="#m7">[7]</a> 262144/262144   5550875 java/math/BigInt.product (Ljava/math/BigInt;Ljava/math/BigInt;)Ljava/math/BigInt;
+[17]     4.7%                262144+0        5550875 java/math/NativeBN.BN_mul (III)Z
+               100.0%   excl                 5550875
+<a name="m18"></a>----------------------------------------------------
+               100.0%   <a href="#m12">[12]</a> 523270/523270   5220572 java/lang/ref/Reference.enqueueInternal ()Z
+[18]     4.5%                523270+0        5220572 java/lang/ref/ReferenceQueue.enqueue (Ljava/lang/ref/Reference;)V
+                75.9%   excl                 3962041
+                24.1%   <a href="#m24">[24]</a> 523270/1044571   1258531 java/lang/Object.notify ()V
+<a name="m19"></a>----------------------------------------------------
+               100.0%    <a href="#m2">[2]</a> 262144/262144   4490720 java/math/BigInteger.mod (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+[19]     3.8%                262144+0        4490720 java/math/BigInteger.signum ()I
+                42.3%   excl                 1900563
+                43.9%   <a href="#m27">[27]</a> 262144/262144   1970402 java/math/BigInt.sign ()I
+                13.8%   <a href="#m21">[21]</a> 262144/1310720    619755 java/math/BigInteger.getBigInt ()Ljava/math/BigInt;
+<a name="m20"></a>----------------------------------------------------
+               100.0%   <a href="#m15">[15]</a> 524435/524435   3772605 java/lang/ref/FinalizerReference.add (Ljava/lang/Object;)V
+[20]     3.2%                524435+0        3772605 java/lang/ref/FinalizerReference.&lt;init&gt; (Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V
+                65.4%   excl                 2469014
+                34.6%   <a href="#m33">[33]</a> 524435/524582   1303591 java/lang/ref/Reference.&lt;init&gt; (Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V
+<a name="m21"></a>----------------------------------------------------
+                40.1%    <a href="#m4">[4]</a> 524288/1310720   1257614 java/math/BigInteger.multiply (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+                40.1%    <a href="#m2">[2]</a> 524288/1310720   1256558 java/math/BigInteger.mod (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+                19.8%   <a href="#m19">[19]</a> 262144/1310720    619755 java/math/BigInteger.signum ()I
+[21]     2.7%                1310720+0        3133927 java/math/BigInteger.getBigInt ()Ljava/math/BigInt;
+               100.0%   excl                 3133927
+<a name="m22"></a>----------------------------------------------------
+               100.0%    <a href="#m0">[0]</a>    147/147      2888367 (toplevel)
+[22]     2.5%                   147+0        2888367 dalvik/system/VMDebug.startGC ()V
+               100.0%   excl                 2888367
+<a name="m23"></a>----------------------------------------------------
+                48.0%    <a href="#m6">[6]</a> 524288/1048576   1197509 java/math/BigInt.newBigInt ()Ljava/math/BigInt;
+                26.1%    <a href="#m7">[7]</a> 262144/1048576    651799 java/math/BigInt.product (Ljava/math/BigInt;Ljava/math/BigInt;)Ljava/math/BigInt;
+                25.9%    <a href="#m5">[5]</a> 262144/1048576    647395 java/math/BigInt.modulus (Ljava/math/BigInt;Ljava/math/BigInt;)Ljava/math/BigInt;
+[23]     2.1%                1048576+0        2496703 java/math/BigInt.Check (Z)V
+               100.0%   excl                 2496703
+<a name="m24"></a>----------------------------------------------------
+                50.6%   <a href="#m18">[18]</a> 523270/1044571   1258531 java/lang/ref/ReferenceQueue.enqueue (Ljava/lang/ref/Reference;)V
+                49.4%    <a href="#m3">[3]</a> 521301/1044571   1228217 java/lang/Daemons$FinalizerDaemon.doFinalize (Ljava/lang/ref/FinalizerReference;)V
+[24]     2.1%                1044571+0        2486748 java/lang/Object.notify ()V
+               100.0%   excl                 2486748
+<a name="m25"></a>----------------------------------------------------
+               100.0%    <a href="#m3">[3]</a> 1042603/1042603   2386752 java/lang/Daemons$FinalizerDaemon.doFinalize (Ljava/lang/ref/FinalizerReference;)V
+[25]     2.0%                1042603+0        2386752 java/lang/Daemons$FinalizerWatchdogDaemon.access$200 ()Ljava/lang/Daemons$FinalizerWatchdogDaemon;
+               100.0%   excl                 2386752
+<a name="m26"></a>----------------------------------------------------
+               100.0%   <a href="#m14">[14]</a> 521138/521138   2366087 java/math/BigInt.finalize ()V
+[26]     2.0%                521138+0        2366087 java/math/NativeBN.BN_free (I)V
+               100.0%   excl                 2366087
+<a name="m27"></a>----------------------------------------------------
+               100.0%   <a href="#m19">[19]</a> 262144/262144   1970402 java/math/BigInteger.signum ()I
+[27]     1.7%                262144+0        1970402 java/math/BigInt.sign ()I
+                62.5%   excl                 1231680
+                37.5%   <a href="#m40">[40]</a> 262144/262144    738722 java/math/NativeBN.sign (I)I
+<a name="m28"></a>----------------------------------------------------
+               100.0%    <a href="#m6">[6]</a> 524288/524288   1869370 java/math/BigInt.newBigInt ()Ljava/math/BigInt;
+[28]     1.6%                524288+0        1869370 java/math/NativeBN.BN_new ()I
+               100.0%   excl                 1869370
+<a name="m29"></a>----------------------------------------------------
+               100.0%    <a href="#m3">[3]</a> 521302/521309   1588980 java/lang/Daemons$FinalizerDaemon.doFinalize (Ljava/lang/ref/FinalizerReference;)V
+                 0.0%   <a href="#m53">[53]</a>      7/521309        24 java/lang/Daemons$FinalizerWatchdogDaemon.sleepFor (JJ)V
+[29]     1.4%                521309+0        1589004 java/lang/System.nanoTime ()J
+               100.0%   excl                 1589004
+<a name="m30"></a>----------------------------------------------------
+               100.0%   <a href="#m16">[16]</a> 521301/521302   1530185 java/lang/ref/ReferenceQueue.remove (J)Ljava/lang/ref/Reference;
+                 0.0%    <a href="#m0">[0]</a>      1/521302         4 (toplevel)
+[30]     1.3%                521302+0        1530189 java/lang/ref/ReferenceQueue.poll ()Ljava/lang/ref/Reference;
+               100.0%   excl                 1530189
+<a name="m31"></a>----------------------------------------------------
+               100.0%    <a href="#m3">[3]</a> 521302/521302   1529038 java/lang/Daemons$FinalizerDaemon.doFinalize (Ljava/lang/ref/FinalizerReference;)V
+[31]     1.3%                521302+0        1529038 java/lang/ref/FinalizerReference.remove (Ljava/lang/ref/FinalizerReference;)V
+               100.0%   excl                 1529038
+<a name="m32"></a>----------------------------------------------------
+               100.0%    <a href="#m0">[0]</a> 521451/521451   1421406 (toplevel)
+[32]     1.2%                521451+0        1421406 java/lang/Daemons$Daemon.isRunning ()Z
+               100.0%   excl                 1421406
+<a name="m33"></a>----------------------------------------------------
+               100.0%   <a href="#m20">[20]</a> 524435/524582   1303591 java/lang/ref/FinalizerReference.&lt;init&gt; (Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V
+                 0.0%   <a href="#m48">[48]</a>    147/524582       364 java/lang/ref/WeakReference.&lt;init&gt; (Ljava/lang/Object;)V
+[33]     1.1%                524582+0        1303955 java/lang/ref/Reference.&lt;init&gt; (Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V
+               100.0%   excl                 1303955
+<a name="m34"></a>----------------------------------------------------
+               100.0%   <a href="#m10">[10]</a> 524288/524288   1236111 java/math/BigInteger.&lt;init&gt; (Ljava/math/BigInt;)V
+[34]     1.1%                524288+0        1236111 java/math/BigInteger.setBigInt (Ljava/math/BigInt;)V
+               100.0%   excl                 1236111
+<a name="m35"></a>----------------------------------------------------
+               100.0%   <a href="#m10">[10]</a> 524288/524288   1229180 java/math/BigInteger.&lt;init&gt; (Ljava/math/BigInt;)V
+[35]     1.1%                524288+0        1229180 java/lang/Number.&lt;init&gt; ()V
+               100.0%   excl                 1229180
+<a name="m36"></a>----------------------------------------------------
+               100.0%   <a href="#m10">[10]</a> 524288/524288   1228534 java/math/BigInteger.&lt;init&gt; (Ljava/math/BigInt;)V
+[36]     1.0%                524288+0        1228534 java/math/BigInt.getNativeBIGNUM ()I
+               100.0%   excl                 1228534
+<a name="m37"></a>----------------------------------------------------
+               100.0%    <a href="#m3">[3]</a> 521302/521302   1203972 java/lang/Daemons$FinalizerDaemon.doFinalize (Ljava/lang/ref/FinalizerReference;)V
+[37]     1.0%                521302+0        1203972 java/lang/ref/FinalizerReference.get ()Ljava/lang/Object;
+               100.0%   excl                 1203972
+<a name="m38"></a>----------------------------------------------------
+               100.0%    <a href="#m3">[3]</a> 521302/521302   1198435 java/lang/Daemons$FinalizerDaemon.doFinalize (Ljava/lang/ref/FinalizerReference;)V
+[38]     1.0%                521302+0        1198435 java/lang/ref/FinalizerReference.clear ()V
+               100.0%   excl                 1198435
+<a name="m39"></a>----------------------------------------------------
+               100.0%   <a href="#m14">[14]</a> 521138/521153   1181414 java/math/BigInt.finalize ()V
+                 0.0%   <a href="#m71">[71]</a>      4/521153         9 android/graphics/Region.finalize ()V
+                 0.0%   <a href="#m62">[62]</a>      4/521153         8 android/graphics/Paint.finalize ()V
+                 0.0%   <a href="#m68">[68]</a>      3/521153         7 android/os/Binder.finalize ()V
+                 0.0%   <a href="#m63">[63]</a>      1/521153         3 android/graphics/Canvas$CanvasFinalizer.finalize ()V
+                 0.0%   <a href="#m72">[72]</a>      1/521153         3 android/view/Surface.finalize ()V
+                 0.0%   <a href="#m81">[81]</a>      1/521153         2 android/view/InputChannel.finalize ()V
+                 0.0%   <a href="#m74">[74]</a>      1/521153         2 android/view/InputEventReceiver.finalize ()V
+[39]     1.0%                521153+0        1181448 java/lang/Object.finalize ()V
+               100.0%   excl                 1181448
+<a name="m40"></a>----------------------------------------------------
+               100.0%   <a href="#m27">[27]</a> 262144/262144    738722 java/math/BigInt.sign ()I
+[40]     0.6%                262144+0         738722 java/math/NativeBN.sign (I)I
+               100.0%   excl                  738722
+<a name="m41"></a>----------------------------------------------------
+               100.0%    <a href="#m3">[3]</a>    147/147         8677 java/lang/Daemons$FinalizerDaemon.doFinalize (Ljava/lang/ref/FinalizerReference;)V
+[41]     0.0%                   147+0           8677 com/android/internal/os/BinderInternal$GcWatcher.finalize ()V
+                32.2%   excl                    2798
+                35.3%   <a href="#m46">[46]</a>    147/147         3063 com/android/internal/os/BinderInternal$GcWatcher.&lt;init&gt; ()V
+                12.2%   <a href="#m48">[48]</a>    147/147         1061 java/lang/ref/WeakReference.&lt;init&gt; (Ljava/lang/Object;)V
+                11.8%   <a href="#m49">[49]</a>    147/148         1027 android/os/SystemClock.uptimeMillis ()J
+                 8.4%   <a href="#m51">[51]</a>    147/147          728 com/android/internal/os/BinderInternal.handleGc ()V
+<a name="m42"></a>----------------------------------------------------
+                51.6%   <a href="#m43">[43]</a>    146/313         4214 java/lang/Object.wait (J)V
+                48.4%   <a href="#m44">[44]</a>    167/313         3960 java/lang/Object.wait ()V
+[42]     0.0%                   313+0           8174 java/lang/Object.wait (JI)V
+               100.0%   excl                    8174
+<a name="m43"></a>----------------------------------------------------
+               100.0%   <a href="#m16">[16]</a>    146/147         5194 java/lang/ref/ReferenceQueue.remove (J)Ljava/lang/ref/Reference;
+                 0.0%    <a href="#m0">[0]</a>      1/147            2 (toplevel)
+[43]     0.0%                   147+0           5196 java/lang/Object.wait (J)V
+                18.9%   excl                     980
+                81.1%   <a href="#m42">[42]</a>    146/313         4214 java/lang/Object.wait (JI)V
+<a name="m44"></a>----------------------------------------------------
+                92.1%    <a href="#m0">[0]</a>    152/169         4673 (toplevel)
+                 7.9%   <a href="#m50">[50]</a>     17/169          400 java/lang/Daemons$FinalizerWatchdogDaemon.waitForObject ()Ljava/lang/Object;
+[44]     0.0%                   169+0           5073 java/lang/Object.wait ()V
+                21.9%   excl                    1109
+                78.1%   <a href="#m42">[42]</a>    167/313         3960 java/lang/Object.wait (JI)V
+<a name="m45"></a>----------------------------------------------------
+               100.0%    <a href="#m0">[0]</a>    147/147         3079 (toplevel)
+[45]     0.0%                   147+0           3079 java/lang/ref/ReferenceQueue.add (Ljava/lang/ref/Reference;)V
+                39.4%   excl                    1213
+                60.6%   <a href="#m47">[47]</a>    147/147         1866 java/lang/Object.notifyAll ()V
+<a name="m46"></a>----------------------------------------------------
+               100.0%   <a href="#m41">[41]</a>    147/147         3063 com/android/internal/os/BinderInternal$GcWatcher.finalize ()V
+[46]     0.0%                   147+0           3063 com/android/internal/os/BinderInternal$GcWatcher.&lt;init&gt; ()V
+                31.0%   excl                     950
+                69.0%   <a href="#m15">[15]</a>    147/524435      2113 java/lang/ref/FinalizerReference.add (Ljava/lang/Object;)V
+<a name="m47"></a>----------------------------------------------------
+               100.0%   <a href="#m45">[45]</a>    147/147         1866 java/lang/ref/ReferenceQueue.add (Ljava/lang/ref/Reference;)V
+[47]     0.0%                   147+0           1866 java/lang/Object.notifyAll ()V
+               100.0%   excl                    1866
+<a name="m48"></a>----------------------------------------------------
+               100.0%   <a href="#m41">[41]</a>    147/147         1061 com/android/internal/os/BinderInternal$GcWatcher.finalize ()V
+[48]     0.0%                   147+0           1061 java/lang/ref/WeakReference.&lt;init&gt; (Ljava/lang/Object;)V
+                65.7%   excl                     697
+                34.3%   <a href="#m33">[33]</a>    147/524582       364 java/lang/ref/Reference.&lt;init&gt; (Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V
+<a name="m49"></a>----------------------------------------------------
+                99.5%   <a href="#m41">[41]</a>    147/148         1027 com/android/internal/os/BinderInternal$GcWatcher.finalize ()V
+                 0.5%   <a href="#m79">[79]</a>      1/148            5 android/os/Handler.sendMessageDelayed (Landroid/os/Message;J)Z
+[49]     0.0%                   148+0           1032 android/os/SystemClock.uptimeMillis ()J
+               100.0%   excl                    1032
+<a name="m50"></a>----------------------------------------------------
+               100.0%    <a href="#m0">[0]</a>      4/4            756 (toplevel)
+[50]     0.0%                     4+0            756 java/lang/Daemons$FinalizerWatchdogDaemon.waitForObject ()Ljava/lang/Object;
+                21.3%   excl                     161
+                52.9%   <a href="#m44">[44]</a>     17/169          400 java/lang/Object.wait ()V
+                 6.3%   <a href="#m66">[66]</a>     20/31            48 java/lang/Daemons$FinalizerDaemon.access$100 ()Ljava/lang/Daemons$FinalizerDaemon;
+                 5.8%   <a href="#m70">[70]</a>     20/27            44 java/lang/Daemons$FinalizerDaemon.access$400 (Ljava/lang/Daemons$FinalizerDaemon;)Ljava/lang/Object;
+<a name="m51"></a>----------------------------------------------------
+               100.0%   <a href="#m41">[41]</a>    147/147          728 com/android/internal/os/BinderInternal$GcWatcher.finalize ()V
+[51]     0.0%                   147+0            728 com/android/internal/os/BinderInternal.handleGc ()V
+               100.0%   excl                     728
+<a name="m52"></a>----------------------------------------------------
+               100.0%    <a href="#m0">[0]</a>      4/4            351 (toplevel)
+[52]     0.0%                     4+0            351 java/lang/Daemons$FinalizerWatchdogDaemon.waitForFinalization (Ljava/lang/Object;)Z
+                15.7%   excl                      55
+                73.8%   <a href="#m53">[53]</a>      4/4            259 java/lang/Daemons$FinalizerWatchdogDaemon.sleepFor (JJ)V
+                 5.4%   <a href="#m66">[66]</a>      7/31            19 java/lang/Daemons$FinalizerDaemon.access$100 ()Ljava/lang/Daemons$FinalizerDaemon;
+                 3.1%   <a href="#m90">[90]</a>      4/4             11 java/lang/Daemons$FinalizerDaemon.access$500 (Ljava/lang/Daemons$FinalizerDaemon;)J
+                 2.0%   <a href="#m70">[70]</a>      3/27             7 java/lang/Daemons$FinalizerDaemon.access$400 (Ljava/lang/Daemons$FinalizerDaemon;)Ljava/lang/Object;
+<a name="m53"></a>----------------------------------------------------
+               100.0%   <a href="#m52">[52]</a>      4/4            259 java/lang/Daemons$FinalizerWatchdogDaemon.waitForFinalization (Ljava/lang/Object;)Z
+[53]     0.0%                     4+0            259 java/lang/Daemons$FinalizerWatchdogDaemon.sleepFor (JJ)V
+                29.7%   excl                      77
+                61.0%   <a href="#m56">[56]</a>      4/4            158 java/lang/Thread.sleep (J)V
+                 9.3%   <a href="#m29">[29]</a>      7/521309        24 java/lang/System.nanoTime ()J
+<a name="m54"></a>----------------------------------------------------
+               100.0%    <a href="#m0">[0]</a>      1/1            180 (toplevel)
+[54]     0.0%                     1+0            180 android/os/Debug.stopMethodTracing ()V
+               100.0%   excl                     180
+                 0.0%  <a href="#m104">[104]</a>      1/1              0 dalvik/system/VMDebug.stopMethodTracing ()V
+<a name="m55"></a>----------------------------------------------------
+               100.0%    <a href="#m0">[0]</a>      1/1            179 (toplevel)
+[55]     0.0%                     1+0            179 android/os/Binder.execTransact (IIII)Z
+                10.6%   excl                      19
+                69.8%   <a href="#m60">[60]</a>      1/1            125 com/android/internal/view/IInputMethodClient$Stub.onTransact (ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+                11.2%   <a href="#m83">[83]</a>      2/2             20 android/os/Parcel.recycle ()V
+                 8.4%   <a href="#m87">[87]</a>      2/2             15 android/os/Parcel.obtain (I)Landroid/os/Parcel;
+<a name="m56"></a>----------------------------------------------------
+               100.0%   <a href="#m53">[53]</a>      4/4            158 java/lang/Daemons$FinalizerWatchdogDaemon.sleepFor (JJ)V
+[56]     0.0%                     4+0            158 java/lang/Thread.sleep (J)V
+                16.5%   excl                      26
+                83.5%   <a href="#m59">[59]</a>      4/4            132 java/lang/Thread.sleep (JI)V
+<a name="m57"></a>----------------------------------------------------
+               100.0%    <a href="#m0">[0]</a>      1/1            142 (toplevel)
+[57]     0.0%                     1+0            142 android/os/Debug.startMethodTracing (Ljava/lang/String;I)V
+                 2.8%   excl                       4
+<a name="m58"></a>----------------------------------------------------
+               100.0%    <a href="#m0">[0]</a>      1/1            138 (toplevel)
+[58]     0.0%                     1+0            138 android/os/Debug.startMethodTracing (Ljava/lang/String;II)V
+                97.1%   excl                     134
+<a name="m59"></a>----------------------------------------------------
+               100.0%   <a href="#m56">[56]</a>      4/4            132 java/lang/Thread.sleep (J)V
+[59]     0.0%                     4+0            132 java/lang/Thread.sleep (JI)V
+                18.2%   excl                      24
+                81.8%   <a href="#m61">[61]</a>      4/4            108 java/lang/VMThread.sleep (JI)V
+<a name="m60"></a>----------------------------------------------------
+               100.0%   <a href="#m55">[55]</a>      1/1            125 android/os/Binder.execTransact (IIII)Z
+[60]     0.0%                     1+0            125 com/android/internal/view/IInputMethodClient$Stub.onTransact (ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+                 9.6%   excl                      12
+                55.2%   <a href="#m67">[67]</a>      1/1             69 android/view/inputmethod/InputMethodManager$1.onUnbindMethod (I)V
+                25.6%   <a href="#m76">[76]</a>      1/1             32 android/os/Parcel.enforceInterface (Ljava/lang/String;)V
+                 9.6%   <a href="#m89">[89]</a>      1/1             12 android/os/Parcel.readInt ()I
+<a name="m61"></a>----------------------------------------------------
+               100.0%   <a href="#m59">[59]</a>      4/4            108 java/lang/Thread.sleep (JI)V
+[61]     0.0%                     4+0            108 java/lang/VMThread.sleep (JI)V
+               100.0%   excl                     108
+<a name="m62"></a>----------------------------------------------------
+               100.0%    <a href="#m3">[3]</a>      4/4            101 java/lang/Daemons$FinalizerDaemon.doFinalize (Ljava/lang/ref/FinalizerReference;)V
+[62]     0.0%                     4+0            101 android/graphics/Paint.finalize ()V
+                31.7%   excl                      32
+                60.4%   <a href="#m69">[69]</a>      4/4             61 android/graphics/Paint.finalizer (I)V
+                 7.9%   <a href="#m39">[39]</a>      4/521153         8 java/lang/Object.finalize ()V
+<a name="m63"></a>----------------------------------------------------
+               100.0%    <a href="#m3">[3]</a>      1/1             99 java/lang/Daemons$FinalizerDaemon.doFinalize (Ljava/lang/ref/FinalizerReference;)V
+[63]     0.0%                     1+0             99 android/graphics/Canvas$CanvasFinalizer.finalize ()V
+                10.1%   excl                      10
+                86.9%   <a href="#m64">[64]</a>      1/1             86 android/graphics/Canvas.access$000 (I)V
+                 3.0%   <a href="#m39">[39]</a>      1/521153         3 java/lang/Object.finalize ()V
+<a name="m64"></a>----------------------------------------------------
+               100.0%   <a href="#m63">[63]</a>      1/1             86 android/graphics/Canvas$CanvasFinalizer.finalize ()V
+[64]     0.0%                     1+0             86 android/graphics/Canvas.access$000 (I)V
+                 8.1%   excl                       7
+                91.9%   <a href="#m65">[65]</a>      1/1             79 android/graphics/Canvas.finalizer (I)V
+<a name="m65"></a>----------------------------------------------------
+               100.0%   <a href="#m64">[64]</a>      1/1             79 android/graphics/Canvas.access$000 (I)V
+[65]     0.0%                     1+0             79 android/graphics/Canvas.finalizer (I)V
+               100.0%   excl                      79
+<a name="m66"></a>----------------------------------------------------
+                64.0%   <a href="#m50">[50]</a>     20/31            48 java/lang/Daemons$FinalizerWatchdogDaemon.waitForObject ()Ljava/lang/Object;
+                25.3%   <a href="#m52">[52]</a>      7/31            19 java/lang/Daemons$FinalizerWatchdogDaemon.waitForFinalization (Ljava/lang/Object;)Z
+                10.7%    <a href="#m0">[0]</a>      4/31             8 (toplevel)
+[66]     0.0%                    31+0             75 java/lang/Daemons$FinalizerDaemon.access$100 ()Ljava/lang/Daemons$FinalizerDaemon;
+               100.0%   excl                      75
+<a name="m67"></a>----------------------------------------------------
+               100.0%   <a href="#m60">[60]</a>      1/1             69 com/android/internal/view/IInputMethodClient$Stub.onTransact (ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+[67]     0.0%                     1+0             69 android/view/inputmethod/InputMethodManager$1.onUnbindMethod (I)V
+                34.8%   excl                      24
+                43.5%   <a href="#m77">[77]</a>      1/1             30 android/os/Handler.sendMessage (Landroid/os/Message;)Z
+                21.7%   <a href="#m86">[86]</a>      1/1             15 android/os/Handler.obtainMessage (III)Landroid/os/Message;
+<a name="m68"></a>----------------------------------------------------
+               100.0%    <a href="#m3">[3]</a>      3/3             66 java/lang/Daemons$FinalizerDaemon.doFinalize (Ljava/lang/ref/FinalizerReference;)V
+[68]     0.0%                     3+0             66 android/os/Binder.finalize ()V
+                33.3%   excl                      22
+                56.1%   <a href="#m73">[73]</a>      3/3             37 android/os/Binder.destroy ()V
+                10.6%   <a href="#m39">[39]</a>      3/521153         7 java/lang/Object.finalize ()V
+<a name="m69"></a>----------------------------------------------------
+               100.0%   <a href="#m62">[62]</a>      4/4             61 android/graphics/Paint.finalize ()V
+[69]     0.0%                     4+0             61 android/graphics/Paint.finalizer (I)V
+               100.0%   excl                      61
+<a name="m70"></a>----------------------------------------------------
+                73.3%   <a href="#m50">[50]</a>     20/27            44 java/lang/Daemons$FinalizerWatchdogDaemon.waitForObject ()Ljava/lang/Object;
+                15.0%    <a href="#m0">[0]</a>      4/27             9 (toplevel)
+                11.7%   <a href="#m52">[52]</a>      3/27             7 java/lang/Daemons$FinalizerWatchdogDaemon.waitForFinalization (Ljava/lang/Object;)Z
+[70]     0.0%                    27+0             60 java/lang/Daemons$FinalizerDaemon.access$400 (Ljava/lang/Daemons$FinalizerDaemon;)Ljava/lang/Object;
+               100.0%   excl                      60
+<a name="m71"></a>----------------------------------------------------
+               100.0%    <a href="#m3">[3]</a>      4/4             58 java/lang/Daemons$FinalizerDaemon.doFinalize (Ljava/lang/ref/FinalizerReference;)V
+[71]     0.0%                     4+0             58 android/graphics/Region.finalize ()V
+                55.2%   excl                      32
+                29.3%   <a href="#m85">[85]</a>      4/4             17 android/graphics/Region.nativeDestructor (I)V
+                15.5%   <a href="#m39">[39]</a>      4/521153         9 java/lang/Object.finalize ()V
+<a name="m72"></a>----------------------------------------------------
+               100.0%    <a href="#m3">[3]</a>      1/1             47 java/lang/Daemons$FinalizerDaemon.doFinalize (Ljava/lang/ref/FinalizerReference;)V
+[72]     0.0%                     1+0             47 android/view/Surface.finalize ()V
+                21.3%   excl                      10
+                72.3%   <a href="#m75">[75]</a>      1/1             34 android/view/Surface.release ()V
+                 6.4%   <a href="#m39">[39]</a>      1/521153         3 java/lang/Object.finalize ()V
+<a name="m73"></a>----------------------------------------------------
+               100.0%   <a href="#m68">[68]</a>      3/3             37 android/os/Binder.finalize ()V
+[73]     0.0%                     3+0             37 android/os/Binder.destroy ()V
+               100.0%   excl                      37
+<a name="m74"></a>----------------------------------------------------
+               100.0%    <a href="#m3">[3]</a>      1/1             37 java/lang/Daemons$FinalizerDaemon.doFinalize (Ljava/lang/ref/FinalizerReference;)V
+[74]     0.0%                     1+0             37 android/view/InputEventReceiver.finalize ()V
+                27.0%   excl                      10
+                67.6%   <a href="#m82">[82]</a>      1/1             25 android/view/ViewRootImpl$WindowInputEventReceiver.dispose ()V
+                 5.4%   <a href="#m39">[39]</a>      1/521153         2 java/lang/Object.finalize ()V
+<a name="m75"></a>----------------------------------------------------
+               100.0%   <a href="#m72">[72]</a>      1/1             34 android/view/Surface.finalize ()V
+[75]     0.0%                     1+0             34 android/view/Surface.release ()V
+               100.0%   excl                      34
+<a name="m76"></a>----------------------------------------------------
+               100.0%   <a href="#m60">[60]</a>      1/1             32 com/android/internal/view/IInputMethodClient$Stub.onTransact (ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+[76]     0.0%                     1+0             32 android/os/Parcel.enforceInterface (Ljava/lang/String;)V
+                21.9%   excl                       7
+                78.1%   <a href="#m80">[80]</a>      1/1             25 android/os/Parcel.nativeEnforceInterface (ILjava/lang/String;)V
+<a name="m77"></a>----------------------------------------------------
+               100.0%   <a href="#m67">[67]</a>      1/1             30 android/view/inputmethod/InputMethodManager$1.onUnbindMethod (I)V
+[77]     0.0%                     1+0             30 android/os/Handler.sendMessage (Landroid/os/Message;)Z
+                16.7%   excl                       5
+                83.3%   <a href="#m79">[79]</a>      1/1             25 android/os/Handler.sendMessageDelayed (Landroid/os/Message;J)Z
+<a name="m78"></a>----------------------------------------------------
+               100.0%    <a href="#m3">[3]</a>      1/1             28 java/lang/Daemons$FinalizerDaemon.doFinalize (Ljava/lang/ref/FinalizerReference;)V
+[78]     0.0%                     1+0             28 android/graphics/Matrix.finalize ()V
+                39.3%   excl                      11
+                60.7%   <a href="#m84">[84]</a>      1/1             17 android/graphics/Matrix.finalizer (I)V
+<a name="m79"></a>----------------------------------------------------
+               100.0%   <a href="#m77">[77]</a>      1/1             25 android/os/Handler.sendMessage (Landroid/os/Message;)Z
+[79]     0.0%                     1+0             25 android/os/Handler.sendMessageDelayed (Landroid/os/Message;J)Z
+                24.0%   excl                       6
+                56.0%   <a href="#m88">[88]</a>      1/1             14 android/os/Handler.sendMessageAtTime (Landroid/os/Message;J)Z
+                20.0%   <a href="#m49">[49]</a>      1/148            5 android/os/SystemClock.uptimeMillis ()J
+<a name="m80"></a>----------------------------------------------------
+               100.0%   <a href="#m76">[76]</a>      1/1             25 android/os/Parcel.enforceInterface (Ljava/lang/String;)V
+[80]     0.0%                     1+0             25 android/os/Parcel.nativeEnforceInterface (ILjava/lang/String;)V
+               100.0%   excl                      25
+<a name="m81"></a>----------------------------------------------------
+               100.0%    <a href="#m3">[3]</a>      1/1             25 java/lang/Daemons$FinalizerDaemon.doFinalize (Ljava/lang/ref/FinalizerReference;)V
+[81]     0.0%                     1+0             25 android/view/InputChannel.finalize ()V
+                56.0%   excl                      14
+                36.0%   <a href="#m94">[94]</a>      1/1              9 android/view/InputChannel.nativeDispose (Z)V
+                 8.0%   <a href="#m39">[39]</a>      1/521153         2 java/lang/Object.finalize ()V
+<a name="m82"></a>----------------------------------------------------
+               100.0%   <a href="#m74">[74]</a>      1/1             25 android/view/InputEventReceiver.finalize ()V
+[82]     0.0%                     1+0             25 android/view/ViewRootImpl$WindowInputEventReceiver.dispose ()V
+                40.0%   excl                      10
+                40.0%   <a href="#m91">[91]</a>      1/1             10 android/view/InputEventReceiver.dispose ()V
+                20.0%   <a href="#m97">[97]</a>      1/1              5 android/view/ViewRootImpl.unscheduleConsumeBatchedInput ()V
+<a name="m83"></a>----------------------------------------------------
+               100.0%   <a href="#m55">[55]</a>      2/2             20 android/os/Binder.execTransact (IIII)Z
+[83]     0.0%                     2+0             20 android/os/Parcel.recycle ()V
+                80.0%   excl                      16
+                20.0%  <a href="#m100">[100]</a>      2/2              4 android/os/Parcel.freeBuffer ()V
+<a name="m84"></a>----------------------------------------------------
+               100.0%   <a href="#m78">[78]</a>      1/1             17 android/graphics/Matrix.finalize ()V
+[84]     0.0%                     1+0             17 android/graphics/Matrix.finalizer (I)V
+               100.0%   excl                      17
+<a name="m85"></a>----------------------------------------------------
+               100.0%   <a href="#m71">[71]</a>      4/4             17 android/graphics/Region.finalize ()V
+[85]     0.0%                     4+0             17 android/graphics/Region.nativeDestructor (I)V
+               100.0%   excl                      17
+<a name="m86"></a>----------------------------------------------------
+               100.0%   <a href="#m67">[67]</a>      1/1             15 android/view/inputmethod/InputMethodManager$1.onUnbindMethod (I)V
+[86]     0.0%                     1+0             15 android/os/Handler.obtainMessage (III)Landroid/os/Message;
+                40.0%   excl                       6
+                60.0%   <a href="#m92">[92]</a>      1/1              9 android/os/Message.obtain (Landroid/os/Handler;III)Landroid/os/Message;
+<a name="m87"></a>----------------------------------------------------
+               100.0%   <a href="#m55">[55]</a>      2/2             15 android/os/Binder.execTransact (IIII)Z
+[87]     0.0%                     2+0             15 android/os/Parcel.obtain (I)Landroid/os/Parcel;
+                66.7%   excl                      10
+                33.3%   <a href="#m96">[96]</a>      2/2              5 android/os/Parcel.init (I)V
+<a name="m88"></a>----------------------------------------------------
+               100.0%   <a href="#m79">[79]</a>      1/1             14 android/os/Handler.sendMessageDelayed (Landroid/os/Message;J)Z
+[88]     0.0%                     1+0             14 android/os/Handler.sendMessageAtTime (Landroid/os/Message;J)Z
+                35.7%   excl                       5
+                64.3%   <a href="#m93">[93]</a>      1/1              9 android/os/MessageQueue.enqueueMessage (Landroid/os/Message;J)Z
+<a name="m89"></a>----------------------------------------------------
+               100.0%   <a href="#m60">[60]</a>      1/1             12 com/android/internal/view/IInputMethodClient$Stub.onTransact (ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+[89]     0.0%                     1+0             12 android/os/Parcel.readInt ()I
+                33.3%   excl                       4
+                66.7%   <a href="#m95">[95]</a>      1/1              8 android/os/Parcel.nativeReadInt (I)I
+<a name="m90"></a>----------------------------------------------------
+               100.0%   <a href="#m52">[52]</a>      4/4             11 java/lang/Daemons$FinalizerWatchdogDaemon.waitForFinalization (Ljava/lang/Object;)Z
+[90]     0.0%                     4+0             11 java/lang/Daemons$FinalizerDaemon.access$500 (Ljava/lang/Daemons$FinalizerDaemon;)J
+               100.0%   excl                      11
+<a name="m91"></a>----------------------------------------------------
+               100.0%   <a href="#m82">[82]</a>      1/1             10 android/view/ViewRootImpl$WindowInputEventReceiver.dispose ()V
+[91]     0.0%                     1+0             10 android/view/InputEventReceiver.dispose ()V
+                50.0%   excl                       5
+                50.0%   <a href="#m98">[98]</a>      1/1              5 dalvik/system/CloseGuard.close ()V
+<a name="m92"></a>----------------------------------------------------
+               100.0%   <a href="#m86">[86]</a>      1/1              9 android/os/Handler.obtainMessage (III)Landroid/os/Message;
+[92]     0.0%                     1+0              9 android/os/Message.obtain (Landroid/os/Handler;III)Landroid/os/Message;
+                55.6%   excl                       5
+                44.4%   <a href="#m99">[99]</a>      1/1              4 android/os/Message.obtain ()Landroid/os/Message;
+<a name="m93"></a>----------------------------------------------------
+               100.0%   <a href="#m88">[88]</a>      1/1              9 android/os/Handler.sendMessageAtTime (Landroid/os/Message;J)Z
+[93]     0.0%                     1+0              9 android/os/MessageQueue.enqueueMessage (Landroid/os/Message;J)Z
+                66.7%   excl                       6
+                33.3%  <a href="#m102">[102]</a>      1/1              3 android/os/Message.isInUse ()Z
+<a name="m94"></a>----------------------------------------------------
+               100.0%   <a href="#m81">[81]</a>      1/1              9 android/view/InputChannel.finalize ()V
+[94]     0.0%                     1+0              9 android/view/InputChannel.nativeDispose (Z)V
+               100.0%   excl                       9
+<a name="m95"></a>----------------------------------------------------
+               100.0%   <a href="#m89">[89]</a>      1/1              8 android/os/Parcel.readInt ()I
+[95]     0.0%                     1+0              8 android/os/Parcel.nativeReadInt (I)I
+               100.0%   excl                       8
+<a name="m96"></a>----------------------------------------------------
+               100.0%   <a href="#m87">[87]</a>      2/2              5 android/os/Parcel.obtain (I)Landroid/os/Parcel;
+[96]     0.0%                     2+0              5 android/os/Parcel.init (I)V
+               100.0%   excl                       5
+<a name="m97"></a>----------------------------------------------------
+               100.0%   <a href="#m82">[82]</a>      1/1              5 android/view/ViewRootImpl$WindowInputEventReceiver.dispose ()V
+[97]     0.0%                     1+0              5 android/view/ViewRootImpl.unscheduleConsumeBatchedInput ()V
+               100.0%   excl                       5
+<a name="m98"></a>----------------------------------------------------
+               100.0%   <a href="#m91">[91]</a>      1/1              5 android/view/InputEventReceiver.dispose ()V
+[98]     0.0%                     1+0              5 dalvik/system/CloseGuard.close ()V
+               100.0%   excl                       5
+<a name="m99"></a>----------------------------------------------------
+               100.0%   <a href="#m92">[92]</a>      1/1              4 android/os/Message.obtain (Landroid/os/Handler;III)Landroid/os/Message;
+[99]     0.0%                     1+0              4 android/os/Message.obtain ()Landroid/os/Message;
+               100.0%   excl                       4
+<a name="m100"></a>----------------------------------------------------
+               100.0%   <a href="#m83">[83]</a>      2/2              4 android/os/Parcel.recycle ()V
+[100]    0.0%                     2+0              4 android/os/Parcel.freeBuffer ()V
+               100.0%   excl                       4
+<a name="m101"></a>----------------------------------------------------
+               100.0%    <a href="#m0">[0]</a>      1/1              4 (toplevel)
+[101]    0.0%                     1+0              4 dalvik/system/VMDebug.startMethodTracing (Ljava/lang/String;II)V
+                 0.0%   excl                       0
+<a name="m102"></a>----------------------------------------------------
+               100.0%   <a href="#m93">[93]</a>      1/1              3 android/os/MessageQueue.enqueueMessage (Landroid/os/Message;J)Z
+[102]    0.0%                     1+0              3 android/os/Message.isInUse ()Z
+               100.0%   excl                       3
+</pre>
+<a name="class"></a>
+<hr>
+<a href="#contents">[Top]</a>
+<a href="#exclusive">[Exclusive]</a>
+<a href="#inclusive">[Inclusive]</a>
+<a href="#class">[Class]</a>
+<a href="#method">[Method]</a>
+<br><br>
+
+Exclusive elapsed time for each class, summed over all the methods
+in the class.
+
+<br><br>
+<div class="header"><span class="parent">&nbsp;</span>&nbsp;&nbsp;&nbsp;Cycles %/total Cumul.% &nbsp;Calls+Recur&nbsp; Class</div>
+<div class="link" onClick="javascript:toggle('d0')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd0">+</span>&nbsp;22435021 &nbsp;&nbsp;&nbsp;19.2 &nbsp;&nbsp;&nbsp;19.2 3929010+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; java/math/BigInt</div>
+<div class="parent" id="d0">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;5503307&nbsp;&nbsp;18754575&nbsp;&nbsp;&nbsp;&nbsp;24.5&nbsp;&nbsp;&nbsp;&nbsp;24.5&nbsp;524288+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m6">[6]</a>&nbsp;newBigInt&nbsp;()Ljava/math/BigInt;</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;3754857&nbsp;&nbsp;&nbsp;7302358&nbsp;&nbsp;&nbsp;&nbsp;16.7&nbsp;&nbsp;&nbsp;&nbsp;41.3&nbsp;521138+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m14">[14]</a>&nbsp;finalize&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;2978975&nbsp;&nbsp;10184389&nbsp;&nbsp;&nbsp;&nbsp;13.3&nbsp;&nbsp;&nbsp;&nbsp;54.5&nbsp;524288+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m8">[8]</a>&nbsp;&lt;init&gt;&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;2620495&nbsp;&nbsp;18194942&nbsp;&nbsp;&nbsp;&nbsp;11.7&nbsp;&nbsp;&nbsp;&nbsp;66.2&nbsp;262144+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m7">[7]</a>&nbsp;product&nbsp;(Ljava/math/BigInt;Ljava/math/BigInt;)Ljava/math/BigInt;</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;2620470&nbsp;&nbsp;20394076&nbsp;&nbsp;&nbsp;&nbsp;11.7&nbsp;&nbsp;&nbsp;&nbsp;77.9&nbsp;262144+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m5">[5]</a>&nbsp;modulus&nbsp;(Ljava/math/BigInt;Ljava/math/BigInt;)Ljava/math/BigInt;</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;2496703&nbsp;&nbsp;&nbsp;2496703&nbsp;&nbsp;&nbsp;&nbsp;11.1&nbsp;&nbsp;&nbsp;&nbsp;89.0&nbsp;1048576+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m23">[23]</a>&nbsp;Check&nbsp;(Z)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1231680&nbsp;&nbsp;&nbsp;1970402&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.5&nbsp;&nbsp;&nbsp;&nbsp;94.5&nbsp;262144+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m27">[27]</a>&nbsp;sign&nbsp;()I</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1228534&nbsp;&nbsp;&nbsp;1228534&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.5&nbsp;&nbsp;&nbsp;100.0&nbsp;524288+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m36">[36]</a>&nbsp;getNativeBIGNUM&nbsp;()I</div>
+</div>
+<div class="link" onClick="javascript:toggle('d1')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd1">+</span>&nbsp;18985267 &nbsp;&nbsp;&nbsp;16.2 &nbsp;&nbsp;&nbsp;35.4 3145728+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; java/math/BigInteger</div>
+<div class="parent" id="d1">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;5085494&nbsp;&nbsp;&nbsp;8779319&nbsp;&nbsp;&nbsp;&nbsp;26.8&nbsp;&nbsp;&nbsp;&nbsp;26.8&nbsp;524288+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m10">[10]</a>&nbsp;&lt;init&gt;&nbsp;(Ljava/math/BigInt;)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;4151989&nbsp;&nbsp;34683924&nbsp;&nbsp;&nbsp;&nbsp;21.9&nbsp;&nbsp;&nbsp;&nbsp;48.7&nbsp;262144+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m2">[2]</a>&nbsp;mod&nbsp;(Ljava/math/BigInteger;)Ljava/math/BigInteger;</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;3477183&nbsp;&nbsp;27318477&nbsp;&nbsp;&nbsp;&nbsp;18.3&nbsp;&nbsp;&nbsp;&nbsp;67.0&nbsp;262144+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m4">[4]</a>&nbsp;multiply&nbsp;(Ljava/math/BigInteger;)Ljava/math/BigInteger;</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;3133927&nbsp;&nbsp;&nbsp;3133927&nbsp;&nbsp;&nbsp;&nbsp;16.5&nbsp;&nbsp;&nbsp;&nbsp;83.5&nbsp;1310720+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m21">[21]</a>&nbsp;getBigInt&nbsp;()Ljava/math/BigInt;</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1900563&nbsp;&nbsp;&nbsp;4490720&nbsp;&nbsp;&nbsp;&nbsp;10.0&nbsp;&nbsp;&nbsp;&nbsp;93.5&nbsp;262144+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m19">[19]</a>&nbsp;signum&nbsp;()I</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1236111&nbsp;&nbsp;&nbsp;1236111&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.5&nbsp;&nbsp;&nbsp;100.0&nbsp;524288+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m34">[34]</a>&nbsp;setBigInt&nbsp;(Ljava/math/BigInt;)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('d2')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd2">+</span>&nbsp;18268463 &nbsp;&nbsp;&nbsp;15.6 &nbsp;&nbsp;&nbsp;51.0 1831858+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; java/math/NativeBN</div>
+<div class="parent" id="d2">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;7743409&nbsp;&nbsp;&nbsp;7743409&nbsp;&nbsp;&nbsp;&nbsp;42.4&nbsp;&nbsp;&nbsp;&nbsp;42.4&nbsp;262144+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m13">[13]</a>&nbsp;BN_nnmod&nbsp;(III)Z</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;5550875&nbsp;&nbsp;&nbsp;5550875&nbsp;&nbsp;&nbsp;&nbsp;30.4&nbsp;&nbsp;&nbsp;&nbsp;72.8&nbsp;262144+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m17">[17]</a>&nbsp;BN_mul&nbsp;(III)Z</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;2366087&nbsp;&nbsp;&nbsp;2366087&nbsp;&nbsp;&nbsp;&nbsp;13.0&nbsp;&nbsp;&nbsp;&nbsp;85.7&nbsp;521138+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m26">[26]</a>&nbsp;BN_free&nbsp;(I)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1869370&nbsp;&nbsp;&nbsp;1869370&nbsp;&nbsp;&nbsp;&nbsp;10.2&nbsp;&nbsp;&nbsp;&nbsp;96.0&nbsp;524288+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m28">[28]</a>&nbsp;BN_new&nbsp;()I</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;738722&nbsp;&nbsp;&nbsp;&nbsp;738722&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.0&nbsp;&nbsp;&nbsp;100.0&nbsp;262144+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m40">[40]</a>&nbsp;sign&nbsp;(I)I</div>
+</div>
+<div class="link" onClick="javascript:toggle('d3')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd3">+</span>&nbsp;12143575 &nbsp;&nbsp;&nbsp;10.4 &nbsp;&nbsp;&nbsp;61.4 2087323+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; java/lang/ref/ReferenceQueue</div>
+<div class="parent" id="d3">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;4191540&nbsp;&nbsp;&nbsp;5726928&nbsp;&nbsp;&nbsp;&nbsp;34.5&nbsp;&nbsp;&nbsp;&nbsp;34.5&nbsp;521302+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m16">[16]</a>&nbsp;remove&nbsp;(J)Ljava/lang/ref/Reference;</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;3962041&nbsp;&nbsp;&nbsp;5220572&nbsp;&nbsp;&nbsp;&nbsp;32.6&nbsp;&nbsp;&nbsp;&nbsp;67.1&nbsp;523270+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m18">[18]</a>&nbsp;enqueue&nbsp;(Ljava/lang/ref/Reference;)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;2458592&nbsp;&nbsp;&nbsp;8185520&nbsp;&nbsp;&nbsp;&nbsp;20.2&nbsp;&nbsp;&nbsp;&nbsp;87.4&nbsp;521302+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m11">[11]</a>&nbsp;remove&nbsp;()Ljava/lang/ref/Reference;</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1530189&nbsp;&nbsp;&nbsp;1530189&nbsp;&nbsp;&nbsp;&nbsp;12.6&nbsp;&nbsp;&nbsp;100.0&nbsp;521302+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m30">[30]</a>&nbsp;poll&nbsp;()Ljava/lang/ref/Reference;</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1213&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3079&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;147+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m45">[45]</a>&nbsp;add&nbsp;(Ljava/lang/ref/Reference;)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('d4')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd4">+</span>&nbsp;11384375 &nbsp;&nbsp;&nbsp;&nbsp;9.7 &nbsp;&nbsp;&nbsp;71.1 521364+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; java/lang/Daemons$FinalizerDaemon</div>
+<div class="parent" id="d4">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;11384229&nbsp;&nbsp;27831119&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;521302+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m3">[3]</a>&nbsp;doFinalize&nbsp;(Ljava/lang/ref/FinalizerReference;)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;75&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;75&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;31+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m66">[66]</a>&nbsp;access$100&nbsp;()Ljava/lang/Daemons$FinalizerDaemon;</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;60&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;60&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;27+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m70">[70]</a>&nbsp;access$400&nbsp;(Ljava/lang/Daemons$FinalizerDaemon;)Ljava/lang/Object;</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m90">[90]</a>&nbsp;access$500&nbsp;(Ljava/lang/Daemons$FinalizerDaemon;)J</div>
+</div>
+<div class="link" onClick="javascript:toggle('d5')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd5">+</span>&nbsp;&nbsp;9835381 &nbsp;&nbsp;&nbsp;&nbsp;8.4 &nbsp;&nbsp;&nbsp;79.5 2612776+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; java/lang/ref/FinalizerReference</div>
+<div class="parent" id="d5">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;3434922&nbsp;&nbsp;&nbsp;7207527&nbsp;&nbsp;&nbsp;&nbsp;34.9&nbsp;&nbsp;&nbsp;&nbsp;34.9&nbsp;524435+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m15">[15]</a>&nbsp;add&nbsp;(Ljava/lang/Object;)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;2469014&nbsp;&nbsp;&nbsp;3772605&nbsp;&nbsp;&nbsp;&nbsp;25.1&nbsp;&nbsp;&nbsp;&nbsp;60.0&nbsp;524435+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m20">[20]</a>&nbsp;&lt;init&gt;&nbsp;(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1529038&nbsp;&nbsp;&nbsp;1529038&nbsp;&nbsp;&nbsp;&nbsp;15.5&nbsp;&nbsp;&nbsp;&nbsp;75.6&nbsp;521302+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m31">[31]</a>&nbsp;remove&nbsp;(Ljava/lang/ref/FinalizerReference;)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1203972&nbsp;&nbsp;&nbsp;1203972&nbsp;&nbsp;&nbsp;&nbsp;12.2&nbsp;&nbsp;&nbsp;&nbsp;87.8&nbsp;521302+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m37">[37]</a>&nbsp;get&nbsp;()Ljava/lang/Object;</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1198435&nbsp;&nbsp;&nbsp;1198435&nbsp;&nbsp;&nbsp;&nbsp;12.2&nbsp;&nbsp;&nbsp;100.0&nbsp;521302+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m38">[38]</a>&nbsp;clear&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('d6')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd6">+</span>&nbsp;&nbsp;4031718 &nbsp;&nbsp;&nbsp;&nbsp;3.4 &nbsp;&nbsp;&nbsp;83.0 1047852+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; java/lang/ref/Reference</div>
+<div class="parent" id="d6">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;2727763&nbsp;&nbsp;&nbsp;7948335&nbsp;&nbsp;&nbsp;&nbsp;67.7&nbsp;&nbsp;&nbsp;&nbsp;67.7&nbsp;523270+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m12">[12]</a>&nbsp;enqueueInternal&nbsp;()Z</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1303955&nbsp;&nbsp;&nbsp;1303955&nbsp;&nbsp;&nbsp;&nbsp;32.3&nbsp;&nbsp;&nbsp;100.0&nbsp;524582+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m33">[33]</a>&nbsp;&lt;init&gt;&nbsp;(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('d7')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd7">+</span>&nbsp;&nbsp;3680325 &nbsp;&nbsp;&nbsp;&nbsp;3.1 &nbsp;&nbsp;&nbsp;86.1 1566500+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; java/lang/Object</div>
+<div class="parent" id="d7">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;2486748&nbsp;&nbsp;&nbsp;2486748&nbsp;&nbsp;&nbsp;&nbsp;67.6&nbsp;&nbsp;&nbsp;&nbsp;67.6&nbsp;1044571+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m24">[24]</a>&nbsp;notify&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1181448&nbsp;&nbsp;&nbsp;1181448&nbsp;&nbsp;&nbsp;&nbsp;32.1&nbsp;&nbsp;&nbsp;&nbsp;99.7&nbsp;521153+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m39">[39]</a>&nbsp;finalize&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8174&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8174&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.2&nbsp;&nbsp;&nbsp;&nbsp;99.9&nbsp;&nbsp;&nbsp;&nbsp;313+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m42">[42]</a>&nbsp;wait&nbsp;(JI)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1866&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1866&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.1&nbsp;&nbsp;&nbsp;&nbsp;99.9&nbsp;&nbsp;&nbsp;&nbsp;147+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m47">[47]</a>&nbsp;notifyAll&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1109&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5073&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;169+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m44">[44]</a>&nbsp;wait&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;980&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5196&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;147+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m43">[43]</a>&nbsp;wait&nbsp;(J)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('d8')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd8">+</span>&nbsp;&nbsp;2888367 &nbsp;&nbsp;&nbsp;&nbsp;2.5 &nbsp;&nbsp;&nbsp;88.6 &nbsp;&nbsp;&nbsp;149+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dalvik/system/VMDebug</div>
+<div class="parent" id="d8">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;2888367&nbsp;&nbsp;&nbsp;2888367&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;147+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m22">[22]</a>&nbsp;startGC&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m101">[101]</a>&nbsp;startMethodTracing&nbsp;(Ljava/lang/String;II)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m104">[104]</a>&nbsp;stopMethodTracing&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('d9')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd9">+</span>&nbsp;&nbsp;2387045 &nbsp;&nbsp;&nbsp;&nbsp;2.0 &nbsp;&nbsp;&nbsp;90.6 1042615+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; java/lang/Daemons$FinalizerWatchdogDaemon</div>
+<div class="parent" id="d9">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;2386752&nbsp;&nbsp;&nbsp;2386752&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;1042603+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m25">[25]</a>&nbsp;access$200&nbsp;()Ljava/lang/Daemons$FinalizerWatchdogDaemon;</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;161&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;756&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m50">[50]</a>&nbsp;waitForObject&nbsp;()Ljava/lang/Object;</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;259&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m53">[53]</a>&nbsp;sleepFor&nbsp;(JJ)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;55&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;351&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m52">[52]</a>&nbsp;waitForFinalization&nbsp;(Ljava/lang/Object;)Z</div>
+</div>
+<div class="link" onClick="javascript:toggle('d10')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd10">+</span>&nbsp;&nbsp;1589004 &nbsp;&nbsp;&nbsp;&nbsp;1.4 &nbsp;&nbsp;&nbsp;92.0 521309+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; java/lang/System</div>
+<div class="parent" id="d10">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1589004&nbsp;&nbsp;&nbsp;1589004&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;521309+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m29">[29]</a>&nbsp;nanoTime&nbsp;()J</div>
+</div>
+<div class="link" onClick="javascript:toggle('d11')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd11">+</span>&nbsp;&nbsp;1516829 &nbsp;&nbsp;&nbsp;&nbsp;1.3 &nbsp;&nbsp;&nbsp;93.3 &nbsp;&nbsp;&nbsp;147+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; java/lang/Daemons$ReferenceQueueDaemon</div>
+<div class="parent" id="d11">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1516829&nbsp;&nbsp;&nbsp;9465164&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;147+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m9">[9]</a>&nbsp;enqueue&nbsp;(Ljava/lang/ref/Reference;)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('d12')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd12">+</span>&nbsp;&nbsp;1421406 &nbsp;&nbsp;&nbsp;&nbsp;1.2 &nbsp;&nbsp;&nbsp;94.5 521451+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; java/lang/Daemons$Daemon</div>
+<div class="parent" id="d12">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1421406&nbsp;&nbsp;&nbsp;1421406&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;521451+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m32">[32]</a>&nbsp;isRunning&nbsp;()Z</div>
+</div>
+<div class="link" onClick="javascript:toggle('d13')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd13">+</span>&nbsp;&nbsp;1383982 &nbsp;&nbsp;&nbsp;&nbsp;1.2 &nbsp;&nbsp;&nbsp;95.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fr/android/bri/test_profiling/MainActivity</div>
+<div class="parent" id="d13">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1383982&nbsp;&nbsp;63386383&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m1">[1]</a>&nbsp;mult&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('d14')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd14">+</span>&nbsp;&nbsp;1229180 &nbsp;&nbsp;&nbsp;&nbsp;1.1 &nbsp;&nbsp;&nbsp;96.7 524288+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; java/lang/Number</div>
+<div class="parent" id="d14">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1229180&nbsp;&nbsp;&nbsp;1229180&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;524288+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m35">[35]</a>&nbsp;&lt;init&gt;&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('d15')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd15">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3748 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;294+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; com/android/internal/os/BinderInternal$GcWatcher</div>
+<div class="parent" id="d15">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2798&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8677&nbsp;&nbsp;&nbsp;&nbsp;74.7&nbsp;&nbsp;&nbsp;&nbsp;74.7&nbsp;&nbsp;&nbsp;&nbsp;147+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m41">[41]</a>&nbsp;finalize&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;950&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3063&nbsp;&nbsp;&nbsp;&nbsp;25.3&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;147+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m46">[46]</a>&nbsp;&lt;init&gt;&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('d16')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd16">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1032 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;148+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; android/os/SystemClock</div>
+<div class="parent" id="d16">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1032&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1032&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;148+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m49">[49]</a>&nbsp;uptimeMillis&nbsp;()J</div>
+</div>
+<div class="link" onClick="javascript:toggle('d17')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd17">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;728 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;147+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; com/android/internal/os/BinderInternal</div>
+<div class="parent" id="d17">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;728&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;728&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;147+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m51">[51]</a>&nbsp;handleGc&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('d18')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd18">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;697 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;147+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; java/lang/ref/WeakReference</div>
+<div class="parent" id="d18">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;697&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1061&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;147+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m48">[48]</a>&nbsp;&lt;init&gt;&nbsp;(Ljava/lang/Object;)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('d19')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd19">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;318 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; android/os/Debug</div>
+<div class="parent" id="d19">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;180&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;180&nbsp;&nbsp;&nbsp;&nbsp;56.6&nbsp;&nbsp;&nbsp;&nbsp;56.6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m54">[54]</a>&nbsp;stopMethodTracing&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;134&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;138&nbsp;&nbsp;&nbsp;&nbsp;42.1&nbsp;&nbsp;&nbsp;&nbsp;98.7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m58">[58]</a>&nbsp;startMethodTracing&nbsp;(Ljava/lang/String;II)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;142&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.3&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m57">[57]</a>&nbsp;startMethodTracing&nbsp;(Ljava/lang/String;I)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('d20')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd20">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;108 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; java/lang/VMThread</div>
+<div class="parent" id="d20">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;108&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;108&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m61">[61]</a>&nbsp;sleep&nbsp;(JI)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('d21')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd21">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;93 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; android/graphics/Paint</div>
+<div class="parent" id="d21">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;61&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;61&nbsp;&nbsp;&nbsp;&nbsp;65.6&nbsp;&nbsp;&nbsp;&nbsp;65.6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m69">[69]</a>&nbsp;finalizer&nbsp;(I)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;101&nbsp;&nbsp;&nbsp;&nbsp;34.4&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m62">[62]</a>&nbsp;finalize&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('d22')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd22">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;86 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; android/graphics/Canvas</div>
+<div class="parent" id="d22">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;79&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;79&nbsp;&nbsp;&nbsp;&nbsp;91.9&nbsp;&nbsp;&nbsp;&nbsp;91.9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m65">[65]</a>&nbsp;finalizer&nbsp;(I)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;86&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.1&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m64">[64]</a>&nbsp;access$000&nbsp;(I)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('d23')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd23">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;79 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;12+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; android/os/Parcel</div>
+<div class="parent" id="d23">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25&nbsp;&nbsp;&nbsp;&nbsp;31.6&nbsp;&nbsp;&nbsp;&nbsp;31.6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m80">[80]</a>&nbsp;nativeEnforceInterface&nbsp;(ILjava/lang/String;)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20&nbsp;&nbsp;&nbsp;&nbsp;20.3&nbsp;&nbsp;&nbsp;&nbsp;51.9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m83">[83]</a>&nbsp;recycle&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15&nbsp;&nbsp;&nbsp;&nbsp;12.7&nbsp;&nbsp;&nbsp;&nbsp;64.6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m87">[87]</a>&nbsp;obtain&nbsp;(I)Landroid/os/Parcel;</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;10.1&nbsp;&nbsp;&nbsp;&nbsp;74.7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m95">[95]</a>&nbsp;nativeReadInt&nbsp;(I)I</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.9&nbsp;&nbsp;&nbsp;&nbsp;83.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m76">[76]</a>&nbsp;enforceInterface&nbsp;(Ljava/lang/String;)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.3&nbsp;&nbsp;&nbsp;&nbsp;89.9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m96">[96]</a>&nbsp;init&nbsp;(I)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1&nbsp;&nbsp;&nbsp;&nbsp;94.9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m100">[100]</a>&nbsp;freeBuffer&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m89">[89]</a>&nbsp;readInt&nbsp;()I</div>
+</div>
+<div class="link" onClick="javascript:toggle('d24')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd24">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;78 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; android/os/Binder</div>
+<div class="parent" id="d24">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;37&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;37&nbsp;&nbsp;&nbsp;&nbsp;47.4&nbsp;&nbsp;&nbsp;&nbsp;47.4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m73">[73]</a>&nbsp;destroy&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;22&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;66&nbsp;&nbsp;&nbsp;&nbsp;28.2&nbsp;&nbsp;&nbsp;&nbsp;75.6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m68">[68]</a>&nbsp;finalize&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;179&nbsp;&nbsp;&nbsp;&nbsp;24.4&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m55">[55]</a>&nbsp;execTransact&nbsp;(IIII)Z</div>
+</div>
+<div class="link" onClick="javascript:toggle('d25')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd25">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;50 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; java/lang/Thread</div>
+<div class="parent" id="d25">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;158&nbsp;&nbsp;&nbsp;&nbsp;52.0&nbsp;&nbsp;&nbsp;&nbsp;52.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m56">[56]</a>&nbsp;sleep&nbsp;(J)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;24&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;132&nbsp;&nbsp;&nbsp;&nbsp;48.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m59">[59]</a>&nbsp;sleep&nbsp;(JI)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('d26')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd26">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;49 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; android/graphics/Region</div>
+<div class="parent" id="d26">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;58&nbsp;&nbsp;&nbsp;&nbsp;65.3&nbsp;&nbsp;&nbsp;&nbsp;65.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m71">[71]</a>&nbsp;finalize&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17&nbsp;&nbsp;&nbsp;&nbsp;34.7&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m85">[85]</a>&nbsp;nativeDestructor&nbsp;(I)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('d27')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd27">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;44 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; android/view/Surface</div>
+<div class="parent" id="d27">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;34&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;34&nbsp;&nbsp;&nbsp;&nbsp;77.3&nbsp;&nbsp;&nbsp;&nbsp;77.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m75">[75]</a>&nbsp;release&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;47&nbsp;&nbsp;&nbsp;&nbsp;22.7&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m72">[72]</a>&nbsp;finalize&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('d28')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd28">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;28 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; android/graphics/Matrix</div>
+<div class="parent" id="d28">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17&nbsp;&nbsp;&nbsp;&nbsp;60.7&nbsp;&nbsp;&nbsp;&nbsp;60.7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m84">[84]</a>&nbsp;finalizer&nbsp;(I)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;28&nbsp;&nbsp;&nbsp;&nbsp;39.3&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m78">[78]</a>&nbsp;finalize&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('d29')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd29">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;24 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; android/view/inputmethod/InputMethodManager$1</div>
+<div class="parent" id="d29">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;24&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;69&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m67">[67]</a>&nbsp;onUnbindMethod&nbsp;(I)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('d30')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd30">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;23 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; android/view/InputChannel</div>
+<div class="parent" id="d30">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25&nbsp;&nbsp;&nbsp;&nbsp;60.9&nbsp;&nbsp;&nbsp;&nbsp;60.9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m81">[81]</a>&nbsp;finalize&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;39.1&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m94">[94]</a>&nbsp;nativeDispose&nbsp;(Z)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('d31')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd31">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;22 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; android/os/Handler</div>
+<div class="parent" id="d31">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15&nbsp;&nbsp;&nbsp;&nbsp;27.3&nbsp;&nbsp;&nbsp;&nbsp;27.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m86">[86]</a>&nbsp;obtainMessage&nbsp;(III)Landroid/os/Message;</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25&nbsp;&nbsp;&nbsp;&nbsp;27.3&nbsp;&nbsp;&nbsp;&nbsp;54.5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m79">[79]</a>&nbsp;sendMessageDelayed&nbsp;(Landroid/os/Message;J)Z</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30&nbsp;&nbsp;&nbsp;&nbsp;22.7&nbsp;&nbsp;&nbsp;&nbsp;77.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m77">[77]</a>&nbsp;sendMessage&nbsp;(Landroid/os/Message;)Z</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14&nbsp;&nbsp;&nbsp;&nbsp;22.7&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m88">[88]</a>&nbsp;sendMessageAtTime&nbsp;(Landroid/os/Message;J)Z</div>
+</div>
+<div class="link" onClick="javascript:toggle('d32')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd32">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; android/view/InputEventReceiver</div>
+<div class="parent" id="d32">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;37&nbsp;&nbsp;&nbsp;&nbsp;66.7&nbsp;&nbsp;&nbsp;&nbsp;66.7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m74">[74]</a>&nbsp;finalize&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;33.3&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m91">[91]</a>&nbsp;dispose&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('d33')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd33">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; android/os/Message</div>
+<div class="parent" id="d33">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;41.7&nbsp;&nbsp;&nbsp;&nbsp;41.7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m92">[92]</a>&nbsp;obtain&nbsp;(Landroid/os/Handler;III)Landroid/os/Message;</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;33.3&nbsp;&nbsp;&nbsp;&nbsp;75.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m99">[99]</a>&nbsp;obtain&nbsp;()Landroid/os/Message;</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;25.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m102">[102]</a>&nbsp;isInUse&nbsp;()Z</div>
+</div>
+<div class="link" onClick="javascript:toggle('d34')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd34">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; com/android/internal/view/IInputMethodClient$Stub</div>
+<div class="parent" id="d34">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;125&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m60">[60]</a>&nbsp;onTransact&nbsp;(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</div>
+</div>
+<div class="link" onClick="javascript:toggle('d35')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd35">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; android/graphics/Canvas$CanvasFinalizer</div>
+<div class="parent" id="d35">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;99&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m63">[63]</a>&nbsp;finalize&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('d36')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd36">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; android/view/ViewRootImpl$WindowInputEventReceiver</div>
+<div class="parent" id="d36">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m82">[82]</a>&nbsp;dispose&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('d37')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd37">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; android/os/MessageQueue</div>
+<div class="parent" id="d37">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m93">[93]</a>&nbsp;enqueueMessage&nbsp;(Landroid/os/Message;J)Z</div>
+</div>
+<div class="link" onClick="javascript:toggle('d38')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd38">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; android/view/ViewRootImpl</div>
+<div class="parent" id="d38">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m97">[97]</a>&nbsp;unscheduleConsumeBatchedInput&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('d39')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xd39">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dalvik/system/CloseGuard</div>
+<div class="parent" id="d39">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m98">[98]</a>&nbsp;close&nbsp;()V</div>
+</div>
+<a name="method"></a>
+<hr>
+<a href="#contents">[Top]</a>
+<a href="#exclusive">[Exclusive]</a>
+<a href="#inclusive">[Inclusive]</a>
+<a href="#class">[Class]</a>
+<a href="#method">[Method]</a>
+<br><br>
+
+Exclusive elapsed time for each method, summed over all the classes
+that contain a method with the same name.
+
+<br><br>
+<div class="header"><span class="parent">&nbsp;</span>&nbsp;&nbsp;&nbsp;Cycles %/total Cumul.% &nbsp;Calls+Recur&nbsp; Method</div>
+<div class="link" onClick="javascript:toggle('e0')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe0">+</span>&nbsp;13068265 &nbsp;&nbsp;&nbsp;11.2 &nbsp;&nbsp;&nbsp;11.2 2622175+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;init&gt;</div>
+<div class="parent" id="e0">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;5085494&nbsp;&nbsp;&nbsp;8779319&nbsp;&nbsp;&nbsp;&nbsp;38.9&nbsp;&nbsp;&nbsp;&nbsp;38.9&nbsp;524288+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m10">[10]</a>&nbsp;java/math/BigInteger.&lt;init&gt;&nbsp;(Ljava/math/BigInt;)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;2978975&nbsp;&nbsp;10184389&nbsp;&nbsp;&nbsp;&nbsp;22.8&nbsp;&nbsp;&nbsp;&nbsp;61.7&nbsp;524288+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m8">[8]</a>&nbsp;java/math/BigInt.&lt;init&gt;&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;2469014&nbsp;&nbsp;&nbsp;3772605&nbsp;&nbsp;&nbsp;&nbsp;18.9&nbsp;&nbsp;&nbsp;&nbsp;80.6&nbsp;524435+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m20">[20]</a>&nbsp;java/lang/ref/FinalizerReference.&lt;init&gt;&nbsp;(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1303955&nbsp;&nbsp;&nbsp;1303955&nbsp;&nbsp;&nbsp;&nbsp;10.0&nbsp;&nbsp;&nbsp;&nbsp;90.6&nbsp;524582+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m33">[33]</a>&nbsp;java/lang/ref/Reference.&lt;init&gt;&nbsp;(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1229180&nbsp;&nbsp;&nbsp;1229180&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.4&nbsp;&nbsp;&nbsp;100.0&nbsp;524288+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m35">[35]</a>&nbsp;java/lang/Number.&lt;init&gt;&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;950&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3063&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;147+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m46">[46]</a>&nbsp;com/android/internal/os/BinderInternal$GcWatcher.&lt;init&gt;&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;697&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1061&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;147+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m48">[48]</a>&nbsp;java/lang/ref/WeakReference.&lt;init&gt;&nbsp;(Ljava/lang/Object;)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e1')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe1">+</span>&nbsp;11384229 &nbsp;&nbsp;&nbsp;&nbsp;9.7 &nbsp;&nbsp;&nbsp;20.9 521302+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; doFinalize</div>
+<div class="parent" id="e1">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;11384229&nbsp;&nbsp;27831119&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;521302+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m3">[3]</a>&nbsp;java/lang/Daemons$FinalizerDaemon.doFinalize&nbsp;(Ljava/lang/ref/FinalizerReference;)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e2')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe2">+</span>&nbsp;&nbsp;8179170 &nbsp;&nbsp;&nbsp;&nbsp;7.0 &nbsp;&nbsp;&nbsp;27.9 1563906+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; remove</div>
+<div class="parent" id="e2">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;4191540&nbsp;&nbsp;&nbsp;5726928&nbsp;&nbsp;&nbsp;&nbsp;51.2&nbsp;&nbsp;&nbsp;&nbsp;51.2&nbsp;521302+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m16">[16]</a>&nbsp;java/lang/ref/ReferenceQueue.remove&nbsp;(J)Ljava/lang/ref/Reference;</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;2458592&nbsp;&nbsp;&nbsp;8185520&nbsp;&nbsp;&nbsp;&nbsp;30.1&nbsp;&nbsp;&nbsp;&nbsp;81.3&nbsp;521302+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m11">[11]</a>&nbsp;java/lang/ref/ReferenceQueue.remove&nbsp;()Ljava/lang/ref/Reference;</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1529038&nbsp;&nbsp;&nbsp;1529038&nbsp;&nbsp;&nbsp;&nbsp;18.7&nbsp;&nbsp;&nbsp;100.0&nbsp;521302+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m31">[31]</a>&nbsp;java/lang/ref/FinalizerReference.remove&nbsp;(Ljava/lang/ref/FinalizerReference;)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e3')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe3">+</span>&nbsp;&nbsp;7743409 &nbsp;&nbsp;&nbsp;&nbsp;6.6 &nbsp;&nbsp;&nbsp;34.5 262144+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BN_nnmod</div>
+<div class="parent" id="e3">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;7743409&nbsp;&nbsp;&nbsp;7743409&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;262144+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m13">[13]</a>&nbsp;java/math/NativeBN.BN_nnmod&nbsp;(III)Z</div>
+</div>
+<div class="link" onClick="javascript:toggle('e4')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe4">+</span>&nbsp;&nbsp;5550875 &nbsp;&nbsp;&nbsp;&nbsp;4.7 &nbsp;&nbsp;&nbsp;39.2 262144+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BN_mul</div>
+<div class="parent" id="e4">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;5550875&nbsp;&nbsp;&nbsp;5550875&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;262144+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m17">[17]</a>&nbsp;java/math/NativeBN.BN_mul&nbsp;(III)Z</div>
+</div>
+<div class="link" onClick="javascript:toggle('e5')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe5">+</span>&nbsp;&nbsp;5503307 &nbsp;&nbsp;&nbsp;&nbsp;4.7 &nbsp;&nbsp;&nbsp;43.9 524288+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; newBigInt</div>
+<div class="parent" id="e5">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;5503307&nbsp;&nbsp;18754575&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;524288+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m6">[6]</a>&nbsp;java/math/BigInt.newBigInt&nbsp;()Ljava/math/BigInt;</div>
+</div>
+<div class="link" onClick="javascript:toggle('e6')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe6">+</span>&nbsp;&nbsp;5478870 &nbsp;&nbsp;&nbsp;&nbsp;4.7 &nbsp;&nbsp;&nbsp;48.6 523417+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; enqueue</div>
+<div class="parent" id="e6">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;3962041&nbsp;&nbsp;&nbsp;5220572&nbsp;&nbsp;&nbsp;&nbsp;72.3&nbsp;&nbsp;&nbsp;&nbsp;72.3&nbsp;523270+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m18">[18]</a>&nbsp;java/lang/ref/ReferenceQueue.enqueue&nbsp;(Ljava/lang/ref/Reference;)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1516829&nbsp;&nbsp;&nbsp;9465164&nbsp;&nbsp;&nbsp;&nbsp;27.7&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;147+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m9">[9]</a>&nbsp;java/lang/Daemons$ReferenceQueueDaemon.enqueue&nbsp;(Ljava/lang/ref/Reference;)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e7')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe7">+</span>&nbsp;&nbsp;4939244 &nbsp;&nbsp;&nbsp;&nbsp;4.2 &nbsp;&nbsp;&nbsp;52.8 1042454+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; finalize</div>
+<div class="parent" id="e7">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;3754857&nbsp;&nbsp;&nbsp;7302358&nbsp;&nbsp;&nbsp;&nbsp;76.0&nbsp;&nbsp;&nbsp;&nbsp;76.0&nbsp;521138+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m14">[14]</a>&nbsp;java/math/BigInt.finalize&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1181448&nbsp;&nbsp;&nbsp;1181448&nbsp;&nbsp;&nbsp;&nbsp;23.9&nbsp;&nbsp;&nbsp;&nbsp;99.9&nbsp;521153+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m39">[39]</a>&nbsp;java/lang/Object.finalize&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2798&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8677&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.1&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;147+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m41">[41]</a>&nbsp;com/android/internal/os/BinderInternal$GcWatcher.finalize&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;101&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m62">[62]</a>&nbsp;android/graphics/Paint.finalize&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;58&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m71">[71]</a>&nbsp;android/graphics/Region.finalize&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;22&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;66&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m68">[68]</a>&nbsp;android/os/Binder.finalize&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m81">[81]</a>&nbsp;android/view/InputChannel.finalize&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;28&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m78">[78]</a>&nbsp;android/graphics/Matrix.finalize&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;99&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m63">[63]</a>&nbsp;android/graphics/Canvas$CanvasFinalizer.finalize&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;37&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m74">[74]</a>&nbsp;android/view/InputEventReceiver.finalize&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;47&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m72">[72]</a>&nbsp;android/view/Surface.finalize&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e8')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe8">+</span>&nbsp;&nbsp;4151989 &nbsp;&nbsp;&nbsp;&nbsp;3.5 &nbsp;&nbsp;&nbsp;56.4 262144+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mod</div>
+<div class="parent" id="e8">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;4151989&nbsp;&nbsp;34683924&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;262144+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m2">[2]</a>&nbsp;java/math/BigInteger.mod&nbsp;(Ljava/math/BigInteger;)Ljava/math/BigInteger;</div>
+</div>
+<div class="link" onClick="javascript:toggle('e9')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe9">+</span>&nbsp;&nbsp;3477183 &nbsp;&nbsp;&nbsp;&nbsp;3.0 &nbsp;&nbsp;&nbsp;59.4 262144+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; multiply</div>
+<div class="parent" id="e9">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;3477183&nbsp;&nbsp;27318477&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;262144+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m4">[4]</a>&nbsp;java/math/BigInteger.multiply&nbsp;(Ljava/math/BigInteger;)Ljava/math/BigInteger;</div>
+</div>
+<div class="link" onClick="javascript:toggle('e10')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe10">+</span>&nbsp;&nbsp;3436135 &nbsp;&nbsp;&nbsp;&nbsp;2.9 &nbsp;&nbsp;&nbsp;62.3 524582+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; add</div>
+<div class="parent" id="e10">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;3434922&nbsp;&nbsp;&nbsp;7207527&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;524435+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m15">[15]</a>&nbsp;java/lang/ref/FinalizerReference.add&nbsp;(Ljava/lang/Object;)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1213&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3079&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;147+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m45">[45]</a>&nbsp;java/lang/ref/ReferenceQueue.add&nbsp;(Ljava/lang/ref/Reference;)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e11')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe11">+</span>&nbsp;&nbsp;3133927 &nbsp;&nbsp;&nbsp;&nbsp;2.7 &nbsp;&nbsp;&nbsp;65.0 1310720+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; getBigInt</div>
+<div class="parent" id="e11">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;3133927&nbsp;&nbsp;&nbsp;3133927&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;1310720+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m21">[21]</a>&nbsp;java/math/BigInteger.getBigInt&nbsp;()Ljava/math/BigInt;</div>
+</div>
+<div class="link" onClick="javascript:toggle('e12')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe12">+</span>&nbsp;&nbsp;2888367 &nbsp;&nbsp;&nbsp;&nbsp;2.5 &nbsp;&nbsp;&nbsp;67.5 &nbsp;&nbsp;&nbsp;147+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; startGC</div>
+<div class="parent" id="e12">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;2888367&nbsp;&nbsp;&nbsp;2888367&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;147+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m22">[22]</a>&nbsp;dalvik/system/VMDebug.startGC&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e13')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe13">+</span>&nbsp;&nbsp;2727763 &nbsp;&nbsp;&nbsp;&nbsp;2.3 &nbsp;&nbsp;&nbsp;69.8 523270+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; enqueueInternal</div>
+<div class="parent" id="e13">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;2727763&nbsp;&nbsp;&nbsp;7948335&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;523270+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m12">[12]</a>&nbsp;java/lang/ref/Reference.enqueueInternal&nbsp;()Z</div>
+</div>
+<div class="link" onClick="javascript:toggle('e14')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe14">+</span>&nbsp;&nbsp;2620495 &nbsp;&nbsp;&nbsp;&nbsp;2.2 &nbsp;&nbsp;&nbsp;72.0 262144+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; product</div>
+<div class="parent" id="e14">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;2620495&nbsp;&nbsp;18194942&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;262144+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m7">[7]</a>&nbsp;java/math/BigInt.product&nbsp;(Ljava/math/BigInt;Ljava/math/BigInt;)Ljava/math/BigInt;</div>
+</div>
+<div class="link" onClick="javascript:toggle('e15')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe15">+</span>&nbsp;&nbsp;2620470 &nbsp;&nbsp;&nbsp;&nbsp;2.2 &nbsp;&nbsp;&nbsp;74.3 262144+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; modulus</div>
+<div class="parent" id="e15">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;2620470&nbsp;&nbsp;20394076&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;262144+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m5">[5]</a>&nbsp;java/math/BigInt.modulus&nbsp;(Ljava/math/BigInt;Ljava/math/BigInt;)Ljava/math/BigInt;</div>
+</div>
+<div class="link" onClick="javascript:toggle('e16')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe16">+</span>&nbsp;&nbsp;2496703 &nbsp;&nbsp;&nbsp;&nbsp;2.1 &nbsp;&nbsp;&nbsp;76.4 1048576+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Check</div>
+<div class="parent" id="e16">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;2496703&nbsp;&nbsp;&nbsp;2496703&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;1048576+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m23">[23]</a>&nbsp;java/math/BigInt.Check&nbsp;(Z)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e17')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe17">+</span>&nbsp;&nbsp;2486748 &nbsp;&nbsp;&nbsp;&nbsp;2.1 &nbsp;&nbsp;&nbsp;78.5 1044571+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; notify</div>
+<div class="parent" id="e17">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;2486748&nbsp;&nbsp;&nbsp;2486748&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;1044571+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m24">[24]</a>&nbsp;java/lang/Object.notify&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e18')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe18">+</span>&nbsp;&nbsp;2386752 &nbsp;&nbsp;&nbsp;&nbsp;2.0 &nbsp;&nbsp;&nbsp;80.6 1042603+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; access$200</div>
+<div class="parent" id="e18">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;2386752&nbsp;&nbsp;&nbsp;2386752&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;1042603+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m25">[25]</a>&nbsp;java/lang/Daemons$FinalizerWatchdogDaemon.access$200&nbsp;()Ljava/lang/Daemons$FinalizerWatchdogDaemon;</div>
+</div>
+<div class="link" onClick="javascript:toggle('e19')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe19">+</span>&nbsp;&nbsp;2366087 &nbsp;&nbsp;&nbsp;&nbsp;2.0 &nbsp;&nbsp;&nbsp;82.6 521138+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BN_free</div>
+<div class="parent" id="e19">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;2366087&nbsp;&nbsp;&nbsp;2366087&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;521138+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m26">[26]</a>&nbsp;java/math/NativeBN.BN_free&nbsp;(I)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e20')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe20">+</span>&nbsp;&nbsp;1970402 &nbsp;&nbsp;&nbsp;&nbsp;1.7 &nbsp;&nbsp;&nbsp;84.3 524288+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sign</div>
+<div class="parent" id="e20">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1231680&nbsp;&nbsp;&nbsp;1970402&nbsp;&nbsp;&nbsp;&nbsp;62.5&nbsp;&nbsp;&nbsp;&nbsp;62.5&nbsp;262144+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m27">[27]</a>&nbsp;java/math/BigInt.sign&nbsp;()I</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;738722&nbsp;&nbsp;&nbsp;&nbsp;738722&nbsp;&nbsp;&nbsp;&nbsp;37.5&nbsp;&nbsp;&nbsp;100.0&nbsp;262144+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m40">[40]</a>&nbsp;java/math/NativeBN.sign&nbsp;(I)I</div>
+</div>
+<div class="link" onClick="javascript:toggle('e21')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe21">+</span>&nbsp;&nbsp;1900563 &nbsp;&nbsp;&nbsp;&nbsp;1.6 &nbsp;&nbsp;&nbsp;85.9 262144+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; signum</div>
+<div class="parent" id="e21">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1900563&nbsp;&nbsp;&nbsp;4490720&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;262144+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m19">[19]</a>&nbsp;java/math/BigInteger.signum&nbsp;()I</div>
+</div>
+<div class="link" onClick="javascript:toggle('e22')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe22">+</span>&nbsp;&nbsp;1869370 &nbsp;&nbsp;&nbsp;&nbsp;1.6 &nbsp;&nbsp;&nbsp;87.5 524288+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BN_new</div>
+<div class="parent" id="e22">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1869370&nbsp;&nbsp;&nbsp;1869370&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;524288+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m28">[28]</a>&nbsp;java/math/NativeBN.BN_new&nbsp;()I</div>
+</div>
+<div class="link" onClick="javascript:toggle('e23')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe23">+</span>&nbsp;&nbsp;1589004 &nbsp;&nbsp;&nbsp;&nbsp;1.4 &nbsp;&nbsp;&nbsp;88.8 521309+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nanoTime</div>
+<div class="parent" id="e23">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1589004&nbsp;&nbsp;&nbsp;1589004&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;521309+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m29">[29]</a>&nbsp;java/lang/System.nanoTime&nbsp;()J</div>
+</div>
+<div class="link" onClick="javascript:toggle('e24')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe24">+</span>&nbsp;&nbsp;1530189 &nbsp;&nbsp;&nbsp;&nbsp;1.3 &nbsp;&nbsp;&nbsp;90.2 521302+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; poll</div>
+<div class="parent" id="e24">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1530189&nbsp;&nbsp;&nbsp;1530189&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;521302+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m30">[30]</a>&nbsp;java/lang/ref/ReferenceQueue.poll&nbsp;()Ljava/lang/ref/Reference;</div>
+</div>
+<div class="link" onClick="javascript:toggle('e25')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe25">+</span>&nbsp;&nbsp;1421406 &nbsp;&nbsp;&nbsp;&nbsp;1.2 &nbsp;&nbsp;&nbsp;91.4 521451+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; isRunning</div>
+<div class="parent" id="e25">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1421406&nbsp;&nbsp;&nbsp;1421406&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;521451+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m32">[32]</a>&nbsp;java/lang/Daemons$Daemon.isRunning&nbsp;()Z</div>
+</div>
+<div class="link" onClick="javascript:toggle('e26')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe26">+</span>&nbsp;&nbsp;1383982 &nbsp;&nbsp;&nbsp;&nbsp;1.2 &nbsp;&nbsp;&nbsp;92.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mult</div>
+<div class="parent" id="e26">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1383982&nbsp;&nbsp;63386383&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m1">[1]</a>&nbsp;fr/android/bri/test_profiling/MainActivity.mult&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e27')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe27">+</span>&nbsp;&nbsp;1236111 &nbsp;&nbsp;&nbsp;&nbsp;1.1 &nbsp;&nbsp;&nbsp;93.6 524288+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; setBigInt</div>
+<div class="parent" id="e27">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1236111&nbsp;&nbsp;&nbsp;1236111&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;524288+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m34">[34]</a>&nbsp;java/math/BigInteger.setBigInt&nbsp;(Ljava/math/BigInt;)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e28')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe28">+</span>&nbsp;&nbsp;1228534 &nbsp;&nbsp;&nbsp;&nbsp;1.0 &nbsp;&nbsp;&nbsp;94.7 524288+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; getNativeBIGNUM</div>
+<div class="parent" id="e28">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1228534&nbsp;&nbsp;&nbsp;1228534&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;524288+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m36">[36]</a>&nbsp;java/math/BigInt.getNativeBIGNUM&nbsp;()I</div>
+</div>
+<div class="link" onClick="javascript:toggle('e29')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe29">+</span>&nbsp;&nbsp;1203972 &nbsp;&nbsp;&nbsp;&nbsp;1.0 &nbsp;&nbsp;&nbsp;95.7 521302+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; get</div>
+<div class="parent" id="e29">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1203972&nbsp;&nbsp;&nbsp;1203972&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;521302+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m37">[37]</a>&nbsp;java/lang/ref/FinalizerReference.get&nbsp;()Ljava/lang/Object;</div>
+</div>
+<div class="link" onClick="javascript:toggle('e30')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe30">+</span>&nbsp;&nbsp;1198435 &nbsp;&nbsp;&nbsp;&nbsp;1.0 &nbsp;&nbsp;&nbsp;96.7 521302+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; clear</div>
+<div class="parent" id="e30">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;1198435&nbsp;&nbsp;&nbsp;1198435&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;521302+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m38">[38]</a>&nbsp;java/lang/ref/FinalizerReference.clear&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e31')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe31">+</span>&nbsp;&nbsp;&nbsp;&nbsp;10263 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;629+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wait</div>
+<div class="parent" id="e31">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8174&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8174&nbsp;&nbsp;&nbsp;&nbsp;79.6&nbsp;&nbsp;&nbsp;&nbsp;79.6&nbsp;&nbsp;&nbsp;&nbsp;313+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m42">[42]</a>&nbsp;java/lang/Object.wait&nbsp;(JI)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1109&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5073&nbsp;&nbsp;&nbsp;&nbsp;10.8&nbsp;&nbsp;&nbsp;&nbsp;90.5&nbsp;&nbsp;&nbsp;&nbsp;169+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m44">[44]</a>&nbsp;java/lang/Object.wait&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;980&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5196&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.5&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;147+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m43">[43]</a>&nbsp;java/lang/Object.wait&nbsp;(J)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e32')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe32">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1866 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;147+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; notifyAll</div>
+<div class="parent" id="e32">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1866&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1866&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;147+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m47">[47]</a>&nbsp;java/lang/Object.notifyAll&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e33')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe33">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1032 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;148+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uptimeMillis</div>
+<div class="parent" id="e33">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1032&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1032&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;148+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m49">[49]</a>&nbsp;android/os/SystemClock.uptimeMillis&nbsp;()J</div>
+</div>
+<div class="link" onClick="javascript:toggle('e34')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe34">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;728 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;147+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; handleGc</div>
+<div class="parent" id="e34">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;728&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;728&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;147+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m51">[51]</a>&nbsp;com/android/internal/os/BinderInternal.handleGc&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e35')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe35">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;180 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stopMethodTracing</div>
+<div class="parent" id="e35">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;180&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;180&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m54">[54]</a>&nbsp;android/os/Debug.stopMethodTracing&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m104">[104]</a>&nbsp;dalvik/system/VMDebug.stopMethodTracing&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e36')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe36">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;161 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; waitForObject</div>
+<div class="parent" id="e36">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;161&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;756&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m50">[50]</a>&nbsp;java/lang/Daemons$FinalizerWatchdogDaemon.waitForObject&nbsp;()Ljava/lang/Object;</div>
+</div>
+<div class="link" onClick="javascript:toggle('e37')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe37">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;158 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;12+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sleep</div>
+<div class="parent" id="e37">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;108&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;108&nbsp;&nbsp;&nbsp;&nbsp;68.4&nbsp;&nbsp;&nbsp;&nbsp;68.4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m61">[61]</a>&nbsp;java/lang/VMThread.sleep&nbsp;(JI)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;158&nbsp;&nbsp;&nbsp;&nbsp;16.5&nbsp;&nbsp;&nbsp;&nbsp;84.8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m56">[56]</a>&nbsp;java/lang/Thread.sleep&nbsp;(J)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;24&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;132&nbsp;&nbsp;&nbsp;&nbsp;15.2&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m59">[59]</a>&nbsp;java/lang/Thread.sleep&nbsp;(JI)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e38')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe38">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;157 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; finalizer</div>
+<div class="parent" id="e38">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;79&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;79&nbsp;&nbsp;&nbsp;&nbsp;50.3&nbsp;&nbsp;&nbsp;&nbsp;50.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m65">[65]</a>&nbsp;android/graphics/Canvas.finalizer&nbsp;(I)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;61&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;61&nbsp;&nbsp;&nbsp;&nbsp;38.9&nbsp;&nbsp;&nbsp;&nbsp;89.2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m69">[69]</a>&nbsp;android/graphics/Paint.finalizer&nbsp;(I)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17&nbsp;&nbsp;&nbsp;&nbsp;10.8&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m84">[84]</a>&nbsp;android/graphics/Matrix.finalizer&nbsp;(I)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e39')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe39">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;138 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; startMethodTracing</div>
+<div class="parent" id="e39">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;134&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;138&nbsp;&nbsp;&nbsp;&nbsp;97.1&nbsp;&nbsp;&nbsp;&nbsp;97.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m58">[58]</a>&nbsp;android/os/Debug.startMethodTracing&nbsp;(Ljava/lang/String;II)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;142&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.9&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m57">[57]</a>&nbsp;android/os/Debug.startMethodTracing&nbsp;(Ljava/lang/String;I)V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m101">[101]</a>&nbsp;dalvik/system/VMDebug.startMethodTracing&nbsp;(Ljava/lang/String;II)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e40')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe40">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;77 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sleepFor</div>
+<div class="parent" id="e40">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;77&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;259&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m53">[53]</a>&nbsp;java/lang/Daemons$FinalizerWatchdogDaemon.sleepFor&nbsp;(JJ)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e41')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe41">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;75 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;31+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; access$100</div>
+<div class="parent" id="e41">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;75&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;75&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;31+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m66">[66]</a>&nbsp;java/lang/Daemons$FinalizerDaemon.access$100&nbsp;()Ljava/lang/Daemons$FinalizerDaemon;</div>
+</div>
+<div class="link" onClick="javascript:toggle('e42')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe42">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;60 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;27+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; access$400</div>
+<div class="parent" id="e42">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;60&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;60&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;27+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m70">[70]</a>&nbsp;java/lang/Daemons$FinalizerDaemon.access$400&nbsp;(Ljava/lang/Daemons$FinalizerDaemon;)Ljava/lang/Object;</div>
+</div>
+<div class="link" onClick="javascript:toggle('e43')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe43">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;55 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; waitForFinalization</div>
+<div class="parent" id="e43">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;55&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;351&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m52">[52]</a>&nbsp;java/lang/Daemons$FinalizerWatchdogDaemon.waitForFinalization&nbsp;(Ljava/lang/Object;)Z</div>
+</div>
+<div class="link" onClick="javascript:toggle('e44')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe44">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;37 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; destroy</div>
+<div class="parent" id="e44">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;37&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;37&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m73">[73]</a>&nbsp;android/os/Binder.destroy&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e45')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe45">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;34 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; release</div>
+<div class="parent" id="e45">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;34&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;34&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m75">[75]</a>&nbsp;android/view/Surface.release&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e46')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe46">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nativeEnforceInterface</div>
+<div class="parent" id="e46">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m80">[80]</a>&nbsp;android/os/Parcel.nativeEnforceInterface&nbsp;(ILjava/lang/String;)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e47')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe47">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;24 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; onUnbindMethod</div>
+<div class="parent" id="e47">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;24&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;69&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m67">[67]</a>&nbsp;android/view/inputmethod/InputMethodManager$1.onUnbindMethod&nbsp;(I)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e48')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe48">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;19 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; execTransact</div>
+<div class="parent" id="e48">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;179&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m55">[55]</a>&nbsp;android/os/Binder.execTransact&nbsp;(IIII)Z</div>
+</div>
+<div class="link" onClick="javascript:toggle('e49')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe49">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;19 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; obtain</div>
+<div class="parent" id="e49">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15&nbsp;&nbsp;&nbsp;&nbsp;52.6&nbsp;&nbsp;&nbsp;&nbsp;52.6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m87">[87]</a>&nbsp;android/os/Parcel.obtain&nbsp;(I)Landroid/os/Parcel;</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;26.3&nbsp;&nbsp;&nbsp;&nbsp;78.9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m92">[92]</a>&nbsp;android/os/Message.obtain&nbsp;(Landroid/os/Handler;III)Landroid/os/Message;</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;21.1&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m99">[99]</a>&nbsp;android/os/Message.obtain&nbsp;()Landroid/os/Message;</div>
+</div>
+<div class="link" onClick="javascript:toggle('e50')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe50">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nativeDestructor</div>
+<div class="parent" id="e50">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m85">[85]</a>&nbsp;android/graphics/Region.nativeDestructor&nbsp;(I)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e51')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe51">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;16 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; recycle</div>
+<div class="parent" id="e51">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m83">[83]</a>&nbsp;android/os/Parcel.recycle&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e52')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe52">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dispose</div>
+<div class="parent" id="e52">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25&nbsp;&nbsp;&nbsp;&nbsp;66.7&nbsp;&nbsp;&nbsp;&nbsp;66.7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m82">[82]</a>&nbsp;android/view/ViewRootImpl$WindowInputEventReceiver.dispose&nbsp;()V</div>
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;33.3&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m91">[91]</a>&nbsp;android/view/InputEventReceiver.dispose&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e53')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe53">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; onTransact</div>
+<div class="parent" id="e53">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;125&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m60">[60]</a>&nbsp;com/android/internal/view/IInputMethodClient$Stub.onTransact&nbsp;(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z</div>
+</div>
+<div class="link" onClick="javascript:toggle('e54')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe54">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; access$500</div>
+<div class="parent" id="e54">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m90">[90]</a>&nbsp;java/lang/Daemons$FinalizerDaemon.access$500&nbsp;(Ljava/lang/Daemons$FinalizerDaemon;)J</div>
+</div>
+<div class="link" onClick="javascript:toggle('e55')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe55">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nativeDispose</div>
+<div class="parent" id="e55">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m94">[94]</a>&nbsp;android/view/InputChannel.nativeDispose&nbsp;(Z)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e56')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe56">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nativeReadInt</div>
+<div class="parent" id="e56">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m95">[95]</a>&nbsp;android/os/Parcel.nativeReadInt&nbsp;(I)I</div>
+</div>
+<div class="link" onClick="javascript:toggle('e57')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe57">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; access$000</div>
+<div class="parent" id="e57">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;86&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m64">[64]</a>&nbsp;android/graphics/Canvas.access$000&nbsp;(I)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e58')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe58">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; enforceInterface</div>
+<div class="parent" id="e58">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;32&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m76">[76]</a>&nbsp;android/os/Parcel.enforceInterface&nbsp;(Ljava/lang/String;)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e59')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe59">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; obtainMessage</div>
+<div class="parent" id="e59">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m86">[86]</a>&nbsp;android/os/Handler.obtainMessage&nbsp;(III)Landroid/os/Message;</div>
+</div>
+<div class="link" onClick="javascript:toggle('e60')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe60">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sendMessageDelayed</div>
+<div class="parent" id="e60">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m79">[79]</a>&nbsp;android/os/Handler.sendMessageDelayed&nbsp;(Landroid/os/Message;J)Z</div>
+</div>
+<div class="link" onClick="javascript:toggle('e61')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe61">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; enqueueMessage</div>
+<div class="parent" id="e61">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m93">[93]</a>&nbsp;android/os/MessageQueue.enqueueMessage&nbsp;(Landroid/os/Message;J)Z</div>
+</div>
+<div class="link" onClick="javascript:toggle('e62')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe62">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sendMessage</div>
+<div class="parent" id="e62">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;30&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m77">[77]</a>&nbsp;android/os/Handler.sendMessage&nbsp;(Landroid/os/Message;)Z</div>
+</div>
+<div class="link" onClick="javascript:toggle('e63')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe63">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sendMessageAtTime</div>
+<div class="parent" id="e63">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m88">[88]</a>&nbsp;android/os/Handler.sendMessageAtTime&nbsp;(Landroid/os/Message;J)Z</div>
+</div>
+<div class="link" onClick="javascript:toggle('e64')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe64">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; init</div>
+<div class="parent" id="e64">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m96">[96]</a>&nbsp;android/os/Parcel.init&nbsp;(I)V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e65')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe65">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unscheduleConsumeBatchedInput</div>
+<div class="parent" id="e65">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m97">[97]</a>&nbsp;android/view/ViewRootImpl.unscheduleConsumeBatchedInput&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e66')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe66">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; close</div>
+<div class="parent" id="e66">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m98">[98]</a>&nbsp;dalvik/system/CloseGuard.close&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e67')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe67">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; freeBuffer</div>
+<div class="parent" id="e67">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m100">[100]</a>&nbsp;android/os/Parcel.freeBuffer&nbsp;()V</div>
+</div>
+<div class="link" onClick="javascript:toggle('e68')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe68">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; readInt</div>
+<div class="parent" id="e68">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m89">[89]</a>&nbsp;android/os/Parcel.readInt&nbsp;()I</div>
+</div>
+<div class="link" onClick="javascript:toggle('e69')" onMouseOver="javascript:onMouseOver(this)" onMouseOut="javascript:onMouseOut(this)"><span class="parent" id="xe69">+</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 &nbsp;&nbsp;&nbsp;&nbsp;0.0 &nbsp;&nbsp;&nbsp;96.7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; isInUse</div>
+<div class="parent" id="e69">
+<div class="leaf"><span class="leaf">&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;100.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#m102">[102]</a>&nbsp;android/os/Message.isInUse&nbsp;()Z</div>
+</div>
+
+</body>
+</html>
