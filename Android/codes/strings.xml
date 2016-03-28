@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Test_profiling</string>
+    <string name="bt192">192</string>
+    <string name="bt269">269</string>
+    <string name="addition">addition</string>
+    <string name="multiplication">multiplication</string>
+    <string name="bt256">256</string>
+    <string name="bt358">358</string>
+    <string name="bt320">320</string>
+    <string name="bt448">448</string>
+    <string name="bt384">384</string>
+    <string name="bt538">538</string>
+    <string name="bt717">717</string>
+    <string name="bt627">627</string>
+    <string name="bt270">270</string>
+    <string name="bt373">373</string>
+    <string name="bt536">536</string>
+    <string name="bt713">713</string>
+    <string name="bt716">716</string>
+    <string name="bt512">512</string>
+</resources>
