@@ -3,190 +3,187 @@ Flat profile:
 Each sample counts as 0.01 seconds.
   %   cumulative   self              self     total           
  time   seconds   seconds    calls  ms/call  ms/call  name    
- 28.07     21.61    21.61 536871020     0.00     0.00  __gmpn_sbpi1_div_qr
- 15.97     33.90    12.30                             __gmpn_mul_basecase
- 10.02     41.62     7.72                             __gmpn_submul_1
-  9.17     48.67     7.06 536870939     0.00     0.00  __gmpn_tdiv_qr
-  6.00     53.29     4.62 536870913     0.00     0.00  __gmpz_tdiv_r
-  5.74     57.71     4.42 536870948     0.00     0.00  __gmpz_mul
-  4.72     61.35     3.64                             __gmpn_copyi
-  4.11     64.51     3.16 536870913     0.00     0.00  __gmpz_mod
-  3.90     67.51     3.00                             __gmpn_invert_limb
-  2.79     69.66     2.15                             __writev_nocancel
-  2.55     71.62     1.97 536871317     0.00     0.00  __gmpn_mul_n
-  2.52     73.56     1.94 536870914     0.00     0.00  __gmpn_mul
-  2.05     75.14     1.58                             __profile_frequency
-  0.70     75.68     0.54                             mult
-  0.70     76.22     0.54                             __gmpn_addmul_1
-  0.23     76.39     0.18                             __gmpn_mod_1s_4p_cps
-  0.21     76.56     0.17                             __gmpn_sqrmod_bnm1_next_size
-  0.21     76.72     0.16                             __gmpz_inits
-  0.18     76.85     0.14      137     0.99     0.99  __gmpn_sqr
-  0.11     76.94     0.09                             __gmpn_bdiv_dbm1c
-  0.05     76.97     0.04                             __gmpn_nussbaumer_mul
-  0.00     76.97     0.00      111     0.00     0.00  __gmpn_toom2_sqr
-  0.00     76.97     0.00      108     0.00     0.00  __gmpz_cmp
-  0.00     76.97     0.00       95     0.00     0.00  __gmpz_cmp_ui
-  0.00     76.97     0.00       84     0.00     0.00  __gmpz_tdiv_q_2exp
-  0.00     76.97     0.00       83     0.00     0.99  __gmpz_powm_ui
-  0.00     76.97     0.00       83     0.00     0.00  mod
-  0.00     76.97     0.00       47     0.00     0.00  __gmpz_addmul_ui
-  0.00     76.97     0.00       47     0.00     0.00  __gmpz_aorsmul_1
-  0.00     76.97     0.00       47     0.00     0.00  __gmpz_tdiv_r_2exp
-  0.00     76.97     0.00       36     0.00     0.00  __gmp_randget_mt
-  0.00     76.97     0.00       27     0.00     0.00  __gmpn_binvert_itch
-  0.00     76.97     0.00       27     0.00     0.00  __gmpn_mulmod_bnm1_next_size
-  0.00     76.97     0.00       27     0.00     0.99  __gmpn_powm
-  0.00     76.97     0.00       27     0.00     0.99  __gmpz_powm
-  0.00     76.97     0.00       27     0.00     0.00  redcify
-  0.00     76.97     0.00       26     0.00     0.00  __gmpz_add_ui
-  0.00     76.97     0.00       25     0.00     0.00  __gmpz_urandomm
-  0.00     76.97     0.00       22     0.00     0.00  __gmpn_toom3_sqr
-  0.00     76.97     0.00       22     0.00     0.00  __gmpn_toom_interpolate_5pts
-  0.00     76.97     0.00       13     0.00     0.00  __gmp_default_allocate
-  0.00     76.97     0.00       12     0.00     0.00  __gmp_default_free
-  0.00     76.97     0.00        6     0.00     0.00  __gmpn_preinv_mod_1
-  0.00     76.97     0.00        5     0.00     0.00  __gmp_default_reallocate
-  0.00     76.97     0.00        5     0.00     0.00  __gmpz_realloc
-  0.00     76.97     0.00        4     0.00     0.00  __gmpz_clear
-  0.00     76.97     0.00        4     0.00     0.00  __gmpz_sub_ui
-  0.00     76.97     0.00        3     0.00     0.00  __gmp_mt_recalc_buffer
-  0.00     76.97     0.00        3     0.00     0.00  __gmpz_init2
-  0.00     76.97     0.00        3     0.00     0.00  __gmpz_sizeinbase
-  0.00     76.97     0.00        2     0.00     0.00  __gmp_randinit_mt_noseed
-  0.00     76.97     0.00        2     0.00    54.20  __gmpz_millerrabin
-  0.00     76.97     0.00        2     0.00     0.00  __gmpz_set_ui
-  0.00     76.97     0.00        1     0.00     0.00  __gmp_randclear
-  0.00     76.97     0.00        1     0.00     0.00  __gmp_randclear_mt
-  0.00     76.97     0.00        1     0.00     0.00  __gmp_randinit_default
-  0.00     76.97     0.00        1     0.00     0.00  __gmp_randinit_mt
-  0.00     76.97     0.00        1     0.00     0.00  __gmp_randseed
-  0.00     76.97     0.00        1     0.00     0.00  __gmpn_mod_1
-  0.00     76.97     0.00        1     0.00     0.00  __gmpz_clrbit
-  0.00     76.97     0.00        1     0.00     0.00  __gmpz_export
-  0.00     76.97     0.00        1     0.00     0.00  __gmpz_init_set
-  0.00     76.97     0.00        1     0.00     0.00  __gmpz_scan1
-  0.00     76.97     0.00        1     0.00     0.00  __gmpz_setbit
-  0.00     76.97     0.00        1     0.00     0.00  __gmpz_tstbit
-  0.00     76.97     0.00        1     0.00     0.00  main
-  0.00     76.97     0.00        1     0.00     0.00  randseed_mt
+ 28.77     20.71    20.71 536870937     0.00     0.00  __gmpn_sbpi1_div_qr
+ 15.22     31.66    10.95                             __gmpn_mul_basecase
+ 10.05     38.89     7.24                             __gmpn_submul_1
+  9.91     46.02     7.13 536870950     0.00     0.00  __gmpn_tdiv_qr
+  6.26     50.53     4.51 536870913     0.00     0.00  __gmpz_tdiv_r
+  5.52     54.50     3.97 536870948     0.00     0.00  __gmpz_mul
+  4.72     57.89     3.40                             __gmpn_copyi
+  4.11     60.85     2.96 536870913     0.00     0.00  __gmpz_mod
+  3.33     63.24     2.40                             __gmpn_invert_limb
+  2.96     65.37     2.13                             __writev_nocancel
+  2.57     67.22     1.85 536870925     0.00     0.00  __gmpn_mul
+  2.38     68.93     1.71 536871482     0.00     0.00  __gmpn_mul_n
+  2.08     70.43     1.50                             __profile_frequency
+  0.71     70.94     0.51                             mult
+  0.58     71.36     0.42                             __gmpn_addmul_1
+  0.19     71.49     0.14                             __gmpn_sqrmod_bnm1_next_size
+  0.17     71.61     0.12                             __gmpn_bdiv_dbm1c
+  0.16     71.73     0.12                             __gmpz_inits
+  0.14     71.83     0.10       65     1.54     1.54  __gmpn_sqr
+  0.14     71.93     0.10                             __gmpn_mod_1s_4p_cps
+  0.06     71.97     0.04                             __gmpn_nussbaumer_mul
+  0.01     71.97     0.01       16     0.31     0.31  __gmpz_sizeinbase
+  0.00     71.97     0.00      168     0.00     0.00  __gmpz_cmp_ui
+  0.00     71.97     0.00      158     0.00     0.00  __gmp_randget_mt
+  0.00     71.97     0.00      111     0.00     0.00  __gmpn_toom2_sqr
+  0.00     71.97     0.00       84     0.00     0.00  __gmpz_tdiv_q_2exp
+  0.00     71.97     0.00       61     0.00     0.00  __gmpn_preinv_mod_1
+  0.00     71.97     0.00       47     0.00     0.00  __gmpz_addmul_ui
+  0.00     71.97     0.00       47     0.00     0.00  __gmpz_aorsmul_1
+  0.00     71.97     0.00       47     0.00     0.00  __gmpz_tdiv_r_2exp
+  0.00     71.97     0.00       38     0.00     0.00  __gmpn_binvert_itch
+  0.00     71.97     0.00       38     0.00     0.00  __gmpn_mulmod_bnm1_next_size
+  0.00     71.97     0.00       38     0.00     1.54  __gmpn_powm
+  0.00     71.97     0.00       38     0.00     1.54  __gmpz_powm
+  0.00     71.97     0.00       38     0.00     0.00  redcify
+  0.00     71.97     0.00       26     0.00     0.00  __gmpz_add_ui
+  0.00     71.97     0.00       25     0.00     0.00  __gmpz_urandomm
+  0.00     71.97     0.00       22     0.00     0.00  __gmpn_toom3_sqr
+  0.00     71.97     0.00       22     0.00     0.00  __gmpn_toom_interpolate_5pts
+  0.00     71.97     0.00       15     0.00     0.00  __gmpz_sub_ui
+  0.00     71.97     0.00       13     0.00     0.00  __gmp_default_allocate
+  0.00     71.97     0.00       13     0.00     0.00  __gmpz_cmp
+  0.00     71.97     0.00       13     0.00     4.50  __gmpz_millerrabin
+  0.00     71.97     0.00       13     0.00     0.00  __gmpz_set_ui
+  0.00     71.97     0.00       12     0.00     0.00  __gmp_default_free
+  0.00     71.97     0.00        5     0.00     0.00  __gmp_default_reallocate
+  0.00     71.97     0.00        5     0.00     0.00  __gmpz_realloc
+  0.00     71.97     0.00        4     0.00     0.00  __gmp_mt_recalc_buffer
+  0.00     71.97     0.00        4     0.00     0.00  __gmpz_clear
+  0.00     71.97     0.00        3     0.00     0.00  __gmpn_mod_1
+  0.00     71.97     0.00        3     0.00     0.00  __gmpz_init2
+  0.00     71.97     0.00        2     0.00     0.00  __gmp_randinit_mt_noseed
+  0.00     71.97     0.00        1     0.00     0.00  __gmp_randclear
+  0.00     71.97     0.00        1     0.00     0.00  __gmp_randclear_mt
+  0.00     71.97     0.00        1     0.00     0.00  __gmp_randinit_default
+  0.00     71.97     0.00        1     0.00     0.00  __gmp_randinit_mt
+  0.00     71.97     0.00        1     0.00     0.00  __gmp_randseed
+  0.00     71.97     0.00        1     0.00     0.00  __gmpz_clrbit
+  0.00     71.97     0.00        1     0.00     0.00  __gmpz_export
+  0.00     71.97     0.00        1     0.00     0.00  __gmpz_init_set
+  0.00     71.97     0.00        1     0.00     0.00  __gmpz_scan1
+  0.00     71.97     0.00        1     0.00     0.00  __gmpz_setbit
+  0.00     71.97     0.00        1     0.00     0.00  __gmpz_tstbit
+  0.00     71.97     0.00        1     0.00     0.00  main
+  0.00     71.97     0.00        1     0.00     0.00  randseed_mt
 
 			Call graph
 
 
-granularity: each sample hit covers 2 byte(s) for 0.01% of 76.97 seconds
+granularity: each sample hit covers 2 byte(s) for 0.01% of 71.97 seconds
 
 index % time    self  children    called     name
                                                  <spontaneous>
-[1]     58.9    0.54   44.79                 mult [1]
-                3.16   33.28 536870912/536870913     __gmpz_mod [2]
-                4.42    3.93 536870912/536870948     __gmpz_mul [7]
-                0.00    0.00       0/0           mcount (211)
+[1]     60.3    0.51   42.87                 mult [1]
+                2.96   32.34 536870912/536870913     __gmpz_mod [2]
+                3.97    3.60 536870912/536870948     __gmpz_mul [7]
+                0.00    0.00       0/0           mcount (210)
 -----------------------------------------------
-                0.00    0.00       1/536870913     randseed_mt [29]
-                3.16   33.28 536870912/536870913     mult [1]
-[2]     47.3    3.16   33.28 536870913         __gmpz_mod [2]
-                4.62   28.66 536870913/536870913     __gmpz_tdiv_r [3]
-                0.00    0.00       0/0           mcount (211)
+                0.00    0.00       1/536870913     randseed_mt [28]
+                2.96   32.34 536870912/536870913     mult [1]
+[2]     49.0    2.96   32.34 536870913         __gmpz_mod [2]
+                4.51   27.84 536870913/536870913     __gmpz_tdiv_r [3]
+                0.00    0.00       0/0           mcount (210)
                 0.00    0.00       0/0           __gmpn_copyi [10]
-                0.00    0.00       0/0           __gmpz_add [778]
-                0.00    0.00       0/0           __gmp_tmp_reentrant_free [650]
-                0.00    0.00       0/0           __gmp_tmp_reentrant_alloc [649]
+                0.00    0.00       0/0           __gmpz_add [777]
+                0.00    0.00       0/0           __gmp_tmp_reentrant_free [649]
+                0.00    0.00       0/0           __gmp_tmp_reentrant_alloc [648]
                 0.00    0.00       0/0           __stack_chk_fail [882]
 -----------------------------------------------
-                4.62   28.66 536870913/536870913     __gmpz_mod [2]
-[3]     43.2    4.62   28.66 536870913         __gmpz_tdiv_r [3]
-                7.06   21.61 536870912/536870939     __gmpn_tdiv_qr [4]
-                0.00    0.00       0/0           mcount (211)
+                4.51   27.84 536870913/536870913     __gmpz_mod [2]
+[3]     44.9    4.51   27.84 536870913         __gmpz_tdiv_r [3]
+                7.13   20.71 536870912/536870950     __gmpn_tdiv_qr [4]
+                0.00    0.00       0/0           mcount (210)
                 0.00    0.00       0/0           __gmpn_copyi [10]
-                0.00    0.00       0/0           __gmp_divide_by_zero [645]
-                0.00    0.00       0/0           __gmp_tmp_reentrant_alloc [649]
-                0.00    0.00       0/0           __gmp_tmp_reentrant_free [650]
+                0.00    0.00       0/0           __gmp_divide_by_zero [644]
+                0.00    0.00       0/0           __gmp_tmp_reentrant_alloc [648]
+                0.00    0.00       0/0           __gmp_tmp_reentrant_free [649]
                 0.00    0.00       0/0           __stack_chk_fail [882]
 -----------------------------------------------
-                0.00    0.00      27/536870939     redcify [28]
-                7.06   21.61 536870912/536870939     __gmpz_tdiv_r [3]
-[4]     37.2    7.06   21.61 536870939         __gmpn_tdiv_qr [4]
-               21.61    0.00 536870937/536871020     __gmpn_sbpi1_div_qr [5]
-                0.00    0.00       2/536870914     __gmpn_mul [9]
-                0.00    0.00       0/0           mcount (211)
-                0.00    0.00       0/0           __gmpn_lshift [702]
+                0.00    0.00      38/536870950     redcify [27]
+                7.13   20.71 536870912/536870950     __gmpz_tdiv_r [3]
+[4]     38.7    7.13   20.71 536870950         __gmpn_tdiv_qr [4]
+               20.71    0.00 536870937/536870937     __gmpn_sbpi1_div_qr [5]
+                0.00    0.00      13/536870925     __gmpn_mul [9]
+                0.00    0.00       0/0           mcount (210)
+                0.00    0.00       0/0           __gmpn_lshift [701]
                 0.00    0.00       0/0           __gmpn_invert_limb [11]
-                0.00    0.00       0/0           __gmpn_dcpi1_div_qr [673]
-                0.00    0.00       0/0           __gmpn_rshift [741]
-                0.00    0.00       0/0           __gmpn_divrem_2 [679]
-                0.00    0.00       0/0           __gmp_tmp_reentrant_free [650]
-                0.00    0.00       0/0           __gmp_divide_by_zero [645]
-                0.00    0.00       0/0           __gmpn_divrem_1 [678]
-                0.00    0.00       0/0           __gmpn_mu_div_qr_itch [719]
-                0.00    0.00       0/0           __gmpn_mu_div_qr [717]
+                0.00    0.00       0/0           __gmpn_dcpi1_div_qr [672]
+                0.00    0.00       0/0           __gmpn_rshift [740]
+                0.00    0.00       0/0           __gmpn_divrem_2 [678]
+                0.00    0.00       0/0           __gmp_tmp_reentrant_free [649]
+                0.00    0.00       0/0           __gmp_divide_by_zero [644]
+                0.00    0.00       0/0           __gmpn_divrem_1 [677]
+                0.00    0.00       0/0           __gmpn_mu_div_qr_itch [718]
+                0.00    0.00       0/0           __gmpn_mu_div_qr [716]
                 0.00    0.00       0/0           __gmpn_copyi [10]
-                0.00    0.00       0/0           __gmpn_add_n [651]
-                0.00    0.00       0/0           __gmp_assert_fail [643]
-                0.00    0.00       0/0           __gmpn_sub_n [749]
+                0.00    0.00       0/0           __gmpn_add_n [650]
+                0.00    0.00       0/0           __gmp_assert_fail [642]
+                0.00    0.00       0/0           __gmpn_sub_n [748]
                 0.00    0.00       0/0           __gmpn_submul_1 [8]
-                0.00    0.00       0/0           __gmp_tmp_reentrant_alloc [649]
+                0.00    0.00       0/0           __gmp_tmp_reentrant_alloc [648]
                 0.00    0.00       0/0           __stack_chk_fail [882]
 -----------------------------------------------
-                0.00    0.00      83/536871020     mod [27]
-               21.61    0.00 536870937/536871020     __gmpn_tdiv_qr [4]
-[5]     28.1   21.61    0.00 536871020         __gmpn_sbpi1_div_qr [5]
-                0.00    0.00       0/0           mcount (211)
-                0.00    0.00       0/0           __gmpn_sub_n [749]
+               20.71    0.00 536870937/536870937     __gmpn_tdiv_qr [4]
+[5]     28.8   20.71    0.00 536870937         __gmpn_sbpi1_div_qr [5]
+                0.00    0.00       0/0           mcount (210)
+                0.00    0.00       0/0           __gmpn_sub_n [748]
                 0.00    0.00       0/0           __gmpn_submul_1 [8]
-                0.00    0.00       0/0           __gmpn_add_n [651]
+                0.00    0.00       0/0           __gmpn_add_n [650]
 -----------------------------------------------
                 0.00    0.00       0/0           __gmpn_mul [9]
                 0.00    0.00       0/0           __gmpn_mul_n [13]
-[6]     16.0   12.30    0.00                 __gmpn_mul_basecase [6]
+[6]     15.2   10.95    0.00                 __gmpn_mul_basecase [6]
 -----------------------------------------------
-                0.00    0.00      36/536870948     randseed_mt [29]
-                4.42    3.93 536870912/536870948     mult [1]
-[7]     10.9    4.42    3.93 536870948         __gmpz_mul [7]
-                1.94    1.97 536870912/536870914     __gmpn_mul [9]
-                0.03    0.00      27/137         __gmpn_sqr [19]
-                0.00    0.00       3/12          __gmp_default_free [375]
-                0.00    0.00       3/13          __gmp_default_allocate [374]
-                0.00    0.00       0/0           mcount (211)
-                0.00    0.00       0/0           __gmpn_mul_2 [721]
-                0.00    0.00       0/0           __gmp_tmp_reentrant_free [650]
-                0.00    0.00       0/0           __gmpn_mul_1 [720]
-                0.00    0.00       0/5           __gmpz_realloc [378]
+                0.00    0.00      36/536870948     randseed_mt [28]
+                3.97    3.60 536870912/536870948     mult [1]
+[7]     10.5    3.97    3.60 536870948         __gmpz_mul [7]
+                1.85    1.71 536870912/536870925     __gmpn_mul [9]
+                0.04    0.00      27/65          __gmpn_sqr [19]
+                0.00    0.00       3/12          __gmp_default_free [378]
+                0.00    0.00       3/13          __gmp_default_allocate [375]
+                0.00    0.00       0/0           mcount (210)
+                0.00    0.00       0/0           __gmpn_mul_2 [720]
+                0.00    0.00       0/0           __gmp_tmp_reentrant_free [649]
+                0.00    0.00       0/0           __gmpn_mul_1 [719]
+                0.00    0.00       0/5           __gmpz_realloc [380]
                 0.00    0.00       0/0           __gmpn_copyi [10]
-                0.00    0.00       0/0           __gmp_tmp_reentrant_alloc [649]
+                0.00    0.00       0/0           __gmp_tmp_reentrant_alloc [648]
                 0.00    0.00       0/0           __stack_chk_fail [882]
 -----------------------------------------------
                 0.00    0.00       0/0           __gmpn_tdiv_qr [4]
-                0.00    0.00       0/0           __gmpn_toom_interpolate_7pts [776]
-                0.00    0.00       0/0           __gmpn_toom_interpolate_12pts [773]
-                0.00    0.00       0/0           __gmpn_toom_interpolate_16pts [774]
+                0.00    0.00       0/0           __gmpn_toom_interpolate_7pts [775]
+                0.00    0.00       0/0           __gmpn_toom_interpolate_12pts [772]
+                0.00    0.00       0/0           __gmpn_toom_interpolate_16pts [773]
                 0.00    0.00       0/0           __gmpn_sbpi1_div_qr [5]
-                0.00    0.00       0/0           __gmpn_dcpi1_div_qr [673]
-                0.00    0.00       0/0           __gmpz_aorsmul_1 [365]
-[8]     10.0    7.72    0.00                 __gmpn_submul_1 [8]
+                0.00    0.00       0/0           __gmpn_dcpi1_div_qr [672]
+                0.00    0.00       0/0           __gmpz_aorsmul_1 [366]
+[8]     10.1    7.24    0.00                 __gmpn_submul_1 [8]
 -----------------------------------------------
-                0.00    0.00       2/536870914     __gmpn_tdiv_qr [4]
-                1.94    1.97 536870912/536870914     __gmpz_mul [7]
-[9]      5.1    1.94    1.97 536870914         __gmpn_mul [9]
-                1.97    0.00 536870912/536871317     __gmpn_mul_n [13]
-                0.00    0.00       0/0           mcount (211)
+                0.00    0.00      13/536870925     __gmpn_tdiv_qr [4]
+                1.85    1.71 536870912/536870925     __gmpz_mul [7]
+[9]      4.9    1.85    1.71 536870925         __gmpn_mul [9]
+                1.71    0.00 536870912/536871482     __gmpn_mul_n [13]
+                0.00    0.00       0/0           mcount (210)
                 0.00    0.00       0/0           __gmpn_mul_basecase [6]
                 0.00    0.00       0/0           __gmpn_copyi [10]
-                0.00    0.00       0/0           __gmpn_add_n [651]
-                0.00    0.00       0/0           __gmpn_toom8h_mul [765]
-                0.00    0.00       0/0           __gmp_tmp_reentrant_free [650]
-                0.00    0.00       0/0           __gmp_tmp_reentrant_alloc [649]
-                0.00    0.00       0/0           __gmpn_nussbaumer_mul [24]
-                0.00    0.00       0/0           __gmpn_toom63_mul [761]
-                0.00    0.00       0/0           __gmpn_toom42_mul [756]
-                0.00    0.00       0/0           __gmpn_toom32_mul [754]
-                0.00    0.00       0/0           __gmpn_toom43_mul [757]
-                0.00    0.00       0/0           __gmpn_toom53_mul [760]
-                0.00    0.00       0/137         __gmpn_sqr [19]
-                0.00    0.00       0/0           __gmpn_toom33_mul [755]
-                0.00    0.00       0/0           __gmpn_toom22_mul [753]
-                0.00    0.00       0/0           __gmpn_toom44_mul [758]
-                0.00    0.00       0/0           __gmpn_toom6h_mul [763]
+                0.00    0.00       0/0           __gmpn_add_n [650]
+                0.00    0.00       0/0           __gmpn_toom8h_mul [764]
+                0.00    0.00       0/0           __gmp_tmp_reentrant_free [649]
+                0.00    0.00       0/0           __gmp_tmp_reentrant_alloc [648]
+                0.00    0.00       0/0           __gmpn_nussbaumer_mul [25]
+                0.00    0.00       0/0           __gmpn_toom63_mul [760]
+                0.00    0.00       0/0           __gmpn_toom42_mul [755]
+                0.00    0.00       0/0           __gmpn_toom32_mul [753]
+                0.00    0.00       0/0           __gmpn_toom43_mul [756]
+                0.00    0.00       0/0           __gmpn_toom53_mul [759]
+                0.00    0.00       0/65          __gmpn_sqr [19]
+                0.00    0.00       0/0           __gmpn_toom33_mul [754]
+                0.00    0.00       0/0           __gmpn_toom22_mul [752]
+                0.00    0.00       0/0           __gmpn_toom44_mul [757]
+                0.00    0.00       0/0           __gmpn_toom6h_mul [762]
                 0.00    0.00       0/0           __stack_chk_fail [882]
 -----------------------------------------------
                 0.00    0.00       0/0           __gmpz_mod [2]
@@ -194,461 +191,443 @@ index % time    self  children    called     name
                 0.00    0.00       0/0           __gmpz_tdiv_r [3]
                 0.00    0.00       0/0           __gmpn_mul [9]
                 0.00    0.00       0/0           __gmpn_tdiv_qr [4]
-                0.00    0.00       0/0           __gmpn_preinv_mu_div_qr [730]
+                0.00    0.00       0/0           __gmpn_preinv_mu_div_qr [729]
                 0.00    0.00       0/0           mpn_mu_div_qr2 [229]
-[10]     4.7    3.64    0.00                 __gmpn_copyi [10]
+[10]     4.7    3.40    0.00                 __gmpn_copyi [10]
 -----------------------------------------------
-                0.00    0.00       0/0           __gmpn_mod_1 [391]
-                0.00    0.00       0/0           __gmpn_mod_1_1p_cps [709]
-                0.00    0.00       0/0           __gmpn_mod_1s_2p_cps [711]
-                0.00    0.00       0/0           __gmpn_mod_1s_4p_cps [16]
+                0.00    0.00       0/0           __gmpn_mod_1 [383]
+                0.00    0.00       0/0           __gmpn_mod_1_1p_cps [708]
+                0.00    0.00       0/0           __gmpn_mod_1s_2p_cps [710]
+                0.00    0.00       0/0           __gmpn_mod_1s_4p_cps [20]
                 0.00    0.00       0/0           __gmpn_tdiv_qr [4]
-[11]     3.9    3.00    0.00                 __gmpn_invert_limb [11]
+[11]     3.3    2.40    0.00                 __gmpn_invert_limb [11]
 -----------------------------------------------
                                                  <spontaneous>
-[12]     2.8    2.15    0.00                 __writev_nocancel [12]
+[12]     3.0    2.13    0.00                 __writev_nocancel [12]
 -----------------------------------------------
-                0.00    0.00     405/536871317     __gmpn_powm [25]
-                1.97    0.00 536870912/536871317     __gmpn_mul [9]
-[13]     2.6    1.97    0.00 536871317         __gmpn_mul_n [13]
-                0.00    0.00       0/0           mcount (211)
-                0.00    0.00       0/0           __gmpn_toom8h_mul [765]
+                0.00    0.00     570/536871482     __gmpn_powm [22]
+                1.71    0.00 536870912/536871482     __gmpn_mul [9]
+[13]     2.4    1.71    0.00 536871482         __gmpn_mul_n [13]
+                0.00    0.00       0/0           mcount (210)
+                0.00    0.00       0/0           __gmpn_toom8h_mul [764]
                 0.00    0.00       0/0           __gmpn_mul_basecase [6]
-                0.00    0.00       0/0           __gmpn_toom33_mul [755]
-                0.00    0.00       0/0           __gmpn_toom22_mul [753]
-                0.00    0.00       0/0           __gmpn_toom44_mul [758]
-                0.00    0.00       0/0           __gmpn_nussbaumer_mul [24]
-                0.00    0.00       0/0           __gmpn_toom6h_mul [763]
-                0.00    0.00       0/0           __gmp_tmp_reentrant_free [650]
-                0.00    0.00       0/0           __gmp_tmp_reentrant_alloc [649]
+                0.00    0.00       0/0           __gmpn_toom33_mul [754]
+                0.00    0.00       0/0           __gmpn_toom22_mul [752]
+                0.00    0.00       0/0           __gmpn_toom44_mul [757]
+                0.00    0.00       0/0           __gmpn_nussbaumer_mul [25]
+                0.00    0.00       0/0           __gmpn_toom6h_mul [762]
+                0.00    0.00       0/0           __gmp_tmp_reentrant_free [649]
+                0.00    0.00       0/0           __gmp_tmp_reentrant_alloc [648]
                 0.00    0.00       0/0           __stack_chk_fail [882]
 -----------------------------------------------
                 0.00    0.00       0/0           write_gmon [357]
                 0.00    0.00       0/0           profil [251]
-[14]     2.1    1.58    0.00                 __profile_frequency [14]
+[14]     2.1    1.50    0.00                 __profile_frequency [14]
 -----------------------------------------------
-                0.00    0.00       0/0           __gmpn_toom42_mul [756]
-                0.00    0.00       0/0           __gmpn_toom_interpolate_7pts [776]
-                0.00    0.00       0/0           __gmpn_toom_interpolate_12pts [773]
-                0.00    0.00       0/0           __gmpn_toom_interpolate_16pts [774]
-                0.00    0.00       0/0           __gmpz_aorsmul_1 [365]
-[15]     0.7    0.54    0.00                 __gmpn_addmul_1 [15]
+                0.00    0.00       0/0           __gmpn_toom42_mul [755]
+                0.00    0.00       0/0           __gmpn_toom_interpolate_7pts [775]
+                0.00    0.00       0/0           __gmpn_toom_interpolate_12pts [772]
+                0.00    0.00       0/0           __gmpn_toom_interpolate_16pts [773]
+                0.00    0.00       0/0           __gmpz_aorsmul_1 [366]
+[15]     0.6    0.42    0.00                 __gmpn_addmul_1 [15]
 -----------------------------------------------
-                0.00    0.00       0/0           __gmpn_mod_1 [391]
-[16]     0.2    0.18    0.00                 __gmpn_mod_1s_4p_cps [16]
-                0.00    0.00       0/0           __gmpn_invert_limb [11]
+                0.00    0.00       0/0           __gmpn_nussbaumer_mul [25]
+[16]     0.2    0.14    0.00                 __gmpn_sqrmod_bnm1_next_size [16]
+                0.00    0.00       0/0           mcount (210)
+                0.00    0.00       0/0           __gmpn_fft_best_k [679]
+                0.00    0.00       0/0           __gmpn_fft_next_size [680]
 -----------------------------------------------
-                0.00    0.00       0/0           __gmpn_nussbaumer_mul [24]
-[17]     0.2    0.17    0.00                 __gmpn_sqrmod_bnm1_next_size [17]
-                0.00    0.00       0/0           mcount (211)
-                0.00    0.00       0/0           __gmpn_fft_best_k [680]
-                0.00    0.00       0/0           __gmpn_fft_next_size [681]
+                0.00    0.00       0/0           __gmpn_toom_interpolate_5pts [373]
+                0.00    0.00       0/0           __gmpn_toom_interpolate_6pts [774]
+                0.00    0.00       0/0           __gmpn_toom_interpolate_7pts [775]
+                0.00    0.00       0/0           __gmpn_toom_interpolate_8pts [776]
+                0.00    0.00       0/0           __gmpn_toom_interpolate_12pts [772]
+[17]     0.2    0.12    0.00                 __gmpn_bdiv_dbm1c [17]
 -----------------------------------------------
                                                  <spontaneous>
-[18]     0.2    0.16    0.00                 __gmpz_inits [18]
-                0.00    0.00       4/13          __gmp_default_allocate [374]
-                0.00    0.00       0/0           mcount (211)
+[18]     0.2    0.12    0.00                 __gmpz_inits [18]
+                0.00    0.00       4/13          __gmp_default_allocate [375]
+                0.00    0.00       0/0           mcount (210)
                 0.00    0.00       0/0           __stack_chk_fail [882]
 -----------------------------------------------
-                0.00    0.00       0/137         __gmpn_mul [9]
-                0.03    0.00      27/137         __gmpz_mul [7]
-                0.03    0.00      27/137         __gmpn_powm [25]
-                0.08    0.00      83/137         __gmpz_powm_ui [23]
-[19]     0.2    0.14    0.00     137         __gmpn_sqr [19]
+                0.00    0.00       0/65          __gmpn_mul [9]
+                0.04    0.00      27/65          __gmpz_mul [7]
+                0.06    0.00      38/65          __gmpn_powm [22]
+[19]     0.1    0.10    0.00      65         __gmpn_sqr [19]
                 0.00    0.00      22/22          __gmpn_toom3_sqr [372]
-                0.00    0.00       1/111         __gmpn_toom2_sqr [360]
-                0.00    0.00       0/0           mcount (211)
-                0.00    0.00       0/0           __gmpn_toom8_sqr [764]
-                0.00    0.00       0/0           __gmpn_sqr_basecase [745]
-                0.00    0.00       0/0           __gmpn_toom4_sqr [759]
-                0.00    0.00       0/0           __gmpn_nussbaumer_mul [24]
-                0.00    0.00       0/0           __gmpn_toom6_sqr [762]
-                0.00    0.00       0/0           __gmp_tmp_reentrant_free [650]
-                0.00    0.00       0/0           __gmp_tmp_reentrant_alloc [649]
+                0.00    0.00       1/111         __gmpn_toom2_sqr [362]
+                0.00    0.00       0/0           mcount (210)
+                0.00    0.00       0/0           __gmpn_toom8_sqr [763]
+                0.00    0.00       0/0           __gmpn_sqr_basecase [744]
+                0.00    0.00       0/0           __gmpn_toom4_sqr [758]
+                0.00    0.00       0/0           __gmpn_nussbaumer_mul [25]
+                0.00    0.00       0/0           __gmpn_toom6_sqr [761]
+                0.00    0.00       0/0           __gmp_tmp_reentrant_free [649]
+                0.00    0.00       0/0           __gmp_tmp_reentrant_alloc [648]
                 0.00    0.00       0/0           __stack_chk_fail [882]
 -----------------------------------------------
-                0.00    0.11       2/2           __gmpz_probab_prime_p [21]
-[20]     0.1    0.00    0.11       2         __gmpz_millerrabin [20]
-                0.00    0.08      83/83          __gmpz_powm_ui [23]
-                0.00    0.03      27/27          __gmpz_powm [26]
-                0.00    0.00     108/108         __gmpz_cmp [361]
-                0.00    0.00      86/95          __gmpz_cmp_ui [362]
+                0.00    0.00       0/0           __gmpn_mod_1 [383]
+[20]     0.1    0.10    0.00                 __gmpn_mod_1s_4p_cps [20]
+                0.00    0.00       0/0           __gmpn_invert_limb [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[21]     0.1    0.00    0.06                 __gmpz_probab_prime_p [21]
+                0.00    0.06      13/13          __gmpz_millerrabin [24]
+                0.01    0.00      16/16          __gmpz_sizeinbase [26]
+                0.00    0.00     130/168         __gmpz_cmp_ui [360]
+                0.00    0.00      61/61          __gmpn_preinv_mod_1 [364]
+                0.00    0.00       3/3           __gmpn_mod_1 [383]
+                0.00    0.00       0/0           mcount (210)
+                0.00    0.00       0/0           __gmpn_modexact_1_odd [712]
+                0.00    0.00       0/0           __gmpz_cmpabs_ui [779]
+                0.00    0.00       0/0           __stack_chk_fail [882]
+                0.00    0.00       0/0           __gmp_assert_fail [642]
+-----------------------------------------------
+                0.00    0.06      38/38          __gmpz_powm [23]
+[22]     0.1    0.00    0.06      38         __gmpn_powm [22]
+                0.06    0.00      38/65          __gmpn_sqr [19]
+                0.00    0.00      38/38          redcify [27]
+                0.00    0.00     570/536871482     __gmpn_mul_n [13]
+                0.00    0.00       0/0           mcount (210)
+                0.00    0.00       0/0           __gmpn_redc_n [733]
+                0.00    0.00       0/0           __gmpn_redc_2 [732]
+                0.00    0.00       0/0           __gmpn_redc_1 [731]
+                0.00    0.00       0/0           __stack_chk_fail [882]
+-----------------------------------------------
+                0.00    0.06      38/38          __gmpz_millerrabin [24]
+[23]     0.1    0.00    0.06      38         __gmpz_powm [23]
+                0.00    0.06      38/38          __gmpn_powm [22]
+                0.00    0.00      38/38          __gmpn_binvert_itch [368]
+                0.00    0.00       0/0           mcount (210)
+                0.00    0.00       0/0           __gmpn_rshift [740]
+                0.00    0.00       0/0           __gmpn_binvert [664]
+                0.00    0.00       0/0           __gmpn_mullo_n [723]
+                0.00    0.00       0/0           __gmpn_powlo [727]
+                0.00    0.00       0/0           __gmpn_add_n [650]
+                0.00    0.00       0/0           __gmpn_sub_n [748]
+                0.00    0.00       0/0           __gmpz_invert [782]
+                0.00    0.00       0/0           __stack_chk_fail [882]
+-----------------------------------------------
+                0.00    0.06      13/13          __gmpz_probab_prime_p [21]
+[24]     0.1    0.00    0.06      13         __gmpz_millerrabin [24]
+                0.00    0.06      38/38          __gmpz_powm [23]
+                0.00    0.00      38/168         __gmpz_cmp_ui [360]
                 0.00    0.00      25/25          __gmpz_urandomm [371]
                 0.00    0.00      25/26          __gmpz_add_ui [370]
-                0.00    0.00       3/4           __gmpz_sub_ui [380]
-                0.00    0.00       2/2           __gmpz_set_ui [385]
-                0.00    0.00       1/1           __gmpz_scan1 [395]
+                0.00    0.00      14/15          __gmpz_sub_ui [374]
+                0.00    0.00      13/13          __gmpz_set_ui [377]
+                0.00    0.00      13/13          __gmpz_cmp [376]
+                0.00    0.00       1/1           __gmpz_scan1 [394]
                 0.00    0.00       1/84          __gmpz_tdiv_q_2exp [363]
                 0.00    0.00       1/1           __gmp_randinit_mt [389]
                 0.00    0.00       1/1           __gmp_randinit_default [388]
-                0.00    0.00       1/12          __gmp_default_free [375]
+                0.00    0.00       1/12          __gmp_default_free [378]
                 0.00    0.00       1/1           __gmp_randclear_mt [387]
                 0.00    0.00       1/1           __gmp_randclear [386]
-                0.00    0.00       0/0           mcount (211)
-                0.00    0.00       0/0           __stack_chk_fail [882]
------------------------------------------------
-                                                 <spontaneous>
-[21]     0.1    0.00    0.11                 __gmpz_probab_prime_p [21]
-                0.00    0.11       2/2           __gmpz_millerrabin [20]
-                0.00    0.00       9/95          __gmpz_cmp_ui [362]
-                0.00    0.00       6/6           __gmpn_preinv_mod_1 [376]
-                0.00    0.00       3/3           __gmpz_sizeinbase [383]
-                0.00    0.00       1/1           __gmpn_mod_1 [391]
-                0.00    0.00       0/0           mcount (211)
-                0.00    0.00       0/0           __gmpn_modexact_1_odd [713]
-                0.00    0.00       0/0           __gmpz_cmpabs_ui [780]
-                0.00    0.00       0/0           __stack_chk_fail [882]
-                0.00    0.00       0/0           __gmp_assert_fail [643]
------------------------------------------------
-                0.00    0.00       0/0           __gmpn_toom_interpolate_5pts [373]
-                0.00    0.00       0/0           __gmpn_toom_interpolate_6pts [775]
-                0.00    0.00       0/0           __gmpn_toom_interpolate_7pts [776]
-                0.00    0.00       0/0           __gmpn_toom_interpolate_8pts [777]
-                0.00    0.00       0/0           __gmpn_toom_interpolate_12pts [773]
-[22]     0.1    0.09    0.00                 __gmpn_bdiv_dbm1c [22]
------------------------------------------------
-                0.00    0.08      83/83          __gmpz_millerrabin [20]
-[23]     0.1    0.00    0.08      83         __gmpz_powm_ui [23]
-                0.08    0.00      83/137         __gmpn_sqr [19]
-                0.00    0.00      83/83          mod [27]
-                0.00    0.00       0/0           mcount (211)
-                0.00    0.00       0/0           __gmpn_lshift [702]
-                0.00    0.00       0/0           __gmpn_rshift [741]
-                0.00    0.00       0/0           __gmpn_sub_n [749]
+                0.00    0.00       0/0           mcount (210)
+                0.00    0.00       0/0           __gmpz_powm_ui [783]
                 0.00    0.00       0/0           __stack_chk_fail [882]
 -----------------------------------------------
                 0.00    0.00       0/0           __gmpn_mul [9]
                 0.00    0.00       0/0           __gmpn_mul_n [13]
                 0.00    0.00       0/0           __gmpn_sqr [19]
-[24]     0.0    0.04    0.00                 __gmpn_nussbaumer_mul [24]
-                0.00    0.00       0/0           mcount (211)
-                0.00    0.00       0/0           __gmpn_sqrmod_bnm1_next_size [17]
-                0.00    0.00       0/0           __gmpn_sqrmod_bnm1 [748]
-                0.00    0.00       0/0           __gmp_tmp_reentrant_free [650]
-                0.00    0.00       0/27          __gmpn_mulmod_bnm1_next_size [369]
-                0.00    0.00       0/0           __gmpn_mulmod_bnm1 [725]
-                0.00    0.00       0/0           __gmp_tmp_reentrant_alloc [649]
+[25]     0.1    0.04    0.00                 __gmpn_nussbaumer_mul [25]
+                0.00    0.00       0/0           mcount (210)
+                0.00    0.00       0/0           __gmpn_sqrmod_bnm1_next_size [16]
+                0.00    0.00       0/0           __gmpn_sqrmod_bnm1 [747]
+                0.00    0.00       0/0           __gmp_tmp_reentrant_free [649]
+                0.00    0.00       0/38          __gmpn_mulmod_bnm1_next_size [369]
+                0.00    0.00       0/0           __gmpn_mulmod_bnm1 [724]
+                0.00    0.00       0/0           __gmp_tmp_reentrant_alloc [648]
                 0.00    0.00       0/0           __stack_chk_fail [882]
 -----------------------------------------------
-                0.00    0.03      27/27          __gmpz_powm [26]
-[25]     0.0    0.00    0.03      27         __gmpn_powm [25]
-                0.03    0.00      27/137         __gmpn_sqr [19]
-                0.00    0.00     405/536871317     __gmpn_mul_n [13]
-                0.00    0.00      27/27          redcify [28]
-                0.00    0.00       0/0           mcount (211)
-                0.00    0.00       0/0           __gmpn_redc_n [734]
-                0.00    0.00       0/0           __gmpn_redc_2 [733]
-                0.00    0.00       0/0           __gmpn_redc_1 [732]
+                0.01    0.00      16/16          __gmpz_probab_prime_p [21]
+[26]     0.0    0.01    0.00      16         __gmpz_sizeinbase [26]
+                0.00    0.00       0/0           mcount (210)
+-----------------------------------------------
+                0.00    0.00      38/38          __gmpn_powm [22]
+[27]     0.0    0.00    0.00      38         redcify [27]
+                0.00    0.00      38/536870950     __gmpn_tdiv_qr [4]
+                0.00    0.00       0/0           mcount (210)
                 0.00    0.00       0/0           __stack_chk_fail [882]
 -----------------------------------------------
-                0.00    0.03      27/27          __gmpz_millerrabin [20]
-[26]     0.0    0.00    0.03      27         __gmpz_powm [26]
-                0.00    0.03      27/27          __gmpn_powm [25]
-                0.00    0.00      27/27          __gmpn_binvert_itch [368]
-                0.00    0.00       0/0           mcount (211)
-                0.00    0.00       0/0           __gmpn_rshift [741]
-                0.00    0.00       0/0           __gmpn_binvert [665]
-                0.00    0.00       0/0           __gmpn_mullo_n [724]
-                0.00    0.00       0/0           __gmpn_powlo [728]
-                0.00    0.00       0/0           __gmpn_add_n [651]
-                0.00    0.00       0/0           __gmpn_sub_n [749]
-                0.00    0.00       0/0           __gmpz_invert [783]
-                0.00    0.00       0/0           __stack_chk_fail [882]
------------------------------------------------
-                0.00    0.00      83/83          __gmpz_powm_ui [23]
-[27]     0.0    0.00    0.00      83         mod [27]
-                0.00    0.00      83/536871020     __gmpn_sbpi1_div_qr [5]
-                0.00    0.00       0/0           mcount (211)
-                0.00    0.00       0/0           __gmpn_divrem_1 [678]
-                0.00    0.00       0/0           __gmpn_div_qr_2n_pi1 [675]
-                0.00    0.00       0/0           __stack_chk_fail [882]
------------------------------------------------
-                0.00    0.00      27/27          __gmpn_powm [25]
-[28]     0.0    0.00    0.00      27         redcify [28]
-                0.00    0.00      27/536870939     __gmpn_tdiv_qr [4]
-                0.00    0.00       0/0           mcount (211)
-                0.00    0.00       0/0           __stack_chk_fail [882]
------------------------------------------------
-                0.00    0.00       1/1           __gmp_randseed_ui [30]
-[29]     0.0    0.00    0.00       1         randseed_mt [29]
+                0.00    0.00       1/1           __gmp_randseed_ui [29]
+[28]     0.0    0.00    0.00       1         randseed_mt [28]
                 0.00    0.00      36/536870948     __gmpz_mul [7]
                 0.00    0.00       1/536870913     __gmpz_mod [2]
                 0.00    0.00      83/84          __gmpz_tdiv_q_2exp [363]
-                0.00    0.00      47/47          __gmpz_tdiv_r_2exp [366]
-                0.00    0.00      47/47          __gmpz_aorsmul_1 [365]
-                0.00    0.00      47/47          __gmpz_addmul_ui [364]
-                0.00    0.00       4/12          __gmp_default_free [375]
-                0.00    0.00       4/4           __gmpz_clear [379]
-                0.00    0.00       3/3           __gmpz_init2 [382]
-                0.00    0.00       3/3           __gmp_mt_recalc_buffer [381]
-                0.00    0.00       1/1           __gmpz_setbit [396]
-                0.00    0.00       1/4           __gmpz_sub_ui [380]
+                0.00    0.00      47/47          __gmpz_tdiv_r_2exp [367]
+                0.00    0.00      47/47          __gmpz_aorsmul_1 [366]
+                0.00    0.00      47/47          __gmpz_addmul_ui [365]
+                0.00    0.00       4/12          __gmp_default_free [378]
+                0.00    0.00       4/4           __gmpz_clear [382]
+                0.00    0.00       3/3           __gmpz_init2 [384]
+                0.00    0.00       3/4           __gmp_mt_recalc_buffer [381]
+                0.00    0.00       1/1           __gmpz_setbit [395]
+                0.00    0.00       1/15          __gmpz_sub_ui [374]
                 0.00    0.00       1/26          __gmpz_add_ui [370]
-                0.00    0.00       1/1           __gmpz_init_set [394]
-                0.00    0.00       1/1           __gmpz_tstbit [397]
-                0.00    0.00       1/1           __gmpz_clrbit [392]
-                0.00    0.00       1/1           __gmpz_export [393]
-                0.00    0.00       0/0           mcount (211)
+                0.00    0.00       1/1           __gmpz_init_set [393]
+                0.00    0.00       1/1           __gmpz_tstbit [396]
+                0.00    0.00       1/1           __gmpz_clrbit [391]
+                0.00    0.00       1/1           __gmpz_export [392]
+                0.00    0.00       0/0           mcount (210)
                 0.00    0.00       0/0           __stack_chk_fail [882]
 -----------------------------------------------
                                                  <spontaneous>
-[30]     0.0    0.00    0.00                 __gmp_randseed_ui [30]
-                0.00    0.00       1/1           randseed_mt [29]
+[29]     0.0    0.00    0.00                 __gmp_randseed_ui [29]
+                0.00    0.00       1/1           randseed_mt [28]
                 0.00    0.00       1/1           __gmp_randseed [390]
-                0.00    0.00       0/0           mcount (211)
+                0.00    0.00       0/0           mcount (210)
                 0.00    0.00       0/0           __stack_chk_fail [882]
 -----------------------------------------------
                 0.00    0.00       1/1           __libc_start_main [813]
-[31]     0.0    0.00    0.00       1         main [31]
+[30]     0.0    0.00    0.00       1         main [30]
 -----------------------------------------------
-                                 315             __gmpn_toom2_sqr [360]
-                0.00    0.00       0/111         __gmpn_toom6_sqr [762]
-                0.00    0.00       0/111         __gmpn_toom8_sqr [764]
+                0.00    0.00      38/168         __gmpz_millerrabin [24]
+                0.00    0.00     130/168         __gmpz_probab_prime_p [21]
+[360]    0.0    0.00    0.00     168         __gmpz_cmp_ui [360]
+                0.00    0.00       0/0           mcount (210)
+-----------------------------------------------
+                0.00    0.00      26/158         __gmpz_urandomm [371]
+                0.00    0.00     132/158         __gmpz_urandomb [787]
+[361]    0.0    0.00    0.00     158         __gmp_randget_mt [361]
+                0.00    0.00       1/4           __gmp_mt_recalc_buffer [381]
+                0.00    0.00       0/0           mcount (210)
+-----------------------------------------------
+                                 315             __gmpn_toom2_sqr [362]
+                0.00    0.00       0/111         __gmpn_toom6_sqr [761]
+                0.00    0.00       0/111         __gmpn_toom8_sqr [763]
                 0.00    0.00       1/111         __gmpn_sqr [19]
                 0.00    0.00     110/111         __gmpn_toom3_sqr [372]
-[360]    0.0    0.00    0.00     111+315     __gmpn_toom2_sqr [360]
-                0.00    0.00       0/0           mcount (211)
-                0.00    0.00       0/0           __gmpn_sub_n [749]
-                0.00    0.00       0/0           __gmpn_add_n [651]
-                                 315             __gmpn_toom2_sqr [360]
+[362]    0.0    0.00    0.00     111+315     __gmpn_toom2_sqr [362]
+                0.00    0.00       0/0           mcount (210)
+                0.00    0.00       0/0           __gmpn_sub_n [748]
+                0.00    0.00       0/0           __gmpn_add_n [650]
+                                 315             __gmpn_toom2_sqr [362]
 -----------------------------------------------
-                0.00    0.00     108/108         __gmpz_millerrabin [20]
-[361]    0.0    0.00    0.00     108         __gmpz_cmp [361]
-                0.00    0.00       0/0           mcount (211)
------------------------------------------------
-                0.00    0.00       9/95          __gmpz_probab_prime_p [21]
-                0.00    0.00      86/95          __gmpz_millerrabin [20]
-[362]    0.0    0.00    0.00      95         __gmpz_cmp_ui [362]
-                0.00    0.00       0/0           mcount (211)
------------------------------------------------
-                0.00    0.00       1/84          __gmpz_millerrabin [20]
-                0.00    0.00      83/84          randseed_mt [29]
+                0.00    0.00       1/84          __gmpz_millerrabin [24]
+                0.00    0.00      83/84          randseed_mt [28]
 [363]    0.0    0.00    0.00      84         __gmpz_tdiv_q_2exp [363]
-                0.00    0.00       1/5           __gmpz_realloc [378]
-                0.00    0.00       0/0           mcount (211)
-                0.00    0.00       0/0           __gmpn_rshift [741]
+                0.00    0.00       1/5           __gmpz_realloc [380]
+                0.00    0.00       0/0           mcount (210)
+                0.00    0.00       0/0           __gmpn_rshift [740]
 -----------------------------------------------
-                0.00    0.00      47/47          randseed_mt [29]
-[364]    0.0    0.00    0.00      47         __gmpz_addmul_ui [364]
-                0.00    0.00       0/0           mcount (211)
+                0.00    0.00      61/61          __gmpz_probab_prime_p [21]
+[364]    0.0    0.00    0.00      61         __gmpn_preinv_mod_1 [364]
+                0.00    0.00       0/0           mcount (210)
 -----------------------------------------------
-                0.00    0.00      47/47          randseed_mt [29]
-[365]    0.0    0.00    0.00      47         __gmpz_aorsmul_1 [365]
-                0.00    0.00       0/0           mcount (211)
+                0.00    0.00      47/47          randseed_mt [28]
+[365]    0.0    0.00    0.00      47         __gmpz_addmul_ui [365]
+                0.00    0.00       0/0           mcount (210)
+-----------------------------------------------
+                0.00    0.00      47/47          randseed_mt [28]
+[366]    0.0    0.00    0.00      47         __gmpz_aorsmul_1 [366]
+                0.00    0.00       0/0           mcount (210)
                 0.00    0.00       0/0           __gmpn_addmul_1 [15]
                 0.00    0.00       0/0           __gmpn_submul_1 [8]
-                0.00    0.00       0/0           __gmpn_com [666]
+                0.00    0.00       0/0           __gmpn_com [665]
 -----------------------------------------------
-                0.00    0.00      47/47          randseed_mt [29]
-[366]    0.0    0.00    0.00      47         __gmpz_tdiv_r_2exp [366]
-                0.00    0.00       0/0           mcount (211)
+                0.00    0.00      47/47          randseed_mt [28]
+[367]    0.0    0.00    0.00      47         __gmpz_tdiv_r_2exp [367]
+                0.00    0.00       0/0           mcount (210)
 -----------------------------------------------
-                0.00    0.00      11/36          __gmpz_urandomb [787]
-                0.00    0.00      25/36          __gmpz_urandomm [371]
-[367]    0.0    0.00    0.00      36         __gmp_randget_mt [367]
-                0.00    0.00       0/0           mcount (211)
+                0.00    0.00      38/38          __gmpz_powm [23]
+[368]    0.0    0.00    0.00      38         __gmpn_binvert_itch [368]
+                0.00    0.00      38/38          __gmpn_mulmod_bnm1_next_size [369]
+                0.00    0.00       0/0           mcount (210)
 -----------------------------------------------
-                0.00    0.00      27/27          __gmpz_powm [26]
-[368]    0.0    0.00    0.00      27         __gmpn_binvert_itch [368]
-                0.00    0.00      27/27          __gmpn_mulmod_bnm1_next_size [369]
-                0.00    0.00       0/0           mcount (211)
+                0.00    0.00       0/38          __gmpn_nussbaumer_mul [25]
+                0.00    0.00      38/38          __gmpn_binvert_itch [368]
+[369]    0.0    0.00    0.00      38         __gmpn_mulmod_bnm1_next_size [369]
+                0.00    0.00       0/0           mcount (210)
+                0.00    0.00       0/0           __gmpn_fft_best_k [679]
+                0.00    0.00       0/0           __gmpn_fft_next_size [680]
 -----------------------------------------------
-                0.00    0.00       0/27          __gmpn_nussbaumer_mul [24]
-                0.00    0.00      27/27          __gmpn_binvert_itch [368]
-[369]    0.0    0.00    0.00      27         __gmpn_mulmod_bnm1_next_size [369]
-                0.00    0.00       0/0           mcount (211)
-                0.00    0.00       0/0           __gmpn_fft_best_k [680]
-                0.00    0.00       0/0           __gmpn_fft_next_size [681]
------------------------------------------------
-                0.00    0.00       1/26          randseed_mt [29]
-                0.00    0.00      25/26          __gmpz_millerrabin [20]
+                0.00    0.00       1/26          randseed_mt [28]
+                0.00    0.00      25/26          __gmpz_millerrabin [24]
 [370]    0.0    0.00    0.00      26         __gmpz_add_ui [370]
-                0.00    0.00       0/0           mcount (211)
+                0.00    0.00       0/0           mcount (210)
 -----------------------------------------------
-                0.00    0.00      25/25          __gmpz_millerrabin [20]
+                0.00    0.00      25/25          __gmpz_millerrabin [24]
 [371]    0.0    0.00    0.00      25         __gmpz_urandomm [371]
-                0.00    0.00      25/36          __gmp_randget_mt [367]
-                0.00    0.00       0/0           mcount (211)
-                0.00    0.00       0/0           __gmpn_sub_n [749]
+                0.00    0.00      26/158         __gmp_randget_mt [361]
+                0.00    0.00       0/0           mcount (210)
+                0.00    0.00       0/0           __gmpn_sub_n [748]
                 0.00    0.00       0/0           __stack_chk_fail [882]
 -----------------------------------------------
-                0.00    0.00       0/22          __gmpn_toom8_sqr [764]
+                0.00    0.00       0/22          __gmpn_toom8_sqr [763]
                 0.00    0.00      22/22          __gmpn_sqr [19]
 [372]    0.0    0.00    0.00      22         __gmpn_toom3_sqr [372]
-                0.00    0.00     110/111         __gmpn_toom2_sqr [360]
+                0.00    0.00     110/111         __gmpn_toom2_sqr [362]
                 0.00    0.00      22/22          __gmpn_toom_interpolate_5pts [373]
-                0.00    0.00       0/0           mcount (211)
-                0.00    0.00       0/0           __gmpn_add_n [651]
-                0.00    0.00       0/0           __gmpn_sub_n [749]
-                0.00    0.00       0/0           __gmpn_rsblsh1_n [735]
+                0.00    0.00       0/0           mcount (210)
+                0.00    0.00       0/0           __gmpn_add_n [650]
+                0.00    0.00       0/0           __gmpn_sub_n [748]
+                0.00    0.00       0/0           __gmpn_rsblsh1_n [734]
 -----------------------------------------------
-                0.00    0.00       0/22          __gmpn_toom42_mul [756]
-                0.00    0.00       0/22          __gmpn_toom33_mul [755]
+                0.00    0.00       0/22          __gmpn_toom42_mul [755]
+                0.00    0.00       0/22          __gmpn_toom33_mul [754]
                 0.00    0.00      22/22          __gmpn_toom3_sqr [372]
 [373]    0.0    0.00    0.00      22         __gmpn_toom_interpolate_5pts [373]
-                0.00    0.00       0/0           mcount (211)
-                0.00    0.00       0/0           __gmpn_add_n [651]
-                0.00    0.00       0/0           __gmpn_bdiv_dbm1c [22]
-                0.00    0.00       0/0           __gmpn_rsh1add_n [737]
-                0.00    0.00       0/0           __gmpn_sub_n [749]
-                0.00    0.00       0/0           __gmpn_rsh1sub_n [739]
-                0.00    0.00       0/0           __gmpn_sublsh1_n [751]
+                0.00    0.00       0/0           mcount (210)
+                0.00    0.00       0/0           __gmpn_add_n [650]
+                0.00    0.00       0/0           __gmpn_bdiv_dbm1c [17]
+                0.00    0.00       0/0           __gmpn_rsh1add_n [736]
+                0.00    0.00       0/0           __gmpn_sub_n [748]
+                0.00    0.00       0/0           __gmpn_rsh1sub_n [738]
+                0.00    0.00       0/0           __gmpn_sublsh1_n [750]
 -----------------------------------------------
-                0.00    0.00       1/13          __gmpz_init_set [394]
-                0.00    0.00       2/13          __gmp_randinit_mt_noseed [384]
+                0.00    0.00       1/15          randseed_mt [28]
+                0.00    0.00      14/15          __gmpz_millerrabin [24]
+[374]    0.0    0.00    0.00      15         __gmpz_sub_ui [374]
+                0.00    0.00       1/5           __gmpz_realloc [380]
+                0.00    0.00       0/0           mcount (210)
+-----------------------------------------------
+                0.00    0.00       1/13          __gmpz_init_set [393]
+                0.00    0.00       2/13          __gmp_randinit_mt_noseed [385]
                 0.00    0.00       3/13          __gmpz_mul [7]
-                0.00    0.00       3/13          __gmpz_init2 [382]
+                0.00    0.00       3/13          __gmpz_init2 [384]
                 0.00    0.00       4/13          __gmpz_inits [18]
-[374]    0.0    0.00    0.00      13         __gmp_default_allocate [374]
-                0.00    0.00       0/0           mcount (211)
-                0.00    0.00       0/0           malloc [194]
-                0.00    0.00       0/0           __fprintf_chk [595]
-                0.00    0.00       0/0           abort [35]
+[375]    0.0    0.00    0.00      13         __gmp_default_allocate [375]
+                0.00    0.00       0/0           mcount (210)
+                0.00    0.00       0/0           malloc [193]
+                0.00    0.00       0/0           __fprintf_chk [594]
+                0.00    0.00       0/0           abort [34]
 -----------------------------------------------
-                0.00    0.00       1/12          __gmpz_millerrabin [20]
+                0.00    0.00      13/13          __gmpz_millerrabin [24]
+[376]    0.0    0.00    0.00      13         __gmpz_cmp [376]
+                0.00    0.00       0/0           mcount (210)
+-----------------------------------------------
+                0.00    0.00      13/13          __gmpz_millerrabin [24]
+[377]    0.0    0.00    0.00      13         __gmpz_set_ui [377]
+                0.00    0.00       0/0           mcount (210)
+-----------------------------------------------
+                0.00    0.00       1/12          __gmpz_millerrabin [24]
                 0.00    0.00       3/12          __gmpz_mul [7]
-                0.00    0.00       4/12          __gmpz_clears [779]
-                0.00    0.00       4/12          randseed_mt [29]
-[375]    0.0    0.00    0.00      12         __gmp_default_free [375]
-                0.00    0.00       0/0           mcount (211)
+                0.00    0.00       4/12          __gmpz_clears [778]
+                0.00    0.00       4/12          randseed_mt [28]
+[378]    0.0    0.00    0.00      12         __gmp_default_free [378]
+                0.00    0.00       0/0           mcount (210)
 -----------------------------------------------
-                0.00    0.00       6/6           __gmpz_probab_prime_p [21]
-[376]    0.0    0.00    0.00       6         __gmpn_preinv_mod_1 [376]
-                0.00    0.00       0/0           mcount (211)
------------------------------------------------
-                0.00    0.00       5/5           __gmpz_realloc [378]
-[377]    0.0    0.00    0.00       5         __gmp_default_reallocate [377]
-                0.00    0.00       0/0           mcount (211)
+                0.00    0.00       5/5           __gmpz_realloc [380]
+[379]    0.0    0.00    0.00       5         __gmp_default_reallocate [379]
+                0.00    0.00       0/0           mcount (210)
                 0.00    0.00       0/0           realloc [268]
-                0.00    0.00       0/0           __fprintf_chk [595]
-                0.00    0.00       0/0           abort [35]
+                0.00    0.00       0/0           __fprintf_chk [594]
+                0.00    0.00       0/0           abort [34]
 -----------------------------------------------
                 0.00    0.00       0/5           __gmpz_mul [7]
-                0.00    0.00       1/5           __gmpz_sub_ui [380]
+                0.00    0.00       1/5           __gmpz_sub_ui [374]
                 0.00    0.00       1/5           __gmpz_tdiv_q_2exp [363]
                 0.00    0.00       3/5           __gmpz_urandomb [787]
-[378]    0.0    0.00    0.00       5         __gmpz_realloc [378]
-                0.00    0.00       5/5           __gmp_default_reallocate [377]
-                0.00    0.00       0/0           mcount (211)
-                0.00    0.00       0/0           fwrite [148]
-                0.00    0.00       0/0           abort [35]
+[380]    0.0    0.00    0.00       5         __gmpz_realloc [380]
+                0.00    0.00       5/5           __gmp_default_reallocate [379]
+                0.00    0.00       0/0           mcount (210)
+                0.00    0.00       0/0           fwrite [147]
+                0.00    0.00       0/0           abort [34]
 -----------------------------------------------
-                0.00    0.00       4/4           randseed_mt [29]
-[379]    0.0    0.00    0.00       4         __gmpz_clear [379]
-                0.00    0.00       0/0           mcount (211)
+                0.00    0.00       1/4           __gmp_randget_mt [361]
+                0.00    0.00       3/4           randseed_mt [28]
+[381]    0.0    0.00    0.00       4         __gmp_mt_recalc_buffer [381]
+                0.00    0.00       0/0           mcount (210)
 -----------------------------------------------
-                0.00    0.00       1/4           randseed_mt [29]
-                0.00    0.00       3/4           __gmpz_millerrabin [20]
-[380]    0.0    0.00    0.00       4         __gmpz_sub_ui [380]
-                0.00    0.00       1/5           __gmpz_realloc [378]
-                0.00    0.00       0/0           mcount (211)
------------------------------------------------
-                0.00    0.00       3/3           randseed_mt [29]
-[381]    0.0    0.00    0.00       3         __gmp_mt_recalc_buffer [381]
-                0.00    0.00       0/0           mcount (211)
------------------------------------------------
-                0.00    0.00       3/3           randseed_mt [29]
-[382]    0.0    0.00    0.00       3         __gmpz_init2 [382]
-                0.00    0.00       3/13          __gmp_default_allocate [374]
-                0.00    0.00       0/0           mcount (211)
-                0.00    0.00       0/0           fwrite [148]
-                0.00    0.00       0/0           abort [35]
+                0.00    0.00       4/4           randseed_mt [28]
+[382]    0.0    0.00    0.00       4         __gmpz_clear [382]
+                0.00    0.00       0/0           mcount (210)
 -----------------------------------------------
                 0.00    0.00       3/3           __gmpz_probab_prime_p [21]
-[383]    0.0    0.00    0.00       3         __gmpz_sizeinbase [383]
-                0.00    0.00       0/0           mcount (211)
+[383]    0.0    0.00    0.00       3         __gmpn_mod_1 [383]
+                0.00    0.00       0/0           mcount (210)
+                0.00    0.00       0/0           __gmpn_mod_1s_4p_cps [20]
+                0.00    0.00       0/0           __gmpn_mod_1s_4p [711]
+                0.00    0.00       0/0           __gmpn_invert_limb [11]
+                0.00    0.00       0/0           __gmpn_mod_1s_2p_cps [710]
+                0.00    0.00       0/0           __gmpn_mod_1s_2p [709]
+                0.00    0.00       0/0           __gmpn_mod_1_1p_cps [708]
+                0.00    0.00       0/0           __gmpn_mod_1_1p [707]
+                0.00    0.00       0/0           __stack_chk_fail [882]
+-----------------------------------------------
+                0.00    0.00       3/3           randseed_mt [28]
+[384]    0.0    0.00    0.00       3         __gmpz_init2 [384]
+                0.00    0.00       3/13          __gmp_default_allocate [375]
+                0.00    0.00       0/0           mcount (210)
+                0.00    0.00       0/0           fwrite [147]
+                0.00    0.00       0/0           abort [34]
 -----------------------------------------------
                 0.00    0.00       2/2           __gmp_randinit_mt [389]
-[384]    0.0    0.00    0.00       2         __gmp_randinit_mt_noseed [384]
-                0.00    0.00       2/13          __gmp_default_allocate [374]
-                0.00    0.00       0/0           mcount (211)
+[385]    0.0    0.00    0.00       2         __gmp_randinit_mt_noseed [385]
+                0.00    0.00       2/13          __gmp_default_allocate [375]
+                0.00    0.00       0/0           mcount (210)
 -----------------------------------------------
-                0.00    0.00       2/2           __gmpz_millerrabin [20]
-[385]    0.0    0.00    0.00       2         __gmpz_set_ui [385]
-                0.00    0.00       0/0           mcount (211)
------------------------------------------------
-                0.00    0.00       1/1           __gmpz_millerrabin [20]
+                0.00    0.00       1/1           __gmpz_millerrabin [24]
 [386]    0.0    0.00    0.00       1         __gmp_randclear [386]
-                0.00    0.00       0/0           mcount (211)
+                0.00    0.00       0/0           mcount (210)
 -----------------------------------------------
-                0.00    0.00       1/1           __gmpz_millerrabin [20]
+                0.00    0.00       1/1           __gmpz_millerrabin [24]
 [387]    0.0    0.00    0.00       1         __gmp_randclear_mt [387]
-                0.00    0.00       0/0           mcount (211)
+                0.00    0.00       0/0           mcount (210)
 -----------------------------------------------
-                0.00    0.00       1/1           __gmpz_millerrabin [20]
+                0.00    0.00       1/1           __gmpz_millerrabin [24]
 [388]    0.0    0.00    0.00       1         __gmp_randinit_default [388]
-                0.00    0.00       0/0           mcount (211)
+                0.00    0.00       0/0           mcount (210)
 -----------------------------------------------
-                0.00    0.00       1/1           __gmpz_millerrabin [20]
+                0.00    0.00       1/1           __gmpz_millerrabin [24]
 [389]    0.0    0.00    0.00       1         __gmp_randinit_mt [389]
-                0.00    0.00       2/2           __gmp_randinit_mt_noseed [384]
-                0.00    0.00       0/0           mcount (211)
+                0.00    0.00       2/2           __gmp_randinit_mt_noseed [385]
+                0.00    0.00       0/0           mcount (210)
 -----------------------------------------------
-                0.00    0.00       1/1           __gmp_randseed_ui [30]
+                0.00    0.00       1/1           __gmp_randseed_ui [29]
 [390]    0.0    0.00    0.00       1         __gmp_randseed [390]
-                0.00    0.00       0/0           mcount (211)
+                0.00    0.00       0/0           mcount (210)
 -----------------------------------------------
-                0.00    0.00       1/1           __gmpz_probab_prime_p [21]
-[391]    0.0    0.00    0.00       1         __gmpn_mod_1 [391]
-                0.00    0.00       0/0           mcount (211)
-                0.00    0.00       0/0           __gmpn_mod_1s_4p_cps [16]
-                0.00    0.00       0/0           __gmpn_mod_1s_4p [712]
-                0.00    0.00       0/0           __gmpn_invert_limb [11]
-                0.00    0.00       0/0           __gmpn_mod_1s_2p_cps [711]
-                0.00    0.00       0/0           __gmpn_mod_1s_2p [710]
-                0.00    0.00       0/0           __gmpn_mod_1_1p_cps [709]
-                0.00    0.00       0/0           __gmpn_mod_1_1p [708]
+                0.00    0.00       1/1           randseed_mt [28]
+[391]    0.0    0.00    0.00       1         __gmpz_clrbit [391]
+                0.00    0.00       0/0           mcount (210)
+-----------------------------------------------
+                0.00    0.00       1/1           randseed_mt [28]
+[392]    0.0    0.00    0.00       1         __gmpz_export [392]
+                0.00    0.00       0/0           mcount (210)
                 0.00    0.00       0/0           __stack_chk_fail [882]
 -----------------------------------------------
-                0.00    0.00       1/1           randseed_mt [29]
-[392]    0.0    0.00    0.00       1         __gmpz_clrbit [392]
-                0.00    0.00       0/0           mcount (211)
+                0.00    0.00       1/1           randseed_mt [28]
+[393]    0.0    0.00    0.00       1         __gmpz_init_set [393]
+                0.00    0.00       1/13          __gmp_default_allocate [375]
+                0.00    0.00       0/0           mcount (210)
 -----------------------------------------------
-                0.00    0.00       1/1           randseed_mt [29]
-[393]    0.0    0.00    0.00       1         __gmpz_export [393]
-                0.00    0.00       0/0           mcount (211)
-                0.00    0.00       0/0           __stack_chk_fail [882]
+                0.00    0.00       1/1           __gmpz_millerrabin [24]
+[394]    0.0    0.00    0.00       1         __gmpz_scan1 [394]
+                0.00    0.00       0/0           mcount (210)
 -----------------------------------------------
-                0.00    0.00       1/1           randseed_mt [29]
-[394]    0.0    0.00    0.00       1         __gmpz_init_set [394]
-                0.00    0.00       1/13          __gmp_default_allocate [374]
-                0.00    0.00       0/0           mcount (211)
+                0.00    0.00       1/1           randseed_mt [28]
+[395]    0.0    0.00    0.00       1         __gmpz_setbit [395]
+                0.00    0.00       0/0           mcount (210)
 -----------------------------------------------
-                0.00    0.00       1/1           __gmpz_millerrabin [20]
-[395]    0.0    0.00    0.00       1         __gmpz_scan1 [395]
-                0.00    0.00       0/0           mcount (211)
------------------------------------------------
-                0.00    0.00       1/1           randseed_mt [29]
-[396]    0.0    0.00    0.00       1         __gmpz_setbit [396]
-                0.00    0.00       0/0           mcount (211)
------------------------------------------------
-                0.00    0.00       1/1           randseed_mt [29]
-[397]    0.0    0.00    0.00       1         __gmpz_tstbit [397]
-                0.00    0.00       0/0           mcount (211)
+                0.00    0.00       1/1           randseed_mt [28]
+[396]    0.0    0.00    0.00       1         __gmpz_tstbit [396]
+                0.00    0.00       0/0           mcount (210)
 -----------------------------------------------
 
 Index by function name
 
- [374] __gmp_default_allocate [25] __gmpn_powm             [7] __gmpz_mul
- [375] __gmp_default_free    [376] __gmpn_preinv_mod_1    [26] __gmpz_powm
- [377] __gmp_default_reallocate [5] __gmpn_sbpi1_div_qr   [23] __gmpz_powm_ui
- [381] __gmp_mt_recalc_buffer [19] __gmpn_sqr            [378] __gmpz_realloc
- [386] __gmp_randclear        [17] __gmpn_sqrmod_bnm1_next_size [395] __gmpz_scan1
- [387] __gmp_randclear_mt      [8] __gmpn_submul_1       [385] __gmpz_set_ui
- [367] __gmp_randget_mt        [4] __gmpn_tdiv_qr        [396] __gmpz_setbit
- [388] __gmp_randinit_default [360] __gmpn_toom2_sqr     [383] __gmpz_sizeinbase
- [389] __gmp_randinit_mt     [372] __gmpn_toom3_sqr      [380] __gmpz_sub_ui
- [384] __gmp_randinit_mt_noseed [373] __gmpn_toom_interpolate_5pts [363] __gmpz_tdiv_q_2exp
- [390] __gmp_randseed        [370] __gmpz_add_ui           [3] __gmpz_tdiv_r
-  [15] __gmpn_addmul_1       [364] __gmpz_addmul_ui      [366] __gmpz_tdiv_r_2exp
-  [22] __gmpn_bdiv_dbm1c     [365] __gmpz_aorsmul_1      [397] __gmpz_tstbit
- [368] __gmpn_binvert_itch   [379] __gmpz_clear          [371] __gmpz_urandomm
-  [10] __gmpn_copyi          [392] __gmpz_clrbit          [14] __profile_frequency
-  [11] __gmpn_invert_limb    [361] __gmpz_cmp             [12] __writev_nocancel
- [391] __gmpn_mod_1          [362] __gmpz_cmp_ui          [31] main
-  [16] __gmpn_mod_1s_4p_cps  [393] __gmpz_export          [27] mod
-   [9] __gmpn_mul            [382] __gmpz_init2            [1] mult
-   [6] __gmpn_mul_basecase   [394] __gmpz_init_set        [29] randseed_mt
-  [13] __gmpn_mul_n           [18] __gmpz_inits           [28] redcify
- [369] __gmpn_mulmod_bnm1_next_size [20] __gmpz_millerrabin
-  [24] __gmpn_nussbaumer_mul   [2] __gmpz_mod
+ [375] __gmp_default_allocate [25] __gmpn_nussbaumer_mul  [24] __gmpz_millerrabin
+ [378] __gmp_default_free     [22] __gmpn_powm             [2] __gmpz_mod
+ [379] __gmp_default_reallocate [364] __gmpn_preinv_mod_1  [7] __gmpz_mul
+ [381] __gmp_mt_recalc_buffer  [5] __gmpn_sbpi1_div_qr    [23] __gmpz_powm
+ [386] __gmp_randclear        [19] __gmpn_sqr            [380] __gmpz_realloc
+ [387] __gmp_randclear_mt     [16] __gmpn_sqrmod_bnm1_next_size [394] __gmpz_scan1
+ [361] __gmp_randget_mt        [8] __gmpn_submul_1       [377] __gmpz_set_ui
+ [388] __gmp_randinit_default  [4] __gmpn_tdiv_qr        [395] __gmpz_setbit
+ [389] __gmp_randinit_mt     [362] __gmpn_toom2_sqr       [26] __gmpz_sizeinbase
+ [385] __gmp_randinit_mt_noseed [372] __gmpn_toom3_sqr   [374] __gmpz_sub_ui
+ [390] __gmp_randseed        [373] __gmpn_toom_interpolate_5pts [363] __gmpz_tdiv_q_2exp
+  [15] __gmpn_addmul_1       [370] __gmpz_add_ui           [3] __gmpz_tdiv_r
+  [17] __gmpn_bdiv_dbm1c     [365] __gmpz_addmul_ui      [367] __gmpz_tdiv_r_2exp
+ [368] __gmpn_binvert_itch   [366] __gmpz_aorsmul_1      [396] __gmpz_tstbit
+  [10] __gmpn_copyi          [382] __gmpz_clear          [371] __gmpz_urandomm
+  [11] __gmpn_invert_limb    [391] __gmpz_clrbit          [14] __profile_frequency
+ [383] __gmpn_mod_1          [376] __gmpz_cmp             [12] __writev_nocancel
+  [20] __gmpn_mod_1s_4p_cps  [360] __gmpz_cmp_ui          [30] main
+   [9] __gmpn_mul            [392] __gmpz_export           [1] mult
+   [6] __gmpn_mul_basecase   [384] __gmpz_init2           [28] randseed_mt
+  [13] __gmpn_mul_n          [393] __gmpz_init_set        [27] redcify
+ [369] __gmpn_mulmod_bnm1_next_size [18] __gmpz_inits
