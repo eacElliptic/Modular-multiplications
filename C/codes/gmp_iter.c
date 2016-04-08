@@ -47,7 +47,7 @@ int main(void){
   }while(!found);
   
   
-  nbiter = (1 << 29); 
+  nbiter = (1 << 28); 
   mult();
 
   printf("\nOpérations effectuées\n");
