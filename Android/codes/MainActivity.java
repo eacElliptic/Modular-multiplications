@@ -43,7 +43,7 @@ public class MainActivity extends Activity implements SeekBar.OnSeekBarChangeLis
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
         nbiter = (1 << progress);
-        iteration.setText(String.valueOf(progress + 1)); // les opérations sont effectuées deux fois dans mult et add
+        iteration.setText(String.valueOf(progress + 1)); 
     }
 
 
@@ -55,9 +55,13 @@ public class MainActivity extends Activity implements SeekBar.OnSeekBarChangeLis
         int selectedId = radioGroup.getCheckedRadioButtonId();
         radioButton = (RadioButton) findViewById(selectedId);
 
+		// Generation of a (proba) prime number of size "size" bits. 
         p = BigInteger.probablePrime(size, rg);
+        
+		// Generation of two integers of values between 0 and (2^size-1).
         a = new BigInteger(size, rg);
         b = new BigInteger(size, rg);
+        
         a = a.mod(p);
         b = b.mod(p);
 
@@ -70,16 +74,16 @@ public class MainActivity extends Activity implements SeekBar.OnSeekBarChangeLis
         String traceName;
         if (radioButton.getText().toString().equals("multiplication")) {
             traceName = "perfMul_" + size + "_" + log2_nbIter;
-            Debug.startMethodTracing(traceName, 600 * 1024 * 1024);
+            Debug.startMethodTracing(traceName, 600 * 1024 * 1024);  	 // Start trace recording
             mult();
-            Debug.stopMethodTracing();
-            Toast.makeText(this, "multiplications terminées", Toast.LENGTH_LONG).show();
+            Debug.stopMethodTracing();   );  							 // Stop trace recording
+            Toast.makeText(this, "multiplications completed", Toast.LENGTH_LONG).show();
         } else {
             traceName = "perfAdd_" + size + "_" + log2_nbIter;
-            Debug.startMethodTracing(traceName, 700 * 1024 * 1024);
+            Debug.startMethodTracing(traceName, 700 * 1024 * 1024);      // Start trace recording
             add();
-            Debug.stopMethodTracing();
-            Toast.makeText(this, "additions terminées", Toast.LENGTH_LONG).show();
+            Debug.stopMethodTracing();									 // Stop trace recording
+            Toast.makeText(this, "additions completed", Toast.LENGTH_LONG).show();
         }
 
         System.gc();
@@ -88,20 +92,25 @@ public class MainActivity extends Activity implements SeekBar.OnSeekBarChangeLis
 
 
     /***********************************************/
-
+/*
+ * This function computes "2*nbiter" multiplications and modular reductions.
+ * */
     public void mult() {
         for (j = 1; j <= nbiter; j++) {
-            a = a.multiply(b);
-            a = a.mod(p);
+            a = a.multiply(b);   // compute: a = a*b
+            a = a.mod(p);        // compute: a = a%p
             b = b.multiply(a);
             b = b.mod(p);
         }
     }
 
+/*
+ * This function computes "2*nbiter" additions and modular reductions.
+ * */
     public void add() {
         for (j = 1; j <= nbiter; j++) {
-            a = a.add(b);
-            a = a.mod(p);
+            a = a.add(b);     // compute: a = a+b
+            a = a.mod(p);     // compute: a = a%p
             b = b.add(a);
             b = b.mod(p);
         }

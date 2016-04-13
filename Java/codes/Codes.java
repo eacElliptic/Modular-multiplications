@@ -3,14 +3,11 @@ package perfmult;
 import java.math.BigInteger;
 import java.security.SecureRandom;
 
-/**
- * Created by bri on 10/03/16.
- **/
 
 public class Codes {
 
 
-    private int  nbiter, size;
+    private int  nbiter;
     private BigInteger a, b, p;
     private SecureRandom rg;
 
@@ -21,35 +18,38 @@ public class Codes {
 
     public void go(int pSize, int pNbiter) {
 
+		// Generation of a (proba) prime number of size pSize bits. 
         p = BigInteger.probablePrime(pSize, rg);
+        
+        // Generation of two integers of size pSize bits.
         a = new BigInteger(pSize, rg);
         b = new BigInteger(pSize, rg);
+        a.setBit(pSize - 1);
+        b.setBit(pSize - 1);
        
         a = a.mod(p);
         b = b.mod(p);
         
         nbiter = pNbiter;
         
-        size = pSize - 1;
-        a.setBit(size);
-        b.setBit(size);
-        
         
         mult();
         
 //        add();
 
-        System.out.println("Opérations terminées");
+        System.out.println("Finished");
 
         System.gc();
     }
 
-
+/*
+ * This function computes "2*nbiter" multiplications and modular reductions.
+ * */
     public void mult() {
         int j;
         for (j = 1; j <= nbiter; j++) {
-            a = a.multiply(b);
-            a = a.mod(p);
+            a = a.multiply(b);      // compute: a = a*b
+            a = a.mod(p);			// compute: a = a%p
                
             b = b.multiply(a);
             b = b.mod(p);
@@ -57,11 +57,14 @@ public class Codes {
         }
     }
 
+/*
+ * This function computes "2*nbiter" additions and modular reductions.
+ * */
     public void add() {
         int j;
         for (j = 1; j <= nbiter; j++) {
-            a = a.add(b);
-            a = a.mod(p);
+            a = a.add(b);			// compute: a = a+b
+            a = a.mod(p);			// compute: a = a%p
             
             b = b.add(a);
             b = b.mod(p);
