@@ -34,8 +34,6 @@ public class Codes {
         
         
         mult();
-        
-//        add();
 
         System.out.println("Finished");
 
@@ -48,8 +46,8 @@ public class Codes {
     public void mult() {
         int j;
         for (j = 1; j <= nbiter; j++) {
-            a = a.multiply(b);      // compute: a = a*b
-            a = a.mod(p);			// compute: a = a%p
+            a = a.multiply(b);       // compute: a = a*b
+            a = a.mod(p);	    // compute: a = a%p
                
             b = b.multiply(a);
             b = b.mod(p);
