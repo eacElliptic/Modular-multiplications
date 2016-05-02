@@ -76,18 +76,17 @@ public class MainActivity extends Activity implements SeekBar.OnSeekBarChangeLis
             traceName = "perfMul_" + size + "_" + log2_nbIter;
             Debug.startMethodTracing(traceName, 600 * 1024 * 1024);  	 // Start trace recording
             mult();
-            Debug.stopMethodTracing();   );  							 // Stop trace recording
+            Debug.stopMethodTracing(); 							 // Stop trace recording
             Toast.makeText(this, "multiplications completed", Toast.LENGTH_LONG).show();
         } else {
             traceName = "perfAdd_" + size + "_" + log2_nbIter;
             Debug.startMethodTracing(traceName, 700 * 1024 * 1024);      // Start trace recording
             add();
-            Debug.stopMethodTracing();									 // Stop trace recording
+            Debug.stopMethodTracing();						// Stop trace recording
             Toast.makeText(this, "additions completed", Toast.LENGTH_LONG).show();
         }
 
         System.gc();
-//        System.exit(0);
     }
 
 
