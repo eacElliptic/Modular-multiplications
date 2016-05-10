@@ -1,0 +1,11 @@
+The device we used for tests has these features:
+
+Phone model: Wiko Rainbow 4G
+CPU model: MediaTek MT6582
+Architecture: 4 * ARM Cortex-A7@1.30 GHz 
+Number of cores: 4 
+Clock speed: 598 MHz - 1.30 GHz
+
+Android version: 4.4.2 
+API Level: 19
+
