@@ -1,0 +1,9 @@
+This directory contains codes and results obtained by counting the number of clock cycles done for the modular multiplications.
+In each subdirectory,
+- bn_mult_cycles is for the openssl/crypto library.
+- gmp_mult_cycles is for the gnu gmp library.
+
+The results are the total number of clock cycles and its average number, for each size of integers, which is either 256, 358, 384, 512, 538 or 717.
+Each trace file contains also the ratio of the average number of clock cycles between 256 and 358, 384 and 538, 512 and 717 respectively.
+
+For these tests, we made 2^21 iterations.

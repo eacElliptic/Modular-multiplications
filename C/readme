@@ -1,0 +1,16 @@
+For C language, we made two kinds of test. 
+One using gprof (code and results are in gprof directory) and the other by counting the number of clock cycles (code and results are in rdtsc directory).
+
+The computer used has these features: 
+- Model: Toshiba Satellite L50-B-1M2
+- OS: Ubuntu gnome 15.10
+- Processor: Intel Core i5-4210U CPU @ 1.70GHz × 4 
+
+Also, 
+- gcc version is 5.2.1 20151010
+- GMP version is 6.1.0
+- Openssl version is 1.0.2g
+- gprof version is 2.25.1
+
+
+

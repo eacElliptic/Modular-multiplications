@@ -1,0 +1,19 @@
+For Java language, we used the profiler provided in NetBeans IDE 8.1
+And JDK version was 1.7.0_79
+
+With this profiler, we can choose the depth of call tree of the application to profile.
+
+The directories d1 and d2 contain traces obtained with depth equal to 1 and 2 respectively.
+In these directories, there are two types of files: nps and html.
+- nps file is obtained when one saves a snapshot of profiler result.
+- html file is obtained when one exportes profiler result, but this one doesn't provide as much detail as a nps file.
+
+The file perf_mult_256_20_d7.nps is profiler result after 2^20 modulars multiplications of 256 bits integers. 
+It shows the complete call tree of these multiplications, the 'd7' means the profiling was done with 7 as depth of call tree.
+perf_mult_256_20_d7.pdf is the corresponding pdf file we made to show the percentage of time of each method relative to its parent.
+
+
+Also, the computer used has these features: 
+- Model: Toshiba Satellite L50-B-1M2
+- OS: Ubuntu gnome 15.10
+- Processor: Intel Core i5-4210U CPU @ 1.70GHz × 4 
