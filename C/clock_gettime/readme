@@ -1,0 +1,9 @@
+
+The directory 'codes' contains a code that computes times spent in modular multiplications.
+To obtain these times, we used the method clock_gettime in time.h, with CLOCK_PROCESS_CPUTIME_ID as clockid_t value.
+
+To work, this program needs two parameters: the first is the integers size and the second is the logarithm in base two of the number of iterations.
+
+
+The directory 'traces' contains examples of executions for intergers of size 192, 269, 256, 358, 384 and 517.
+
