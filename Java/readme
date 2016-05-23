@@ -1,6 +1,12 @@
-For Java language, we used the profiler provided in NetBeans IDE 8.1
-And JDK version was 1.7.0_79
+For Java language, JDK version was 1.7.0_79.
 
+Here, we used Java System.currentTimeMillis() method and NetBeans profiler.
+
+Some results for System.currentTimeMillis() are in the file 'trace.txt' in the directory 'traces_and_codes_from_java.system'.
+
+
+
+For NetBeans (in the directory 'traces_from_netbeans') , we used the profiler provided in version 8.1
 With this profiler, we can choose the depth of call tree of the application to profile.
 
 The directories d1 and d2 contain traces obtained with depth equal to 1 and 2 respectively.
