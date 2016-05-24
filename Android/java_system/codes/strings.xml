@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Test_profiling</string>
+    <string name="bt192">192</string>
+    <string name="bt269">269</string>
+    <string name="bt256">256</string>
+    <string name="bt358">358</string>
+    <string name="bt384">384</string>
+    <string name="bt538">538</string>
+    <string name="bt717">717</string>
+    <string name="bt512">512</string>
+    <string name="r_value">Time in milliseconds</string>
+</resources>

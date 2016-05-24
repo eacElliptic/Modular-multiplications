@@ -1,0 +1,22 @@
+
+Times are in milliseconds and we made 2^21 iterations.
+
+      		   mult   	mod    	   multmod (mult + mod)
+
+192-bit integers:  16821  	35012  	   51833
+
+269-bit integers:  17093  	36931  	   54024
+
+256-bit integers:  16900  	36968  	   53868
+
+358-bit integers:  17388  	40084  	   57472
+
+384-bit integers:  17776  	40363  	   58139
+
+538-bit integers:  32994  	44563  	   77557
+
+512-bit integers:  28154  	43942  	   72096
+
+717-bit integers:  34020  	50636  	   84656
+
+
