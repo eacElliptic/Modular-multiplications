@@ -6,7 +6,7 @@ Some results for System.currentTimeMillis() are in the file 'trace.txt' in the d
 
 
 
-For NetBeans (in the directory 'traces_from_netbeans') , we used the profiler provided in version 8.1
+For NetBeans (in the directory 'traces_and_codes_from_netbeans') , we used the profiler provided in version 8.1
 With this profiler, we can choose the depth of call tree of the application to profile.
 
 The directories d1 and d2 contain traces obtained with depth equal to 1 and 2 respectively.
