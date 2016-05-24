@@ -5,5 +5,5 @@ To obtain these times, we used the method clock_gettime in time.h, with CLOCK_PR
 To work, this program needs two parameters in command line: the first is the integers size and the second is the logarithm in base two of the number of iterations.
 
 
-The directory 'traces' contains examples of executions for intergers of size 192, 269, 256, 358, 384 and 517.
+The directory 'traces' contains examples of executions for intergers of size 192, 269, 256, 358, 384, 538, 512 and 717.
 
