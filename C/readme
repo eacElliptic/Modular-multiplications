@@ -1,6 +1,7 @@
 For C language, we made two kinds of test. 
 One using gprof (code and results are in 'gprof' directory) and the other by computing (in nanoseconds) times spent in modular multiplications (code and results are in 'clock_gettime' directory).
 
+
 The computer used has these features: 
 - Model: Toshiba Satellite L50-B-1M2
 - OS: Ubuntu gnome 15.10

@@ -1,21 +1,20 @@
 #include <stdio.h>
 #include <time.h>
 #include <gmp.h>
-#include <assert.h>
-#include <unistd.h>
 #include <stdint.h>
 #include <stdlib.h>
+
 #define BILLION 1000000000L
 
-static mpz_t x;
-static mpz_t y;
-static mpz_t z;
-static mpz_t p;
+
 static gmp_randstate_t r;
-static unsigned nbiter, max_size;
+static unsigned int nbiter, max_size, nb_limbs;
 struct timespec start1;
 struct timespec end1;
 uint64_t diff1, diff2, diff3;
+
+static mpz_t x, y, z, p;
+static mp_limb_t *p_limbs, *x_limbs, *y_limbs, *z_limbs, *q_limbs;
 
 
 /*
@@ -27,28 +26,28 @@ void mult() {
 		
 		clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &start1);
 		
-		mpz_mul (z, x, y); // compute: z = x*y
+		mpn_mul_n (z_limbs, x_limbs, y_limbs, nb_limbs); // compute: z = x*y
 		
 		clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &end1);
 		diff1 += BILLION * (end1.tv_sec - start1.tv_sec) + end1.tv_nsec - start1.tv_nsec;
 
 		clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &start1);
 		
-		mpz_mod (x, z, p); // compute: x = z%p
+		mpn_tdiv_qr (q_limbs, x_limbs, 0, z_limbs, (nb_limbs*2), p_limbs, nb_limbs);  // compute: x = z%p
 		
 		clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &end1);
 		diff2 += BILLION * (end1.tv_sec - start1.tv_sec) + end1.tv_nsec - start1.tv_nsec;
 
 		clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &start1);
 		
-		mpz_mul (z, y, x); // compute: z = y*x
+		mpn_mul_n (z_limbs, y_limbs, x_limbs, nb_limbs); // compute: z = y*x
 		
 		clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &end1);
 		diff1 += BILLION * (end1.tv_sec - start1.tv_sec) + end1.tv_nsec - start1.tv_nsec;
 		
 		clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &start1);
 		
-		mpz_mod (y, z, p); // compute: y = z%p
+		mpn_tdiv_qr (q_limbs, y_limbs, 0, z_limbs, (nb_limbs*2), p_limbs, nb_limbs); // compute: y = z%p
 		
 		clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &end1);
 		diff2 += BILLION * (end1.tv_sec - start1.tv_sec) + end1.tv_nsec - start1.tv_nsec;
@@ -59,9 +58,11 @@ void mult() {
 
 
 
+
+
 int main(int argc, char *argv[]){
 
-	int found;
+	int found, limbs_size;
 	unsigned long seed = time(NULL);
 
 	// Initialisation of the random generator
@@ -83,25 +84,38 @@ int main(int argc, char *argv[]){
 		found = mpz_probab_prime_p (p, 25);
 	}while(!found);
 
-	nbiter = (1 << (atoi(argv[2]) - 1)); 
+	limbs_size = 8*sizeof(mp_limb_t); // size in bits
+	nb_limbs = (max_size/limbs_size);
+	if((max_size%limbs_size))
+		nb_limbs++;
+
+	p_limbs = mpz_limbs_modify (p, nb_limbs);
+	x_limbs = mpz_limbs_modify (x, nb_limbs);
+	y_limbs = mpz_limbs_modify (y, nb_limbs);
+	
+	z_limbs = (mp_limb_t*) calloc ((nb_limbs*2), sizeof(mp_limb_t));
+	q_limbs = (mp_limb_t*) calloc ((nb_limbs+1), sizeof(mp_limb_t));
+	
+
+	nbiter = (1 << (atoi(argv[2])-1)); 
 
     diff1 = 0;
     diff2 = 0;
     diff3 = 0;
     
-	printf("\nExecuting %u iterations for %d-bit integers ...\n", 2*nbiter, atoi(argv[1]));
+	printf("\n\nExecuting %u iterations for %d-bit integers ...\n", 2*nbiter, max_size);
 	
 	mult();
+	
+	printf("\nFinished, elapsed time (in nanoseconds) : \nmult : %llu  mod : %llu multmod : %llu\n", (long long unsigned int) diff1, (long long unsigned int) diff2, (long long unsigned int) diff3);
 
-	printf("Finished, elapsed time = mult : %llu  mod : %llu multmod : %llu nanoseconds\n\n", (long long unsigned int) diff1, (long long unsigned int) diff2, (long long unsigned int) diff3);
-
-
+	
+	free(z_limbs);
+	free(q_limbs);
 	mpz_clears(x, y, z, p, NULL);
 	gmp_randclear(r);
 
 	return 0;
 }
- 
- 
- 
- 
+
+

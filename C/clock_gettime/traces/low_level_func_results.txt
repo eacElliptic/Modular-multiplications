@@ -1,0 +1,35 @@
+ 
+Times are in nanoseconds and we made 2^21 iterations.
+ 
+
+For 192-bit integers,  elapsed time:
+mult : 624073062  mod : 833475210 multmod : 1457548272
+
+
+For 269-bit integers,  elapsed time: 
+mult : 690605287  mod : 1024267154 multmod : 1714872441
+
+
+For 256-bit integers,  elapsed time:
+mult : 640929100  mod : 885664421 multmod : 1526593521
+
+
+For 358-bit integers,  elapsed time:
+mult : 720597363  mod : 1086996284 multmod : 1807593647
+
+
+For 384-bit integers,  elapsed time:
+mult : 728266806  mod : 1019283130 multmod : 1747549936
+
+
+For 538-bit integers,  elapsed time:
+mult : 891788530  mod : 1344091375 multmod : 2235879905
+
+
+For 512-bit integers,  elapsed time:
+mult : 934454171  mod : 1223824463 multmod : 2158278634
+
+
+For 717-bit integers,  elapsed time:
+mult : 1142589708  mod : 1699818633 multmod : 2842408341
+

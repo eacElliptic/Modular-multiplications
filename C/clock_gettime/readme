@@ -1,8 +1,10 @@
 
-The directory 'codes' contains a code that computes times spent in modular multiplications.
+The directory 'codes' contains codes that compute times spent in modular multiplications.
+In this directory, the file 'high_level_func.c' contains code that uses GMP high level functions and the file 'low_level_func.c' contains code that uses GMP low level functions
+
 To obtain these times, we used the method clock_gettime in time.h, with CLOCK_PROCESS_CPUTIME_ID as clockid_t value.
 
-To work, this program needs two parameters in command line: the first is the integers size and the second is the logarithm in base two of the number of iterations.
+To work, the programs need two parameters in command line: the first is the integers size and the second is the logarithm in base two of the number of iterations.
 
 
 The directory 'traces' contains examples of executions for intergers of size 192, 269, 256, 358, 384, 538, 512 and 717.
